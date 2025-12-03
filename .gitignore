@@ -1,0 +1,38 @@
+# Voice notes (personal)
+voice-notes/*.wav
+voice-notes/*.mp3
+voice-notes/*.txt
+
+# Personal tracking data
+runs/*.json
+progress/*.json
+builds/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Whisper models (large files)
+whisper.cpp/models/*
+!whisper.cpp/models/.gitkeep

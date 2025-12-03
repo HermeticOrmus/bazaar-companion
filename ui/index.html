@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazaar Companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">Bazaar <span class="accent">Companion</span></h1>
+      <nav class="nav-tabs">
+        <button class="tab active" data-tab="meta">Meta</button>
+        <button class="tab" data-tab="heroes">Heroes</button>
+        <button class="tab" data-tab="runs">Runs</button>
+        <button class="tab" data-tab="progress">Progress</button>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+        <span class="icon-sun">☀</span>
+        <span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Meta Tab -->
+    <section class="tab-content active" id="meta">
+      <div class="section-header">
+        <h2>Current Meta <span class="badge">Patch 8.0</span></h2>
+      </div>
+
+      <div class="tier-list">
+        <div class="tier tier-s">
+          <div class="tier-label">S</div>
+          <div class="tier-items">
+            <div class="build-card" data-hero="mak">
+              <span class="hero-tag mak">Mak</span>
+              <span class="build-name">Peacewrought</span>
+            </div>
+            <div class="build-card" data-hero="pygmalien">
+              <span class="hero-tag pyg">Pyg</span>
+              <span class="build-name">Jabalian Drum</span>
+            </div>
+            <div class="build-card" data-hero="vanessa">
+              <span class="hero-tag van">Van</span>
+              <span class="build-name">Powder Keg</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tier tier-a">
+          <div class="tier-label">A</div>
+          <div class="tier-items">
+            <div class="build-card" data-hero="mak">
+              <span class="hero-tag mak">Mak</span>
+              <span class="build-name">Self Poison</span>
+            </div>
+            <div class="build-card" data-hero="pygmalien">
+              <span class="hero-tag pyg">Pyg</span>
+              <span class="build-name">Freeze</span>
+            </div>
+            <div class="build-card" data-hero="vanessa">
+              <span class="hero-tag van">Van</span>
+              <span class="build-name">Slow Burn</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tier tier-b">
+          <div class="tier-label">B</div>
+          <div class="tier-items">
+            <div class="build-card" data-hero="dooley">
+              <span class="hero-tag doo">Doo</span>
+              <span class="build-name">Friends</span>
+            </div>
+            <div class="build-card" data-hero="dooley">
+              <span class="hero-tag doo">Doo</span>
+              <span class="build-name">Weaponized Core</span>
+            </div>
+            <div class="build-card" data-hero="pygmalien">
+              <span class="hero-tag pyg">Pyg</span>
+              <span class="build-name">Fit Pyg</span>
+            </div>
+            <div class="build-card" data-hero="vanessa">
+              <span class="hero-tag van">Van</span>
+              <span class="build-name">Mono-Weapon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-stats">
+        <h3>Key Stats Priority</h3>
+        <div class="stat-cards">
+          <div class="stat-card gold">
+            <span class="stat-rank">1</span>
+            <span class="stat-name">CDR</span>
+            <span class="stat-desc">Cooldown Reduction - King stat</span>
+          </div>
+          <div class="stat-card silver">
+            <span class="stat-rank">2</span>
+            <span class="stat-name">Haste</span>
+            <span class="stat-desc">Temporary CDR boost</span>
+          </div>
+          <div class="stat-card bronze">
+            <span class="stat-rank">3</span>
+            <span class="stat-name">Crit</span>
+            <span class="stat-desc">Scales everything late</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="resources-grid">
+        <a href="https://bazaardb.gg/tierlists" target="_blank" class="resource-link">
+          <span class="resource-icon">📊</span>
+          <span>BazaarDB Tiers</span>
+        </a>
+        <a href="https://discord.com/invite/playthebazaar" target="_blank" class="resource-link">
+          <span class="resource-icon">💬</span>
+          <span>Discord</span>
+        </a>
+        <a href="https://reddit.com/r/PlayTheBazaar" target="_blank" class="resource-link">
+          <span class="resource-icon">📱</span>
+          <span>Reddit</span>
+        </a>
+        <a href="https://bazaar-builds.net" target="_blank" class="resource-link">
+          <span class="resource-icon">🏗</span>
+          <span>Daily Builds</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Heroes Tab -->
+    <section class="tab-content" id="heroes">
+      <div class="section-header">
+        <h2>Heroes</h2>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-card vanessa">
+          <h3>Vanessa</h3>
+          <p class="hero-style">Aggression & Damage</p>
+          <p class="hero-difficulty">Beginner</p>
+          <div class="hero-builds">
+            <span class="build-tag">Slow Burn</span>
+            <span class="build-tag">Powder Keg</span>
+            <span class="build-tag">Full Ammo</span>
+          </div>
+        </div>
+        <div class="hero-card pygmalien">
+          <h3>Pygmalien</h3>
+          <p class="hero-style">Shield & Economy</p>
+          <p class="hero-difficulty">Intermediate</p>
+          <div class="hero-builds">
+            <span class="build-tag">Jabalian Drum</span>
+            <span class="build-tag">Cash Cannon</span>
+            <span class="build-tag">Freeze</span>
+          </div>
+        </div>
+        <div class="hero-card dooley">
+          <h3>Dooley</h3>
+          <p class="hero-style">Chain Reactions</p>
+          <p class="hero-difficulty">Advanced</p>
+          <div class="hero-builds">
+            <span class="build-tag">Dooltron</span>
+            <span class="build-tag">Critical Core</span>
+            <span class="build-tag">Friends</span>
+          </div>
+        </div>
+        <div class="hero-card mak">
+          <h3>Mak</h3>
+          <p class="hero-style">Potion & Poison</p>
+          <p class="hero-difficulty">Intermediate</p>
+          <div class="hero-builds">
+            <span class="build-tag">Peacewrought</span>
+            <span class="build-tag">Self Poison</span>
+            <span class="build-tag">Magic Carpet</span>
+          </div>
+        </div>
+        <div class="hero-card stelle">
+          <h3>Stelle</h3>
+          <p class="hero-style">Vehicle & Flying</p>
+          <p class="hero-difficulty">DLC</p>
+          <div class="hero-builds">
+            <span class="build-tag">Coming soon</span>
+          </div>
+        </div>
+        <div class="hero-card jules">
+          <h3>Jules</h3>
+          <p class="hero-style">Food & Cooking</p>
+          <p class="hero-difficulty">DLC</p>
+          <div class="hero-builds">
+            <span class="build-tag">Heated/Chilled</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Runs Tab -->
+    <section class="tab-content" id="runs">
+      <div class="section-header">
+        <h2>Run Tracker</h2>
+        <button class="btn-primary" id="newRun">+ New Run</button>
+      </div>
+      <div class="runs-list" id="runsList">
+        <p class="empty-state">No runs logged yet. Start tracking your progress!</p>
+      </div>
+
+      <!-- New Run Modal -->
+      <div class="modal" id="runModal">
+        <div class="modal-content">
+          <h3>Log New Run</h3>
+          <form id="runForm">
+            <label>
+              Hero
+              <select name="hero" required>
+                <option value="">Select hero...</option>
+                <option value="vanessa">Vanessa</option>
+                <option value="pygmalien">Pygmalien</option>
+                <option value="dooley">Dooley</option>
+                <option value="mak">Mak</option>
+                <option value="stelle">Stelle</option>
+                <option value="jules">Jules</option>
+              </select>
+            </label>
+            <label>
+              Wins
+              <input type="number" name="wins" min="0" max="10" required>
+            </label>
+            <label>
+              Build Type
+              <input type="text" name="build" placeholder="e.g., Powder Keg">
+            </label>
+            <label>
+              Notes
+              <textarea name="notes" rows="3" placeholder="What worked? What didn't?"></textarea>
+            </label>
+            <div class="modal-actions">
+              <button type="button" class="btn-secondary" id="cancelRun">Cancel</button>
+              <button type="submit" class="btn-primary">Save Run</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Tab -->
+    <section class="tab-content" id="progress">
+      <div class="section-header">
+        <h2>Progress</h2>
+      </div>
+
+      <div class="stats-overview">
+        <div class="stat-box">
+          <span class="stat-value" id="totalRuns">0</span>
+          <span class="stat-label">Total Runs</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="avgWins">0</span>
+          <span class="stat-label">Avg Wins</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="bestRun">0</span>
+          <span class="stat-label">Best Run</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="tenWins">0</span>
+          <span class="stat-label">10-Wins</span>
+        </div>
+      </div>
+
+      <div class="milestones">
+        <h3>Milestones</h3>
+        <div class="milestone-list">
+          <label class="milestone">
+            <input type="checkbox" id="m1"> Complete first run
+          </label>
+          <label class="milestone">
+            <input type="checkbox" id="m2"> Reach 5 wins
+          </label>
+          <label class="milestone">
+            <input type="checkbox" id="m3"> Reach 10 wins
+          </label>
+          <label class="milestone">
+            <input type="checkbox" id="m4"> Win with each base hero
+          </label>
+          <label class="milestone">
+            <input type="checkbox" id="m5"> Consistent 6+ wins
+          </label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

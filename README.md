@@ -2,6 +2,35 @@
 
 Personal learning & progression tracker for The Bazaar.
 
+## Getting Started
+
+```bash
+# Start the local UI
+cd ui && python3 -m http.server 8080
+# Open http://localhost:8080
+```
+
+## Features
+
+| Tab | Function |
+|-----|----------|
+| **Meta** | Current tier list, stat priorities, resource links |
+| **Heroes** | All 6 heroes with builds and playstyles |
+| **Items** | Searchable item database with filters |
+| **Builds** | Create/save your own build templates |
+| **Runs** | Track run results and analyze patterns |
+| **Notes** | Voice transcriptions for gameplay insights |
+| **Progress** | Stats, milestones, achievement tracking |
+
+### Voice Notes (Whisper Integration)
+
+Record voice notes during gameplay:
+```bash
+./scripts/record-note.sh      # Record until Ctrl+C
+./scripts/record-note.sh 30   # Record 30 seconds
+```
+Requires: `~/whisper.cpp` with built binaries and models.
+
 ## Quick Reference
 
 ### Day Structure
@@ -22,11 +51,14 @@ Personal learning & progression tracker for The Bazaar.
 
 ## Project Structure
 ```
-/heroes      - Hero guides & personal notes
-/runs        - Run logs & analysis
-/builds      - Successful build templates
-/mechanics   - Deep dives on systems
-/progress    - Personal stats & goals
+/ui              - Web interface (BazaarDB-style dark theme)
+/scripts         - Automation (voice notes)
+/voice-notes     - Audio recordings & transcriptions
+/heroes          - Hero guides & personal notes
+/runs            - Run logs & analysis
+/builds          - Successful build templates
+/mechanics       - Deep dives on systems
+/progress        - Personal stats & goals
 ```
 
 ## Resources

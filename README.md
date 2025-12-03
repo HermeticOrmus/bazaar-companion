@@ -30,6 +30,25 @@ Personal learning & progression tracker for The Bazaar.
 ```
 
 ## Resources
-- [Mobalytics Guides](https://mobalytics.gg/the-bazaar/guides)
-- [Bazaar Builds](https://bazaar-builds.net)
-- [Wiki](https://thebazaar.fandom.com/wiki/The_Bazaar)
+
+### Databases & Tools
+- [BazaarDB.gg](https://bazaardb.gg) - Item database, advanced search, enchantments, tier lists, merchant pools
+- [Mobalytics](https://mobalytics.gg/the-bazaar) - Guides & Kripp's builds
+- [Bazaar Builds](https://bazaar-builds.net) - Build guides & meta analysis
+
+### Community
+- [Official Discord](https://discord.com/invite/playthebazaar) - ~125k members, weekly tournaments, dev announcements
+- [r/PlayTheBazaar](https://reddit.com/r/PlayTheBazaar) - Official subreddit
+- [r/TheBazaar](https://reddit.com/r/TheBazaar) - Unofficial/unmoderated alternative
+
+### Reference
+- [Wiki (Fandom)](https://thebazaar.fandom.com/wiki/The_Bazaar)
+- [Wiki (wiki.gg)](https://thebazaar.wiki.gg/)
+- [Official Site](https://playthebazaar.com/)
+
+### Meta Tracking
+Check these regularly for current meta:
+1. BazaarDB tier lists (updated with patches)
+2. Discord #builds channel
+3. Reddit hot posts for emerging strats
+4. Mobalytics for Kripp's latest builds

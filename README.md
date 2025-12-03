@@ -52,3 +52,9 @@ Check these regularly for current meta:
 2. Discord #builds channel
 3. Reddit hot posts for emerging strats
 4. Mobalytics for Kripp's latest builds
+
+### Patch Notes Sources
+- [BazaarDB Patch Notes](https://bazaardb.gg/patchnotes/8.0) - Auto-generated diffs
+- [How Bazaar Patch Notes](https://www.howbazaar.gg/patchnotes)
+- [Mobalytics Patch Tracker](https://mobalytics.gg/the-bazaar/guides/patch-notes)
+- [The Bazaar Zone](https://thebazaarzone.com/news/patch-notes/)

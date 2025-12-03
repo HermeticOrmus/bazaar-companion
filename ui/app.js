@@ -799,6 +799,7 @@ function renderBuilds() {
         <div class="saved-build-header">
           <div class="saved-build-name">${build.name}</div>
           <div class="saved-build-actions">
+            <button class="btn-icon" onclick="copyBuildToClipboard(${build.id})" title="Copy to clipboard">📋</button>
             <button class="btn-icon" onclick="editBuild(${build.id})" title="Edit">✎</button>
             <button class="btn-icon danger" onclick="deleteBuild(${build.id})" title="Delete">✕</button>
           </div>
@@ -1458,6 +1459,122 @@ document.getElementById('backToGuides')?.addEventListener('click', backToGuides)
 // ==========================================
 // INIT
 // ==========================================
+
+// ==========================================
+// HEROES TAB - SEARCH & FILTER
+// ==========================================
+
+function filterHeroes() {
+  const search = document.getElementById('heroSearch')?.value.toLowerCase() || '';
+  const difficultyFilter = document.getElementById('heroDifficultyFilter')?.value || '';
+  const heroCards = document.querySelectorAll('.hero-card');
+
+  heroCards.forEach(card => {
+    const heroName = card.querySelector('h3').textContent.toLowerCase();
+    const heroStyle = card.querySelector('.hero-style').textContent.toLowerCase();
+    const heroDifficulty = card.querySelector('.hero-difficulty').textContent;
+    const buildTags = Array.from(card.querySelectorAll('.build-tag')).map(tag => tag.textContent.toLowerCase());
+
+    const matchesSearch = !search ||
+      heroName.includes(search) ||
+      heroStyle.includes(search) ||
+      buildTags.some(tag => tag.includes(search));
+
+    const matchesDifficulty = !difficultyFilter || heroDifficulty === difficultyFilter;
+
+    card.style.display = (matchesSearch && matchesDifficulty) ? '' : 'none';
+  });
+}
+
+// Hero search/filter listeners
+document.getElementById('heroSearch')?.addEventListener('input', filterHeroes);
+document.getElementById('heroDifficultyFilter')?.addEventListener('change', filterHeroes);
+
+// ==========================================
+// COPY TO CLIPBOARD FEATURES
+// ==========================================
+
+// Copy build to clipboard
+window.copyBuildToClipboard = function(buildId) {
+  const build = state.builds.find(b => b.id === buildId);
+  if (!build) return;
+
+  const text = `
+**${build.name}** (${capitalize(build.hero)} • ${build.tier.toUpperCase()}-Tier)
+
+Core Items: ${build.coreItems || 'None specified'}
+
+Strategy:
+${build.strategy || 'No strategy notes'}
+
+Early Game:
+${build.earlyGame || 'No notes'}
+
+Late Game:
+${build.lateGame || 'No notes'}
+
+---
+Created with Bazaar Companion
+`.trim();
+
+  navigator.clipboard.writeText(text).then(() => {
+    showCopyFeedback('Build copied to clipboard!');
+  }).catch(err => {
+    console.error('Copy failed:', err);
+  });
+};
+
+// Copy guide to clipboard
+window.copyGuideToClipboard = function() {
+  const guide = state.currentGuide;
+  if (!guide) return;
+
+  const text = `
+**${guide.name}** - ${capitalize(guide.hero)} (${guide.tier.toUpperCase()}-Tier)
+
+${guide.overview}
+
+Win Condition: ${guide.winCondition}
+
+Core Items:
+${guide.coreItems.map(i => `- ${i.name} (${i.tier}): ${i.desc}`).join('\n')}
+
+Early Game:
+${guide.early.map(t => `- ${t}`).join('\n')}
+
+Mid Game:
+${guide.mid.map(t => `- ${t}`).join('\n')}
+
+Late Game:
+${guide.late.map(t => `- ${t}`).join('\n')}
+
+---
+From Bazaar Companion
+`.trim();
+
+  navigator.clipboard.writeText(text).then(() => {
+    showCopyFeedback('Guide copied to clipboard!');
+  }).catch(err => {
+    console.error('Copy failed:', err);
+  });
+};
+
+// Show copy feedback
+function showCopyFeedback(message) {
+  const feedback = document.createElement('div');
+  feedback.className = 'copy-feedback';
+  feedback.textContent = message;
+  document.body.appendChild(feedback);
+
+  setTimeout(() => {
+    feedback.classList.add('show');
+  }, 10);
+
+  setTimeout(() => {
+    feedback.classList.remove('show');
+    setTimeout(() => feedback.remove(), 300);
+  }, 2000);
+}
 
 renderRuns();
 updateStats();

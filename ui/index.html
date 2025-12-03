@@ -110,7 +110,10 @@
 
       <!-- Single Guide View (hidden by default) -->
       <div class="guide-detail" id="guideDetail">
-        <button class="btn-back" id="backToGuides">← Back to Guides</button>
+        <div class="guide-detail-header">
+          <button class="btn-back" id="backToGuides">← Back to Guides</button>
+          <button class="btn-secondary" onclick="copyGuideToClipboard()">📋 Copy Guide</button>
+        </div>
 
         <div class="guide-header">
           <h2 id="guideTitle">Build Name</h2>
@@ -243,6 +246,18 @@
     <section class="tab-content" id="heroes">
       <div class="section-header">
         <h2>Heroes</h2>
+      </div>
+      <div class="search-filters">
+        <input type="text" id="heroSearch" placeholder="Search heroes or builds..." class="search-input">
+        <div class="filter-row">
+          <select id="heroDifficultyFilter" class="filter-select">
+            <option value="">All Difficulties</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="DLC">DLC</option>
+          </select>
+        </div>
       </div>
       <div class="hero-grid">
         <div class="hero-card vanessa">

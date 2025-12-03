@@ -39,24 +39,34 @@
       </div>
       <p class="tier-hint">Click any build to view guide</p>
 
-      <div class="quick-stats">
-        <h3>Key Stats Priority</h3>
-        <div class="stat-cards">
-          <div class="stat-card gold">
-            <span class="stat-rank">1</span>
-            <span class="stat-name">CDR</span>
-            <span class="stat-desc">Cooldown Reduction - King stat</span>
+      <div class="meta-widgets">
+        <div class="quick-stats">
+          <h3>Key Stats Priority</h3>
+          <div class="stat-cards">
+            <div class="stat-card gold">
+              <span class="stat-rank">1</span>
+              <span class="stat-name">CDR</span>
+              <span class="stat-desc">Cooldown Reduction - King stat</span>
+            </div>
+            <div class="stat-card silver">
+              <span class="stat-rank">2</span>
+              <span class="stat-name">Haste</span>
+              <span class="stat-desc">Temporary CDR boost</span>
+            </div>
+            <div class="stat-card bronze">
+              <span class="stat-rank">3</span>
+              <span class="stat-name">Crit</span>
+              <span class="stat-desc">Scales everything late</span>
+            </div>
           </div>
-          <div class="stat-card silver">
-            <span class="stat-rank">2</span>
-            <span class="stat-name">Haste</span>
-            <span class="stat-desc">Temporary CDR boost</span>
+        </div>
+
+        <div class="recent-runs-widget">
+          <h3>Recent Runs</h3>
+          <div class="recent-runs-list" id="recentRunsList">
+            <p class="empty-state">No runs tracked yet</p>
           </div>
-          <div class="stat-card bronze">
-            <span class="stat-rank">3</span>
-            <span class="stat-name">Crit</span>
-            <span class="stat-desc">Scales everything late</span>
-          </div>
+          <a href="#" class="widget-link" data-tab="runs">View all runs →</a>
         </div>
       </div>
 
@@ -353,7 +363,11 @@
     <section class="tab-content" id="builds">
       <div class="section-header">
         <h2>Build Planner</h2>
-        <button class="btn-primary" id="newBuild">+ New Build</button>
+        <div class="header-actions">
+          <button class="btn-secondary" id="exportBuilds">📥 Export</button>
+          <button class="btn-secondary" id="importBuilds">📤 Import</button>
+          <button class="btn-primary" id="newBuild">+ New Build</button>
+        </div>
       </div>
       <div class="builds-list" id="buildsList">
         <p class="empty-state">No builds saved yet. Create your first build!</p>

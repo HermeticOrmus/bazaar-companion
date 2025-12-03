@@ -1576,6 +1576,114 @@ function showCopyFeedback(message) {
   }, 2000);
 }
 
+// ==========================================
+// EXPORT/IMPORT BUILDS
+// ==========================================
+
+document.getElementById('exportBuilds')?.addEventListener('click', () => {
+  if (state.builds.length === 0) {
+    showCopyFeedback('No builds to export');
+    return;
+  }
+
+  const data = {
+    version: '1.0',
+    exportDate: new Date().toISOString(),
+    builds: state.builds
+  };
+
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `bazaar-builds-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  showCopyFeedback(`Exported ${state.builds.length} builds`);
+});
+
+document.getElementById('importBuilds')?.addEventListener('click', () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+
+  input.onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const data = JSON.parse(e.target.result);
+
+        if (!data.builds || !Array.isArray(data.builds)) {
+          throw new Error('Invalid build file format');
+        }
+
+        // Merge with existing builds, updating IDs
+        let imported = 0;
+        data.builds.forEach(build => {
+          const newBuild = {
+            ...build,
+            id: Date.now() + imported
+          };
+          state.builds.push(newBuild);
+          imported++;
+        });
+
+        localStorage.setItem('bazaar-builds', JSON.stringify(state.builds));
+        renderBuilds();
+        showCopyFeedback(`Imported ${imported} builds`);
+      } catch (err) {
+        showCopyFeedback('Failed to import builds');
+        console.error('Import error:', err);
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  input.click();
+});
+
+// ==========================================
+// RECENT RUNS WIDGET
+// ==========================================
+
+function renderRecentRuns() {
+  const container = document.getElementById('recentRunsList');
+  if (!container) return;
+
+  const recentRuns = state.runs.slice(0, 5);
+
+  if (recentRuns.length === 0) {
+    container.innerHTML = '<p class="empty-state">No runs tracked yet</p>';
+    return;
+  }
+
+  container.innerHTML = recentRuns.map(run => `
+    <div class="recent-run-item">
+      <div class="recent-run-hero">
+        <span class="hero-tag ${run.hero.slice(0,3)}">${capitalize(run.hero)}</span>
+        ${run.build ? `<span class="run-build">${run.build}</span>` : ''}
+      </div>
+      <div class="recent-run-result">
+        <span class="run-wins ${run.wins >= 8 ? 'high' : run.wins >= 5 ? 'mid' : 'low'}">${run.wins} wins</span>
+        <span class="run-date">${new Date(run.date).toLocaleDateString()}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Widget link click handler
+document.querySelector('.widget-link')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  const tab = e.target.dataset.tab;
+  if (tab) {
+    document.querySelector(`.tab[data-tab="${tab}"]`).click();
+  }
+});
+
 renderRuns();
 updateStats();
 loadMilestones();
@@ -1585,3 +1693,4 @@ renderNotes();
 loadExternalNotes();
 renderTierList();
 renderGuidesGrid();
+renderRecentRuns();

@@ -10,7 +10,7 @@ Track your runs, analyze builds, record voice notes, and master all 6 heroes wit
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/bazaar-companion.git
+git clone https://github.com/HermeticOrmus/bazaar-companion.git
 cd bazaar-companion
 
 # Start the web interface

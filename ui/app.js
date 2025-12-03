@@ -1694,3 +1694,161 @@ loadExternalNotes();
 renderTierList();
 renderGuidesGrid();
 renderRecentRuns();
+
+// ==========================================
+// CHARTS
+// ==========================================
+
+function renderCharts() {
+  renderWinRateChart();
+  renderHeroPerformanceChart();
+}
+
+function renderWinRateChart() {
+  const container = document.getElementById('winRateChart');
+  if (!container || state.runs.length < 2) return;
+
+  // Take last 10 runs for trend
+  const recentRuns = state.runs.slice(-10);
+  const maxWins = Math.max(...recentRuns.map(r => r.wins), 10);
+
+  container.innerHTML = `
+    <div class="bar-chart">
+      ${recentRuns.map((run, index) => {
+        const height = (run.wins / maxWins) * 100;
+        const colorClass = run.wins >= 8 ? 'high' : run.wins >= 5 ? 'mid' : 'low';
+        return `
+          <div class="bar-wrapper">
+            <div class="bar ${colorClass}" style="height: ${height}%" title="${run.hero}: ${run.wins} wins">
+              <span class="bar-label">${run.wins}</span>
+            </div>
+            <span class="bar-date">${index + 1}</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+function renderHeroPerformanceChart() {
+  const container = document.getElementById('heroPerformanceChart');
+  if (!container || state.runs.length === 0) return;
+
+  // Calculate average wins per hero
+  const heroStats = {};
+  state.runs.forEach(run => {
+    if (!heroStats[run.hero]) {
+      heroStats[run.hero] = { total: 0, count: 0 };
+    }
+    heroStats[run.hero].total += run.wins;
+    heroStats[run.hero].count += 1;
+  });
+
+  const heroData = Object.entries(heroStats).map(([hero, stats]) => ({
+    hero,
+    avg: stats.total / stats.count,
+    count: stats.count
+  })).sort((a, b) => b.avg - a.avg);
+
+  const maxAvg = Math.max(...heroData.map(h => h.avg), 10);
+
+  container.innerHTML = `
+    <div class="hero-bars">
+      ${heroData.map(data => {
+        const width = (data.avg / maxAvg) * 100;
+        const colorClass = data.avg >= 8 ? 'high' : data.avg >= 5 ? 'mid' : 'low';
+        return `
+          <div class="hero-bar-row">
+            <span class="hero-bar-label">${capitalize(data.hero)}</span>
+            <div class="hero-bar-track">
+              <div class="hero-bar ${colorClass}" style="width: ${width}%">
+                <span class="hero-bar-value">${data.avg.toFixed(1)} avg (${data.count} runs)</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+renderCharts();
+
+// ==========================================
+// CHARTS
+// ==========================================
+
+function renderCharts() {
+  renderWinRateChart();
+  renderHeroPerformanceChart();
+}
+
+function renderWinRateChart() {
+  const container = document.getElementById('winRateChart');
+  if (!container || state.runs.length < 2) return;
+
+  // Take last 10 runs for trend
+  const recentRuns = state.runs.slice(-10);
+  const maxWins = Math.max(...recentRuns.map(r => r.wins), 10);
+
+  container.innerHTML = `
+    <div class="bar-chart">
+      ${recentRuns.map((run, index) => {
+        const height = (run.wins / maxWins) * 100;
+        const colorClass = run.wins >= 8 ? 'high' : run.wins >= 5 ? 'mid' : 'low';
+        return `
+          <div class="bar-wrapper">
+            <div class="bar ${colorClass}" style="height: ${height}%" title="${run.hero}: ${run.wins} wins">
+              <span class="bar-label">${run.wins}</span>
+            </div>
+            <span class="bar-date">${index + 1}</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+function renderHeroPerformanceChart() {
+  const container = document.getElementById('heroPerformanceChart');
+  if (!container || state.runs.length === 0) return;
+
+  // Calculate average wins per hero
+  const heroStats = {};
+  state.runs.forEach(run => {
+    if (!heroStats[run.hero]) {
+      heroStats[run.hero] = { total: 0, count: 0 };
+    }
+    heroStats[run.hero].total += run.wins;
+    heroStats[run.hero].count += 1;
+  });
+
+  const heroData = Object.entries(heroStats).map(([hero, stats]) => ({
+    hero,
+    avg: stats.total / stats.count,
+    count: stats.count
+  })).sort((a, b) => b.avg - a.avg);
+
+  const maxAvg = Math.max(...heroData.map(h => h.avg), 10);
+
+  container.innerHTML = `
+    <div class="hero-bars">
+      ${heroData.map(data => {
+        const width = (data.avg / maxAvg) * 100;
+        const colorClass = data.avg >= 8 ? 'high' : data.avg >= 5 ? 'mid' : 'low';
+        return `
+          <div class="hero-bar-row">
+            <span class="hero-bar-label">${capitalize(data.hero)}</span>
+            <div class="hero-bar-track">
+              <div class="hero-bar ${colorClass}" style="width: ${width}%">
+                <span class="hero-bar-value">${data.avg.toFixed(1)} avg (${data.count} runs)</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+renderCharts();

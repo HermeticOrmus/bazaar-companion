@@ -13,7 +13,10 @@
       <nav class="nav-tabs">
         <button class="tab active" data-tab="meta">Meta</button>
         <button class="tab" data-tab="heroes">Heroes</button>
+        <button class="tab" data-tab="items">Items</button>
+        <button class="tab" data-tab="builds">Builds</button>
         <button class="tab" data-tab="runs">Runs</button>
+        <button class="tab" data-tab="notes">Notes</button>
         <button class="tab" data-tab="progress">Progress</button>
       </nav>
       <button class="theme-toggle" id="themeToggle" title="Toggle theme">
@@ -131,6 +134,47 @@
       </div>
     </section>
 
+    <!-- Items Tab -->
+    <section class="tab-content" id="items">
+      <div class="section-header">
+        <h2>Item Database</h2>
+      </div>
+      <div class="search-filters">
+        <input type="text" id="itemSearch" placeholder="Search items..." class="search-input">
+        <div class="filter-row">
+          <select id="heroFilter" class="filter-select">
+            <option value="">All Heroes</option>
+            <option value="vanessa">Vanessa</option>
+            <option value="pygmalien">Pygmalien</option>
+            <option value="dooley">Dooley</option>
+            <option value="mak">Mak</option>
+            <option value="stelle">Stelle</option>
+            <option value="jules">Jules</option>
+          </select>
+          <select id="tierFilter" class="filter-select">
+            <option value="">All Tiers</option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+            <option value="diamond">Diamond</option>
+            <option value="legendary">Legendary</option>
+          </select>
+          <select id="sizeFilter" class="filter-select">
+            <option value="">All Sizes</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+      </div>
+      <div class="items-grid" id="itemsGrid">
+        <p class="empty-state">Loading items from BazaarDB...</p>
+      </div>
+      <div class="items-footer">
+        <a href="https://bazaardb.gg" target="_blank" class="btn-secondary">Full Database at BazaarDB.gg</a>
+      </div>
+    </section>
+
     <!-- Heroes Tab -->
     <section class="tab-content" id="heroes">
       <div class="section-header">
@@ -196,6 +240,74 @@
       </div>
     </section>
 
+    <!-- Builds Tab -->
+    <section class="tab-content" id="builds">
+      <div class="section-header">
+        <h2>Build Planner</h2>
+        <button class="btn-primary" id="newBuild">+ New Build</button>
+      </div>
+      <div class="builds-list" id="buildsList">
+        <p class="empty-state">No builds saved yet. Create your first build!</p>
+      </div>
+
+      <!-- Build Modal -->
+      <div class="modal" id="buildModal">
+        <div class="modal-content modal-wide">
+          <h3 id="buildModalTitle">New Build</h3>
+          <form id="buildForm">
+            <input type="hidden" name="buildId" id="buildId">
+            <div class="form-row">
+              <label>
+                Build Name
+                <input type="text" name="buildName" required placeholder="e.g., Powder Keg Vanessa">
+              </label>
+              <label>
+                Hero
+                <select name="buildHero" required>
+                  <option value="">Select...</option>
+                  <option value="vanessa">Vanessa</option>
+                  <option value="pygmalien">Pygmalien</option>
+                  <option value="dooley">Dooley</option>
+                  <option value="mak">Mak</option>
+                  <option value="stelle">Stelle</option>
+                  <option value="jules">Jules</option>
+                </select>
+              </label>
+              <label>
+                Tier
+                <select name="buildTier">
+                  <option value="s">S-Tier</option>
+                  <option value="a">A-Tier</option>
+                  <option value="b" selected>B-Tier</option>
+                  <option value="c">C-Tier</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Core Items (comma separated)
+              <input type="text" name="coreItems" placeholder="e.g., Powder Keg, Fuse, Cannon">
+            </label>
+            <label>
+              Strategy Notes
+              <textarea name="strategy" rows="3" placeholder="How to play this build, key synergies, win conditions..."></textarea>
+            </label>
+            <label>
+              Early Game
+              <textarea name="earlyGame" rows="2" placeholder="What to look for Days 1-3..."></textarea>
+            </label>
+            <label>
+              Late Game
+              <textarea name="lateGame" rows="2" placeholder="Scaling, final board setup..."></textarea>
+            </label>
+            <div class="modal-actions">
+              <button type="button" class="btn-secondary" id="cancelBuild">Cancel</button>
+              <button type="submit" class="btn-primary">Save Build</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- Runs Tab -->
     <section class="tab-content" id="runs">
       <div class="section-header">
@@ -240,6 +352,40 @@
               <button type="submit" class="btn-primary">Save Run</button>
             </div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes Tab (Voice Transcriptions) -->
+    <section class="tab-content" id="notes">
+      <div class="section-header">
+        <h2>Voice Notes</h2>
+        <button class="btn-primary" id="recordNote">Record Note</button>
+      </div>
+      <div class="notes-info">
+        <p class="info-text">
+          Record voice notes during gameplay to capture insights.
+          Uses local Whisper.cpp for transcription - no data leaves your machine.
+        </p>
+        <div class="recording-status" id="recordingStatus" style="display: none;">
+          <span class="recording-dot"></span>
+          <span>Recording... Press Ctrl+C in terminal to stop</span>
+        </div>
+      </div>
+      <div class="notes-list" id="notesList">
+        <p class="empty-state">No voice notes yet. Click "Record Note" to start!</p>
+      </div>
+
+      <!-- Note Modal -->
+      <div class="modal" id="noteModal">
+        <div class="modal-content">
+          <h3>Voice Note</h3>
+          <div class="note-content" id="noteContent"></div>
+          <div class="note-meta" id="noteMeta"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" id="closeNote">Close</button>
+            <button type="button" class="btn-danger" id="deleteNote">Delete</button>
+          </div>
         </div>
       </div>
     </section>

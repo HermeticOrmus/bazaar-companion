@@ -1,5 +1,5 @@
 // Service Worker for Bazaar Companion PWA
-const CACHE_NAME = 'bazaar-companion-v1';
+const CACHE_NAME = 'bazaar-companion-v10';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -43,26 +43,48 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network-first for core assets, cache-first for images
 self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  // Network-first for HTML, JS, CSS (always get fresh content)
+  if (url.pathname.endsWith('.html') ||
+      url.pathname.endsWith('.js') ||
+      url.pathname.endsWith('.css') ||
+      url.pathname === '/') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Clone and cache the fresh response
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+          return response;
+        })
+        .catch(() => {
+          // Offline fallback to cache
+          return caches.match(event.request);
+        })
+    );
+    return;
+  }
+
+  // Cache-first for images and other assets
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Cache hit - return response
         if (response) {
           return response;
         }
 
         return fetch(event.request).then(
           response => {
-            // Check if valid response
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
 
-            // Clone the response
             const responseToCache = response.clone();
-
             caches.open(CACHE_NAME)
               .then(cache => {
                 cache.put(event.request, responseToCache);
@@ -73,7 +95,6 @@ self.addEventListener('fetch', event => {
         );
       })
       .catch(() => {
-        // Return offline fallback if available
         return caches.match('/index.html');
       })
   );

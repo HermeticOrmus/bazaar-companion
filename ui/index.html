@@ -23,89 +23,214 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-72x72.png">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.4">
 </head>
 <body>
   <header class="header">
-    <div class="header-content">
+    <div class="header-top">
       <h1 class="logo">Bazaar <span class="accent">Companion</span></h1>
-      <nav class="nav-tabs">
-        <button class="tab active" data-tab="meta">Meta</button>
-        <button class="tab" data-tab="guides">Guides</button>
-        <button class="tab" data-tab="heroes">Heroes</button>
-        <button class="tab" data-tab="items">Items</button>
-        <button class="tab" data-tab="builds">My Builds</button>
-        <button class="tab" data-tab="runs">Runs</button>
-        <button class="tab" data-tab="notes">Notes</button>
-        <button class="tab" data-tab="progress">Progress</button>
-      </nav>
+
+      <!-- Global Smart Search -->
+      <div class="global-search" id="globalSearch">
+        <div class="search-trigger" id="searchTrigger">
+          <span class="search-icon">⌕</span>
+          <span class="search-placeholder">Search the Bazaar Companion</span>
+          <span class="search-shortcut">Ctrl+K</span>
+        </div>
+      </div>
+
       <button class="theme-toggle" id="themeToggle" title="Toggle theme">
         <span class="icon-sun">☀</span>
         <span class="icon-moon">☾</span>
       </button>
     </div>
+    <nav class="nav-tabs">
+      <button class="tab active" data-tab="meta">Meta</button>
+      <button class="tab" data-tab="patch">Patch</button>
+      <button class="tab" data-tab="guides">Guides</button>
+      <button class="tab" data-tab="heroes">Heroes</button>
+      <button class="tab" data-tab="items">Items</button>
+      <button class="tab" data-tab="builds">My Builds</button>
+      <button class="tab" data-tab="runs">Runs</button>
+      <button class="tab" data-tab="notes">Notes</button>
+      <button class="tab" data-tab="progress">Progress</button>
+      <button class="tab" data-tab="trainer">Trainer</button>
+    </nav>
   </header>
 
   <main class="main">
-    <!-- Meta Tab -->
+    <!-- Meta Tab (Landing Page) -->
     <section class="tab-content active" id="meta">
+      <!-- Hero Landing Section -->
+      <div class="landing-hero">
+        <div class="landing-logo">
+          <div class="logo-icon">⬡</div>
+        </div>
+        <h1 class="landing-title">Bazaar Companion</h1>
+        <p class="landing-tagline">
+          Your personal companion for mastering <strong>The Bazaar</strong> —
+          build guides, run tracking, performance analytics, and skill development.
+        </p>
+
+        <div class="landing-actions">
+          <button class="landing-btn primary" data-tab="guides">
+            <span class="btn-icon">⚐</span>
+            <span>Build Guides</span>
+          </button>
+          <button class="landing-btn secondary" data-tab="heroes">
+            <span class="btn-icon">⚔</span>
+            <span>Heroes</span>
+          </button>
+          <button class="landing-btn secondary" data-tab="runs">
+            <span class="btn-icon">▤</span>
+            <span>Track Runs</span>
+          </button>
+        </div>
+
+        <div class="landing-patch">
+          <span class="patch-badge">Latest</span>
+          <a href="https://bazaardb.gg/patchnotes/9.0" target="_blank" class="patch-link">9.0</a>
+          <span class="patch-date">Dec 3</span>
+        </div>
+      </div>
+
+      <!-- Tier List Section -->
+      <div class="meta-section">
+        <h2 class="section-title">Current Meta</h2>
+        <div class="tier-list" id="tierList">
+          <!-- Tier list is rendered dynamically from JS -->
+        </div>
+        <p class="tier-hint">Click any build to view guide</p>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="meta-section">
+        <h2 class="section-title">Resources</h2>
+        <div class="resources-grid">
+          <a href="https://bazaardb.gg" target="_blank" class="resource-card">
+            <span class="resource-icon">▤</span>
+            <span class="resource-name">BazaarDB</span>
+            <span class="resource-desc">Item database</span>
+          </a>
+          <a href="https://bazaar-builds.net" target="_blank" class="resource-card">
+            <span class="resource-icon">⚒</span>
+            <span class="resource-name">Daily Builds</span>
+            <span class="resource-desc">10-win builds</span>
+          </a>
+          <a href="https://mobalytics.gg/the-bazaar/guides/meta-builds" target="_blank" class="resource-card">
+            <span class="resource-icon">⚐</span>
+            <span class="resource-name">Mobalytics</span>
+            <span class="resource-desc">Meta guides</span>
+          </a>
+          <a href="https://discord.com/invite/playthebazaar" target="_blank" class="resource-card">
+            <span class="resource-icon">◈</span>
+            <span class="resource-name">Discord</span>
+            <span class="resource-desc">Community</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Your Stats Widget -->
+      <div class="meta-section stats-widget">
+        <h2 class="section-title">Your Progress</h2>
+        <div class="quick-stats-row">
+          <div class="quick-stat">
+            <span class="quick-stat-value" id="homeRunCount">0</span>
+            <span class="quick-stat-label">Runs</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-value" id="homeAvgWins">—</span>
+            <span class="quick-stat-label">Avg Wins</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-value" id="homeBestRun">—</span>
+            <span class="quick-stat-label">Best</span>
+          </div>
+          <div class="quick-stat highlight">
+            <span class="quick-stat-value" id="homeTenWins">0</span>
+            <span class="quick-stat-label">10-Wins</span>
+          </div>
+        </div>
+        <button class="landing-btn small" data-tab="runs">Track a Run →</button>
+      </div>
+    </section>
+
+    <!-- Patch Notes Tab -->
+    <section class="tab-content" id="patch">
       <div class="section-header">
-        <h2>Current Meta <span class="badge">Patch 8.0</span></h2>
+        <h2>Patch Notes <span class="badge" id="currentPatchBadge">9.0</span></h2>
+        <div class="patch-actions">
+          <select id="patchVersionSelect" class="filter-select">
+            <option value="9.0">Patch 9.0 (Current)</option>
+            <option value="8.0">Patch 8.0</option>
+            <option value="7.5">Patch 7.5</option>
+          </select>
+          <button class="btn-secondary" id="refreshPatchBtn">Refresh</button>
+        </div>
       </div>
 
-      <div class="tier-list" id="tierList">
-        <!-- Tier list is rendered dynamically from JS -->
+      <!-- Meta Impact Summary -->
+      <div class="meta-impact-summary">
+        <h3>Meta Impact Prediction</h3>
+        <div class="impact-cards" id="metaImpactCards">
+          <!-- Generated by JS -->
+        </div>
       </div>
-      <p class="tier-hint">Click any build to view guide</p>
 
-      <div class="meta-widgets">
-        <div class="quick-stats">
-          <h3>Key Stats Priority</h3>
-          <div class="stat-cards">
-            <div class="stat-card gold">
-              <span class="stat-rank">1</span>
-              <span class="stat-name">CDR</span>
-              <span class="stat-desc">Cooldown Reduction - King stat</span>
+      <!-- Change Categories -->
+      <div class="patch-categories">
+        <button class="patch-category-btn active" data-category="all">All Changes</button>
+        <button class="patch-category-btn" data-category="buffs">Buffs</button>
+        <button class="patch-category-btn" data-category="nerfs">Nerfs</button>
+        <button class="patch-category-btn" data-category="reworks">Reworks</button>
+        <button class="patch-category-btn" data-category="new">New</button>
+      </div>
+
+      <!-- Patch Notes Content -->
+      <div class="patch-notes-container">
+        <!-- Winners & Losers -->
+        <div class="winners-losers">
+          <div class="winners">
+            <h4>Winners</h4>
+            <div class="winner-list" id="patchWinners">
+              <!-- Generated by JS -->
             </div>
-            <div class="stat-card silver">
-              <span class="stat-rank">2</span>
-              <span class="stat-name">Haste</span>
-              <span class="stat-desc">Temporary CDR boost</span>
-            </div>
-            <div class="stat-card bronze">
-              <span class="stat-rank">3</span>
-              <span class="stat-name">Crit</span>
-              <span class="stat-desc">Scales everything late</span>
+          </div>
+          <div class="losers">
+            <h4>Losers</h4>
+            <div class="loser-list" id="patchLosers">
+              <!-- Generated by JS -->
             </div>
           </div>
         </div>
 
-        <div class="recent-runs-widget">
-          <h3>Recent Runs</h3>
-          <div class="recent-runs-list" id="recentRunsList">
-            <p class="empty-state">No runs tracked yet</p>
-          </div>
-          <a href="#" class="widget-link" data-tab="runs">View all runs →</a>
+        <!-- Detailed Changes -->
+        <div class="patch-changes" id="patchChanges">
+          <!-- Generated by JS -->
         </div>
       </div>
 
-      <div class="resources-grid">
-        <a href="https://bazaardb.gg/tierlists" target="_blank" class="resource-link">
-          <span class="resource-icon">📊</span>
-          <span>BazaarDB Tiers</span>
-        </a>
-        <a href="https://discord.com/invite/playthebazaar" target="_blank" class="resource-link">
-          <span class="resource-icon">💬</span>
-          <span>Discord</span>
-        </a>
-        <a href="https://reddit.com/r/PlayTheBazaar" target="_blank" class="resource-link">
-          <span class="resource-icon">📱</span>
-          <span>Reddit</span>
-        </a>
-        <a href="https://bazaar-builds.net" target="_blank" class="resource-link">
-          <span class="resource-icon">🏗</span>
-          <span>Daily Builds</span>
-        </a>
+      <!-- External Patch Resources -->
+      <div class="patch-resources">
+        <h3>Official & Community Analysis</h3>
+        <div class="patch-links">
+          <a href="https://bazaardb.gg/patchnotes/9.0" target="_blank" class="patch-link">
+            <span class="patch-link-icon">▤</span>
+            <span class="patch-link-text">BazaarDB Diff</span>
+          </a>
+          <a href="https://www.howbazaar.gg/patchnotes" target="_blank" class="patch-link">
+            <span class="patch-link-icon">≡</span>
+            <span class="patch-link-text">How Bazaar</span>
+          </a>
+          <a href="https://mobalytics.gg/the-bazaar/guides/patch-notes" target="_blank" class="patch-link">
+            <span class="patch-link-icon">▲</span>
+            <span class="patch-link-text">Mobalytics</span>
+          </a>
+          <a href="https://thebazaarzone.com/news/patch-notes/" target="_blank" class="patch-link">
+            <span class="patch-link-icon">⬡</span>
+            <span class="patch-link-text">Bazaar Zone</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -137,11 +262,537 @@
         <!-- Rendered by JS -->
       </div>
 
+      <!-- Peacewrought Deep Dive (hidden by default) -->
+      <div class="deep-dive" id="peacewroughtDeepDive">
+        <div class="deep-dive-header">
+          <button class="btn-back" id="backFromDeepDive">← Back to Guides</button>
+          <div class="deep-dive-title">
+            <span class="deep-dive-icon">⚔</span>
+            <h2>Peacewrought Mastery</h2>
+            <span class="hero-tag mak">MAK</span>
+            <span class="tier-badge tier-s">S-TIER</span>
+          </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="deep-dive-summary">
+          <div class="summary-card core-mechanic">
+            <h3>Core Mechanic</h3>
+            <p><strong>Destroy to Regenerate.</strong> Peacewrought destroys the item to its left, gaining Regen equal to the item's tier value. Higher tier items = more Regen = more sustain and damage.</p>
+          </div>
+          <div class="summary-card key-stats">
+            <h3>Key Stats</h3>
+            <div class="stat-chips">
+              <span class="stat-chip primary">Regen</span>
+              <span class="stat-chip">Haste</span>
+              <span class="stat-chip">CDR</span>
+              <span class="stat-chip">Crit</span>
+            </div>
+          </div>
+          <div class="summary-card gold-tip">
+            <h3>Economy Tip</h3>
+            <p>Peacewrought grants <strong>2/4/6/8 Gold</strong> on destroy based on tier. Use with Catalyst generators (Aludel, Mortar & Pestle) for infinite value.</p>
+          </div>
+        </div>
+
+        <!-- Visual Timeline -->
+        <div class="deep-dive-section">
+          <h3>Day-by-Day Progression</h3>
+          <div class="progression-timeline">
+            <div class="timeline-phase early">
+              <div class="phase-header">
+                <span class="phase-icon">◐</span>
+                <span class="phase-name">Early Game</span>
+                <span class="phase-days">Days 1-3</span>
+              </div>
+              <div class="phase-content">
+                <div class="priority-items">
+                  <h4>Priority Items</h4>
+                  <div class="item-pills">
+                    <span class="item-pill must">Any Healing</span>
+                    <span class="item-pill must">Potions</span>
+                    <span class="item-pill good">Gold Generation</span>
+                  </div>
+                </div>
+                <div class="phase-strategy">
+                  <h4>Strategy</h4>
+                  <ul>
+                    <li>Survive. Don't worry about Peacewrought yet.</li>
+                    <li>Stack gold for shop flexibility.</li>
+                    <li>Peacewrought can appear Day 3 from specific merchants.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-connector">→</div>
+
+            <div class="timeline-phase mid">
+              <div class="phase-header">
+                <span class="phase-icon">☀</span>
+                <span class="phase-name">Mid Game</span>
+                <span class="phase-days">Days 4-6</span>
+              </div>
+              <div class="phase-content">
+                <div class="priority-items">
+                  <h4>Priority Items</h4>
+                  <div class="item-pills">
+                    <span class="item-pill must">Peacewrought</span>
+                    <span class="item-pill must">Catalyst Generators</span>
+                    <span class="item-pill good">Haste Sources</span>
+                  </div>
+                </div>
+                <div class="phase-strategy">
+                  <h4>Strategy</h4>
+                  <ul>
+                    <li>Peacewrought is CORE - reroll aggressively.</li>
+                    <li>Add Aludel/Mortar & Pestle for catalyst feeding.</li>
+                    <li>Start building Haste to speed up Peacewrought.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-connector">→</div>
+
+            <div class="timeline-phase late">
+              <div class="phase-header">
+                <span class="phase-icon">☽</span>
+                <span class="phase-name">Late Game</span>
+                <span class="phase-days">Days 7+</span>
+              </div>
+              <div class="phase-content">
+                <div class="priority-items">
+                  <h4>Priority Items</h4>
+                  <div class="item-pills">
+                    <span class="item-pill must">Staff of the Moose</span>
+                    <span class="item-pill must">Library</span>
+                    <span class="item-pill good">Barbed Claws</span>
+                  </div>
+                </div>
+                <div class="phase-strategy">
+                  <h4>Strategy</h4>
+                  <ul>
+                    <li>Staff of the Moose doubles Regen → massive damage.</li>
+                    <li>Library feeds potions → infinite sustain loop.</li>
+                    <li>Position Peacewrought to avoid Freeze.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Synergy Web -->
+        <div class="deep-dive-section">
+          <h3>Item Synergy Map</h3>
+          <p class="section-subtitle">Understand how items connect and amplify each other</p>
+          <div class="synergy-web">
+            <!-- Central Item -->
+            <div class="synergy-center">
+              <div class="synergy-item core" data-item="peacewrought">
+                <div class="synergy-item-icon">⚔</div>
+                <div class="synergy-item-name">Peacewrought</div>
+                <div class="synergy-item-tier legendary">Legendary</div>
+              </div>
+            </div>
+
+            <!-- Synergy Categories -->
+            <div class="synergy-categories">
+              <!-- Feeding -->
+              <div class="synergy-category feeding">
+                <h4>↻ Catalyst Feeding</h4>
+                <p>Items that generate disposable catalysts to feed Peacewrought</p>
+                <div class="synergy-items">
+                  <div class="synergy-item" data-item="aludel">
+                    <span class="synergy-item-name">Aludel</span>
+                    <span class="synergy-item-tier gold">Gold</span>
+                    <span class="synergy-bonus">Creates Catalysts</span>
+                  </div>
+                  <div class="synergy-item" data-item="mortar-pestle">
+                    <span class="synergy-item-name">Mortar & Pestle</span>
+                    <span class="synergy-item-tier silver">Silver</span>
+                    <span class="synergy-bonus">Creates Catalysts</span>
+                  </div>
+                  <div class="synergy-item" data-item="library">
+                    <span class="synergy-item-name">Library</span>
+                    <span class="synergy-item-tier gold">Gold</span>
+                    <span class="synergy-bonus">Creates Potions</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scaling -->
+              <div class="synergy-category scaling">
+                <h4>▲ Regen Scaling</h4>
+                <p>Items that multiply or benefit from Regen</p>
+                <div class="synergy-items">
+                  <div class="synergy-item" data-item="staff-moose">
+                    <span class="synergy-item-name">Staff of the Moose</span>
+                    <span class="synergy-item-tier diamond">Diamond</span>
+                    <span class="synergy-bonus critical">2x Regen!</span>
+                  </div>
+                  <div class="synergy-item" data-item="barbed-claws">
+                    <span class="synergy-item-name">Barbed Claws</span>
+                    <span class="synergy-item-tier gold">Gold</span>
+                    <span class="synergy-bonus">+Dmg per Regen</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speed -->
+              <div class="synergy-category speed">
+                <h4>↯ Speed & Haste</h4>
+                <p>More triggers = more destruction = more Regen</p>
+                <div class="synergy-items">
+                  <div class="synergy-item" data-item="rainbow-staff">
+                    <span class="synergy-item-name">Rainbow Staff</span>
+                    <span class="synergy-item-tier gold">Gold</span>
+                    <span class="synergy-bonus">Haste Generation</span>
+                  </div>
+                  <div class="synergy-item" data-item="energy-potion">
+                    <span class="synergy-item-name">Energy Potion</span>
+                    <span class="synergy-item-tier silver">Silver</span>
+                    <span class="synergy-bonus">Haste + CDR</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Damage -->
+              <div class="synergy-category damage">
+                <h4>✸ Damage Amplifiers</h4>
+                <p>Maximize the damage from each Peacewrought swing</p>
+                <div class="synergy-items">
+                  <div class="synergy-item" data-item="crit-items">
+                    <span class="synergy-item-name">Crit Items</span>
+                    <span class="synergy-item-tier gold">Varies</span>
+                    <span class="synergy-bonus">Massive Crits</span>
+                  </div>
+                  <div class="synergy-item" data-item="vial-launcher">
+                    <span class="synergy-item-name">Vial Launcher</span>
+                    <span class="synergy-item-tier silver">Silver</span>
+                    <span class="synergy-bonus">Potion Synergy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Merchant Finder -->
+        <div class="deep-dive-section">
+          <h3>Where to Find Peacewrought</h3>
+          <p class="section-subtitle">Know which merchants stock your core item</p>
+          <div class="merchant-grid">
+            <div class="merchant-category regular">
+              <h4>Regular Merchants</h4>
+              <div class="merchant-list">
+                <div class="merchant-card">
+                  <span class="merchant-name">Jay Jay</span>
+                  <span class="merchant-specialty">Weapons</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Barkun</span>
+                  <span class="merchant-specialty">Potions</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Herma</span>
+                  <span class="merchant-specialty">General</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Kina</span>
+                  <span class="merchant-specialty">Healing</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Mittel</span>
+                  <span class="merchant-specialty">Economy</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Silvia</span>
+                  <span class="merchant-specialty">Silver Items</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Luxe</span>
+                  <span class="merchant-specialty">Gold Items</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Goldie</span>
+                  <span class="merchant-specialty">Legendary</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">Quixel</span>
+                  <span class="merchant-specialty">Random</span>
+                </div>
+                <div class="merchant-card">
+                  <span class="merchant-name">The Antiquarian</span>
+                  <span class="merchant-specialty">Rare Items</span>
+                </div>
+              </div>
+            </div>
+            <div class="merchant-category enchanted">
+              <h4>Enchanted Versions</h4>
+              <div class="merchant-list">
+                <div class="merchant-card enchanted">
+                  <span class="merchant-name">Cobweb</span>
+                  <span class="merchant-specialty">Enchanted Weapons</span>
+                </div>
+                <div class="merchant-card enchanted">
+                  <span class="merchant-name">Knightshade</span>
+                  <span class="merchant-specialty">Dark Enchants</span>
+                </div>
+                <div class="merchant-card enchanted">
+                  <span class="merchant-name">Chronos</span>
+                  <span class="merchant-specialty">Time Enchants</span>
+                </div>
+                <div class="merchant-card enchanted">
+                  <span class="merchant-name">Hef</span>
+                  <span class="merchant-specialty">Fire Enchants</span>
+                </div>
+                <div class="merchant-card enchanted">
+                  <span class="merchant-name">Freiya</span>
+                  <span class="merchant-specialty">Ice Enchants</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enchantment Decision Tree -->
+        <div class="deep-dive-section">
+          <h3>Enchantment Guide</h3>
+          <p class="section-subtitle">Choose the right enchantment for your situation</p>
+          <div class="enchantment-tree">
+            <div class="enchant-option best">
+              <div class="enchant-header">
+                <span class="enchant-icon">✕</span>
+                <span class="enchant-name">+50% Crit Chance</span>
+                <span class="enchant-rating">BEST</span>
+              </div>
+              <div class="enchant-desc">Massive damage boost. Best overall choice for damage scaling.</div>
+            </div>
+
+            <div class="enchant-option great">
+              <div class="enchant-header">
+                <span class="enchant-icon">❄</span>
+                <span class="enchant-name">Freeze</span>
+                <span class="enchant-rating">GREAT</span>
+              </div>
+              <div class="enchant-desc">Control enemies while you scale. Excellent vs combo builds.</div>
+            </div>
+
+            <div class="enchant-option great">
+              <div class="enchant-header">
+                <span class="enchant-icon">↯</span>
+                <span class="enchant-name">Haste</span>
+                <span class="enchant-rating">GREAT</span>
+              </div>
+              <div class="enchant-desc">More speed = more triggers = more Regen = more damage.</div>
+            </div>
+
+            <div class="enchant-option good">
+              <div class="enchant-header">
+                <span class="enchant-icon">♥</span>
+                <span class="enchant-name">Heal based on Regen</span>
+                <span class="enchant-rating">GOOD</span>
+              </div>
+              <div class="enchant-desc">Synergizes with Peacewrought's Regen stacking. Good sustain.</div>
+            </div>
+
+            <div class="enchant-option good">
+              <div class="enchant-header">
+                <span class="enchant-icon">◈</span>
+                <span class="enchant-name">Shield based on Regen</span>
+                <span class="enchant-rating">GOOD</span>
+              </div>
+              <div class="enchant-desc">Defensive option. Better vs burst damage builds.</div>
+            </div>
+
+            <div class="enchant-option situational">
+              <div class="enchant-header">
+                <span class="enchant-icon">⚔</span>
+                <span class="enchant-name">Damage based on Regen</span>
+                <span class="enchant-rating">SITUATIONAL</span>
+              </div>
+              <div class="enchant-desc">Stack with Staff of the Moose for mega damage. Requires setup.</div>
+            </div>
+
+            <div class="enchant-option niche">
+              <div class="enchant-header">
+                <span class="enchant-icon">✦</span>
+                <span class="enchant-name">Immunity</span>
+                <span class="enchant-rating">NICHE</span>
+              </div>
+              <div class="enchant-desc">Anti-Freeze tech. Take if facing heavy Freeze meta.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monster Strategy -->
+        <div class="deep-dive-section">
+          <h3>Monster Encounter Strategy</h3>
+          <p class="section-subtitle">Navigate PvE fights to maximize value</p>
+          <div class="monster-strategy">
+            <div class="monster-tip positive">
+              <div class="monster-tip-header">
+                <span class="monster-tip-icon">✓</span>
+                <span class="monster-tip-type">FARM</span>
+              </div>
+              <div class="monster-tip-content">
+                <strong>Slow monsters with high HP.</strong> More time to stack Regen and trigger Peacewrought multiple times. You out-sustain them.
+              </div>
+            </div>
+
+            <div class="monster-tip positive">
+              <div class="monster-tip-header">
+                <span class="monster-tip-icon">✓</span>
+                <span class="monster-tip-type">FARM</span>
+              </div>
+              <div class="monster-tip-content">
+                <strong>Poison monsters.</strong> Self-poison synergy exists in Mak's kit. Turn their damage into your advantage.
+              </div>
+            </div>
+
+            <div class="monster-tip warning">
+              <div class="monster-tip-header">
+                <span class="monster-tip-icon">!</span>
+                <span class="monster-tip-type">CAUTION</span>
+              </div>
+              <div class="monster-tip-content">
+                <strong>Freeze monsters.</strong> If they freeze Peacewrought, you lose your engine. Position carefully or avoid if under-leveled.
+              </div>
+            </div>
+
+            <div class="monster-tip danger">
+              <div class="monster-tip-header">
+                <span class="monster-tip-icon">✕</span>
+                <span class="monster-tip-type">AVOID</span>
+              </div>
+              <div class="monster-tip-content">
+                <strong>Burst damage monsters early.</strong> Before Peacewrought gets rolling, fast burst can kill you. Wait until you have sustain.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Board Layout Simulator -->
+        <div class="deep-dive-section">
+          <h3>Optimal Board Layout</h3>
+          <p class="section-subtitle">Position items to maximize synergy and protect key pieces</p>
+          <div class="board-simulator">
+            <div class="board-layout-visual">
+              <div class="board-row">
+                <div class="board-slot occupied feeder" data-slot="1">
+                  <span class="slot-label">Catalyst</span>
+                  <span class="slot-note">Gets destroyed</span>
+                </div>
+                <div class="board-slot occupied core" data-slot="2">
+                  <span class="slot-label">Peacewrought</span>
+                  <span class="slot-note">Destroys left</span>
+                </div>
+                <div class="board-slot occupied support" data-slot="3">
+                  <span class="slot-label">Staff of Moose</span>
+                  <span class="slot-note">2x Regen</span>
+                </div>
+                <div class="board-slot occupied generator" data-slot="4">
+                  <span class="slot-label">Catalyst Gen</span>
+                  <span class="slot-note">Feeds slot 1</span>
+                </div>
+              </div>
+              <div class="board-row">
+                <div class="board-slot occupied speed" data-slot="5">
+                  <span class="slot-label">Haste Source</span>
+                  <span class="slot-note">Speed up</span>
+                </div>
+                <div class="board-slot occupied flex" data-slot="6">
+                  <span class="slot-label">Flex Slot</span>
+                  <span class="slot-note">Utility/Dmg</span>
+                </div>
+              </div>
+            </div>
+            <div class="board-legend">
+              <div class="legend-item feeder"><span class="legend-dot"></span> Feeder (gets destroyed)</div>
+              <div class="legend-item core"><span class="legend-dot"></span> Core (Peacewrought)</div>
+              <div class="legend-item support"><span class="legend-dot"></span> Scaling Support</div>
+              <div class="legend-item generator"><span class="legend-dot"></span> Catalyst Generator</div>
+              <div class="legend-item speed"><span class="legend-dot"></span> Speed/Haste</div>
+              <div class="legend-item flex"><span class="legend-dot"></span> Flex Slot</div>
+            </div>
+            <div class="board-tips">
+              <h4>Positioning Tips</h4>
+              <ul>
+                <li>Peacewrought <strong>destroys the item directly to its LEFT</strong> - always have a feeder there.</li>
+                <li>Keep catalyst generators far from Peacewrought to avoid accidental destruction.</li>
+                <li>Staff of the Moose should be adjacent to benefit from Regen doubling.</li>
+                <li>Position away from enemy Freeze targeting (usually first/last slots).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Winning Builds -->
+        <div class="deep-dive-section">
+          <h3>Example Winning Builds</h3>
+          <p class="section-subtitle">Real 10-win builds for reference</p>
+          <div class="example-builds">
+            <div class="example-build">
+              <div class="build-header">
+                <span class="build-name">Burst Peacewrought</span>
+                <span class="build-result">10-0</span>
+              </div>
+              <div class="build-items">
+                <span class="build-item">Peacewrought</span>
+                <span class="build-item">Staff of the Moose</span>
+                <span class="build-item">Library</span>
+                <span class="build-item">Aludel</span>
+                <span class="build-item">Barbed Claws</span>
+                <span class="build-item">Rainbow Staff</span>
+              </div>
+              <div class="build-notes">Max Regen stacking with Library feeding. Staff doubles everything. Crits hit for 200+.</div>
+            </div>
+
+            <div class="example-build">
+              <div class="build-header">
+                <span class="build-name">Self-Potion Peacewrought</span>
+                <span class="build-result">10-4</span>
+              </div>
+              <div class="build-items">
+                <span class="build-item">Peacewrought</span>
+                <span class="build-item">Foul Mushroom</span>
+                <span class="build-item">Regeneration Potion</span>
+                <span class="build-item">Cauldron</span>
+                <span class="build-item">Apothecary</span>
+                <span class="build-item">Vial Launcher</span>
+              </div>
+              <div class="build-notes">Potion-focused variant. Apothecary doubles potion triggers. Great sustain.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- External Resources -->
+        <div class="deep-dive-section">
+          <h3>External Resources</h3>
+          <div class="external-resources">
+            <a href="https://bazaardb.gg/?hero=mak&search=peacewrought" target="_blank" class="resource-card">
+              <span class="resource-icon">▤</span>
+              <span class="resource-name">BazaarDB - Peacewrought Stats</span>
+            </a>
+            <a href="https://bazaar-builds.net/?s=peacewrought" target="_blank" class="resource-card">
+              <span class="resource-icon">⚒</span>
+              <span class="resource-name">Bazaar Builds - Community Builds</span>
+            </a>
+            <a href="https://mobalytics.gg/the-bazaar/guides/meta-builds" target="_blank" class="resource-card">
+              <span class="resource-icon">⚐</span>
+              <span class="resource-name">Mobalytics - Meta Guide</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <!-- Single Guide View (hidden by default) -->
       <div class="guide-detail" id="guideDetail">
         <div class="guide-detail-header">
           <button class="btn-back" id="backToGuides">← Back to Guides</button>
-          <button class="btn-secondary" onclick="copyGuideToClipboard()">📋 Copy Guide</button>
+          <button class="btn-secondary" onclick="copyGuideToClipboard()">▣ Copy Guide</button>
         </div>
 
         <div class="guide-header">
@@ -288,91 +939,112 @@
           </select>
         </div>
       </div>
-      <div class="hero-grid">
-        <div class="hero-card vanessa">
-          <div class="hero-header">
-            <img src="assets/heroes/vanessa.jpg" alt="Vanessa" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Vanessa</h3>
-              <p class="hero-style">Aggression & Damage</p>
-              <p class="hero-difficulty">Beginner</p>
-            </div>
-          </div>
-          <div class="hero-builds">
-            <span class="build-tag">Slow Burn</span>
-            <span class="build-tag">Powder Keg</span>
-            <span class="build-tag">Full Ammo</span>
-          </div>
+
+      <!-- Hero Grid View -->
+      <div class="hero-grid" id="heroGrid">
+        <!-- Generated by JS -->
+      </div>
+
+      <!-- Hero Detail View (hidden by default) -->
+      <div class="hero-detail" id="heroDetail">
+        <div class="hero-detail-header">
+          <button class="btn-back" id="backToHeroes">← Back to Heroes</button>
         </div>
-        <div class="hero-card pygmalien">
-          <div class="hero-header">
-            <img src="assets/heroes/pygmalien.jpg" alt="Pygmalien" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Pygmalien</h3>
-              <p class="hero-style">Shield & Economy</p>
-              <p class="hero-difficulty">Intermediate</p>
+
+        <div class="hero-detail-content">
+          <div class="hero-profile">
+            <img src="" alt="" class="hero-detail-portrait" id="heroDetailPortrait">
+            <div class="hero-detail-info">
+              <h2 id="heroDetailName">Hero Name</h2>
+              <div class="hero-detail-tags">
+                <span class="hero-style-tag" id="heroDetailStyle">Style</span>
+                <span class="hero-difficulty-tag" id="heroDetailDifficulty">Difficulty</span>
+              </div>
+              <p class="hero-detail-desc" id="heroDetailDesc">Hero description</p>
             </div>
           </div>
-          <div class="hero-builds">
-            <span class="build-tag">Jabalian Drum</span>
-            <span class="build-tag">Cash Cannon</span>
-            <span class="build-tag">Freeze</span>
-          </div>
-        </div>
-        <div class="hero-card dooley">
-          <div class="hero-header">
-            <img src="assets/heroes/dooley.jpg" alt="Dooley" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Dooley</h3>
-              <p class="hero-style">Chain Reactions</p>
-              <p class="hero-difficulty">Advanced</p>
+
+          <div class="hero-detail-sections">
+            <!-- Playstyle -->
+            <div class="hero-section">
+              <h3>Playstyle</h3>
+              <p id="heroDetailPlaystyle"></p>
             </div>
-          </div>
-          <div class="hero-builds">
-            <span class="build-tag">Dooltron</span>
-            <span class="build-tag">Critical Core</span>
-            <span class="build-tag">Friends</span>
-          </div>
-        </div>
-        <div class="hero-card mak">
-          <div class="hero-header">
-            <img src="assets/heroes/mak.jpg" alt="Mak" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Mak</h3>
-              <p class="hero-style">Potion & Poison</p>
-              <p class="hero-difficulty">Intermediate</p>
+
+            <!-- Strengths & Weaknesses -->
+            <div class="hero-strengths-weaknesses">
+              <div class="strengths">
+                <h4>Strengths</h4>
+                <ul id="heroDetailStrengths"></ul>
+              </div>
+              <div class="weaknesses">
+                <h4>Weaknesses</h4>
+                <ul id="heroDetailWeaknesses"></ul>
+              </div>
             </div>
-          </div>
-          <div class="hero-builds">
-            <span class="build-tag">Peacewrought</span>
-            <span class="build-tag">Self Poison</span>
-            <span class="build-tag">Magic Carpet</span>
-          </div>
-        </div>
-        <div class="hero-card stelle">
-          <div class="hero-header">
-            <img src="assets/heroes/stelle.jpg" alt="Stelle" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Stelle</h3>
-              <p class="hero-style">Vehicle & Flying</p>
-              <p class="hero-difficulty">DLC</p>
+
+            <!-- Key Stats -->
+            <div class="hero-section">
+              <h3>Key Stats Priority</h3>
+              <div class="hero-stats-priority" id="heroDetailStats"></div>
             </div>
-          </div>
-          <div class="hero-builds">
-            <span class="build-tag">Coming soon</span>
-          </div>
-        </div>
-        <div class="hero-card jules">
-          <div class="hero-header">
-            <img src="assets/heroes/jules.jpg" alt="Jules" class="hero-portrait">
-            <div class="hero-info">
-              <h3>Jules</h3>
-              <p class="hero-style">Food & Cooking</p>
-              <p class="hero-difficulty">DLC</p>
+
+            <!-- Meta Builds -->
+            <div class="hero-section">
+              <h3>Current Meta Builds</h3>
+              <div class="hero-meta-builds" id="heroDetailBuilds"></div>
             </div>
-          </div>
-          <div class="hero-builds">
-            <span class="build-tag">Heated/Chilled</span>
+
+            <!-- Tips -->
+            <div class="hero-section">
+              <h3>Tips for Beginners</h3>
+              <ul class="hero-tips" id="heroDetailTips"></ul>
+            </div>
+
+            <!-- Learning Checklist -->
+            <div class="hero-section hero-learning-section">
+              <div class="learning-header">
+                <h3>◉ Opportunity Recognition Checklist</h3>
+                <div class="learning-progress-indicator">
+                  <span id="learningPercentage">0%</span>
+                  <span class="learning-label">Mastered</span>
+                </div>
+              </div>
+              <p class="section-subtitle">Track what you've internalized - be honest with yourself!</p>
+              <div class="learning-checklist" id="heroLearningChecklist"></div>
+            </div>
+
+            <!-- Mastery & Performance Analytics -->
+            <div class="hero-section hero-mastery-section">
+              <h3>Your Mastery</h3>
+              <div class="hero-mastery-display" id="heroMasteryDisplay"></div>
+            </div>
+
+            <!-- Build Progression Timeline -->
+            <div class="hero-section hero-progression-section">
+              <h3>Build Progression Guide</h3>
+              <p class="section-subtitle">Day-by-day itemization path to success</p>
+              <div class="hero-progression-timeline" id="heroProgressionTimeline"></div>
+            </div>
+
+            <!-- Matchup Matrix -->
+            <div class="hero-section hero-matchups-section">
+              <h3>Hero Matchups</h3>
+              <p class="section-subtitle">Win rates vs other heroes</p>
+              <div class="hero-matchup-grid" id="heroMatchupGrid"></div>
+            </div>
+
+            <!-- Performance Comparison -->
+            <div class="hero-section hero-performance-section">
+              <h3>Your Performance</h3>
+              <div class="hero-performance-stats" id="heroPerformanceStats"></div>
+            </div>
+
+            <!-- External Links -->
+            <div class="hero-section">
+              <h3>Resources</h3>
+              <div class="hero-links" id="heroDetailLinks"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -383,8 +1055,8 @@
       <div class="section-header">
         <h2>Build Planner</h2>
         <div class="header-actions">
-          <button class="btn-secondary" id="exportBuilds">📥 Export</button>
-          <button class="btn-secondary" id="importBuilds">📤 Import</button>
+          <button class="btn-secondary" id="exportBuilds">▼ Export</button>
+          <button class="btn-secondary" id="importBuilds">▲ Import</button>
           <button class="btn-primary" id="newBuild">+ New Build</button>
         </div>
       </div>
@@ -508,7 +1180,7 @@
       <div class="voice-recorder" id="voiceRecorder">
         <div class="recorder-main">
           <button class="record-btn" id="recordBtn" title="Click to record">
-            <span class="mic-icon">🎤</span>
+            <span class="mic-icon">●</span>
           </button>
           <div class="recorder-status">
             <span id="recorderStatus">Click to record</span>
@@ -616,12 +1288,273 @@
         </div>
       </div>
     </section>
+
+    <!-- Trainer Tab -->
+    <section class="tab-content" id="trainer">
+      <div class="section-header">
+        <h2>Opportunity Trainer ◉</h2>
+        <p class="section-subtitle">Train your brain to recognize high-value opportunities instantly</p>
+      </div>
+
+      <!-- Training Mode Selector -->
+      <div class="trainer-modes">
+        <button class="trainer-mode-btn active" data-mode="shop">
+          <span class="mode-icon">▦</span>
+          <span class="mode-name">Shop Decisions</span>
+        </button>
+        <button class="trainer-mode-btn" data-mode="encounter">
+          <span class="mode-icon">⚔</span>
+          <span class="mode-name">Encounter Timing</span>
+        </button>
+        <button class="trainer-mode-btn" data-mode="synergy">
+          <span class="mode-icon">⚯</span>
+          <span class="mode-name">Synergy Spotting</span>
+        </button>
+        <button class="trainer-mode-btn" data-mode="reference">
+          <span class="mode-icon">≡</span>
+          <span class="mode-name">Quick Reference</span>
+        </button>
+      </div>
+
+      <!-- Shop Decision Training -->
+      <div class="training-mode active" id="shopMode">
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <h3>Scenario <span id="scenarioNumber">1</span> of 10</h3>
+            <div class="scenario-stats">
+              <span class="stat-correct">✓ <span id="correctCount">0</span></span>
+              <span class="stat-wrong">✗ <span id="wrongCount">0</span></span>
+            </div>
+          </div>
+
+          <div class="scenario-context" id="scenarioContext">
+            <!-- Scenario details rendered here -->
+          </div>
+
+          <div class="scenario-options" id="scenarioOptions">
+            <!-- Options rendered here -->
+          </div>
+
+          <div class="scenario-feedback" id="scenarioFeedback" style="display: none;">
+            <!-- Feedback shown after answer -->
+          </div>
+
+          <div class="scenario-actions">
+            <button class="btn-secondary" id="skipScenario">Skip</button>
+            <button class="btn-primary" id="nextScenario" style="display: none;">Next Scenario →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Encounter Training -->
+      <div class="training-mode" id="encounterMode">
+        <div class="encounter-scenarios" id="encounterScenarios">
+          <!-- Similar structure to shop mode -->
+        </div>
+      </div>
+
+      <!-- Synergy Training -->
+      <div class="training-mode" id="synergyMode">
+        <div class="synergy-scenarios" id="synergyScenarios">
+          <!-- Synergy pattern matching -->
+        </div>
+      </div>
+
+      <!-- Quick Reference Mode -->
+      <div class="training-mode" id="referenceMode">
+        <div class="reference-grid">
+          <!-- S-Tier Items by Tier -->
+          <div class="reference-section">
+            <h3>Universal S-Tier Items</h3>
+            <div class="tier-items">
+              <div class="tier-group bronze">
+                <h4>Bronze</h4>
+                <div class="item-ref-list">
+                  <div class="item-ref">
+                    <span class="item-ref-name">Energy Potion</span>
+                    <span class="item-ref-desc">Haste + CDR starter</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Incendiary Rounds</span>
+                    <span class="item-ref-desc">Burn enabler (Vanessa)</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Foul Mushroom</span>
+                    <span class="item-ref-desc">Poison starter</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-group silver">
+                <h4>Silver</h4>
+                <div class="item-ref-list">
+                  <div class="item-ref">
+                    <span class="item-ref-name">Vial Launcher</span>
+                    <span class="item-ref-desc">Potion AoE damage</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Rainbow Staff</span>
+                    <span class="item-ref-desc">Haste generation</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Business Card</span>
+                    <span class="item-ref-desc">Economy (Pygmalien)</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Ice Claw</span>
+                    <span class="item-ref-desc">30-120 dmg, crit</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-group gold">
+                <h4>Gold</h4>
+                <div class="item-ref-list">
+                  <div class="item-ref">
+                    <span class="item-ref-name">GPU</span>
+                    <span class="item-ref-desc">Crit king (Dooley)</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Barbed Claws</span>
+                    <span class="item-ref-desc">Dmg per Regen</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Library</span>
+                    <span class="item-ref-desc">Potion generation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-group diamond">
+                <h4>Diamond</h4>
+                <div class="item-ref-list">
+                  <div class="item-ref">
+                    <span class="item-ref-name">Staff of the Moose</span>
+                    <span class="item-ref-desc">2x Regen (Mak)</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Jabalian Drum</span>
+                    <span class="item-ref-desc">Shield → Damage</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-group legendary">
+                <h4>Legendary</h4>
+                <div class="item-ref-list">
+                  <div class="item-ref">
+                    <span class="item-ref-name">Peacewrought</span>
+                    <span class="item-ref-desc">Mak S-tier build</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Powder Keg</span>
+                    <span class="item-ref-desc">Vanessa S-tier</span>
+                  </div>
+                  <div class="item-ref">
+                    <span class="item-ref-name">Lightning Rod</span>
+                    <span class="item-ref-desc">Stelle S-tier</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Encounter Decision Cheatsheet -->
+          <div class="reference-section">
+            <h3>Encounter Decisions</h3>
+            <div class="decision-table">
+              <div class="decision-row farm">
+                <span class="decision-icon">✓</span>
+                <span class="decision-label">FARM</span>
+                <span class="decision-desc">Slow/High HP monsters, Poison (Mak), Weak monsters</span>
+              </div>
+              <div class="decision-row caution">
+                <span class="decision-icon">⚠</span>
+                <span class="decision-label">CAUTION</span>
+                <span class="decision-desc">Freeze monsters, Unclear matchups</span>
+              </div>
+              <div class="decision-row avoid">
+                <span class="decision-icon">✗</span>
+                <span class="decision-label">AVOID</span>
+                <span class="decision-desc">Burst early game, Hard counters, High Prestige loss</span>
+              </div>
+            </div>
+
+            <div class="prestige-calc">
+              <h4>Prestige Loss Calculator</h4>
+              <p><strong>Loss = Day Number</strong></p>
+              <div class="prestige-examples">
+                <div class="prestige-ex">Day 5 loss = -5 Prestige</div>
+                <div class="prestige-ex">Day 10 loss = -10 Prestige</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Synergy Families -->
+          <div class="reference-section">
+            <h3>Core Synergy Chains</h3>
+            <div class="synergy-chains">
+              <div class="synergy-chain">
+                <h4>Burn (Vanessa)</h4>
+                <div class="chain-flow">
+                  Incendiary Rounds → Powder Keg → Oni Mask → Flame Signal
+                </div>
+              </div>
+              <div class="synergy-chain">
+                <h4>Haste Loop (Mak)</h4>
+                <div class="chain-flow">
+                  Potions → Vial Launcher → Rainbow Staff → Peacewrought → Staff of Moose
+                </div>
+              </div>
+              <div class="synergy-chain">
+                <h4>Shield Stack (Pygmalien)</h4>
+                <div class="chain-flow">
+                  Business Card → Shields → Jabalian Drum → ATM
+                </div>
+              </div>
+              <div class="synergy-chain">
+                <h4>Chain Reaction (Dooley)</h4>
+                <div class="chain-flow">
+                  Core → Friends → GPU → CDR
+                </div>
+              </div>
+              <div class="synergy-chain">
+                <h4>Lightning (Stelle)</h4>
+                <div class="chain-flow">
+                  Small Vehicles → Lightning Rod → More Vehicles → CDR + Crit
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Training Progress -->
+      <div class="trainer-progress">
+        <h3>Your Training Progress</h3>
+        <div class="progress-stats">
+          <div class="progress-stat">
+            <span class="progress-stat-value" id="totalScenarios">0</span>
+            <span class="progress-stat-label">Scenarios Completed</span>
+          </div>
+          <div class="progress-stat">
+            <span class="progress-stat-value" id="accuracyRate">0%</span>
+            <span class="progress-stat-label">Accuracy Rate</span>
+          </div>
+          <div class="progress-stat">
+            <span class="progress-stat-value" id="avgResponseTime">0s</span>
+            <span class="progress-stat-label">Avg Response Time</span>
+          </div>
+        </div>
+        <button class="btn-secondary" id="resetProgress">Reset Progress</button>
+      </div>
+    </section>
   </main>
 
   <!-- PWA Install Banner -->
   <div class="install-banner" id="installBanner" style="display: none;">
     <div class="install-content">
-      <span class="install-icon">📱</span>
+      <span class="install-icon">▦</span>
       <div class="install-text">
         <strong>Install Bazaar Companion</strong>
         <p>Get quick access and offline support</p>
@@ -633,7 +1566,35 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Smart Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal-content">
+      <div class="search-input-wrapper">
+        <span class="search-modal-icon">⌕</span>
+        <input type="text"
+               id="smartSearchInput"
+               class="smart-search-input"
+               placeholder="Search items, heroes, builds, guides..."
+               autocomplete="off"
+               autofocus>
+        <span class="search-esc-hint">ESC</span>
+      </div>
+      <div class="search-results" id="searchResults">
+        <div class="search-hint">
+          <p>Start typing to search across all content</p>
+          <div class="search-shortcuts">
+            <span><code>item:</code> Filter items</span>
+            <span><code>hero:</code> Filter heroes</span>
+            <span><code>build:</code> Filter builds</span>
+            <span><code>guide:</code> Filter guides</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=2.5"></script>
 
   <!-- PWA Service Worker Registration -->
   <script>

@@ -75,9 +75,9 @@ const metaGuides = [
       weak: ['Early aggro before Poppy Field online']
     },
     externalLinks: [
-      { name: 'Kripp Poppy Field', url: 'https://mobalytics.gg/the-bazaar/builds/poppy-field-mak-kripp', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '📊' }
+      { name: 'Kripp Poppy Field', url: 'https://mobalytics.gg/the-bazaar/builds/poppy-field-mak-kripp', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '▤' }
     ]
   },
   {
@@ -137,9 +137,9 @@ const metaGuides = [
       weak: ['Fast burst before Magnus Femur ramps']
     },
     externalLinks: [
-      { name: 'Kripp Magnus Femur', url: 'https://mobalytics.gg/the-bazaar/builds/magnus-femur-mak-kripp', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '📊' }
+      { name: 'Kripp Magnus Femur', url: 'https://mobalytics.gg/the-bazaar/builds/magnus-femur-mak-kripp', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '▤' }
     ]
   },
   {
@@ -199,9 +199,9 @@ const metaGuides = [
       weak: ['Early aggro if economy slow', 'Anti-heal effects']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '📊' },
-      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/mak-builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '▤' },
+      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' }
     ]
   },
   {
@@ -260,9 +260,9 @@ const metaGuides = [
       weak: ['Very fast aggro before shields stack', 'Anti-shield tech']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '📊' },
-      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '▤' },
+      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' }
     ]
   },
   {
@@ -322,9 +322,9 @@ const metaGuides = [
       weak: ['Sustain builds that survive initial burst']
     },
     externalLinks: [
-      { name: 'Kripp Gunslinger', url: 'https://mobalytics.gg/the-bazaar/builds/gunslinger-aggro-vanessa', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/vanessa-builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' }
+      { name: 'Kripp Gunslinger', url: 'https://mobalytics.gg/the-bazaar/builds/gunslinger-aggro-vanessa', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/vanessa-builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' }
     ]
   },
   {
@@ -385,9 +385,9 @@ const metaGuides = [
       weak: ['Fast Lifesteal builds that heal through burst', 'Spread damage instead of burst']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' },
-      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' },
+      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' }
     ]
   },
   {
@@ -442,8 +442,8 @@ const metaGuides = [
       weak: ['Early aggro before you stabilize']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=mak', icon: '▤' }
     ]
   },
   {
@@ -499,8 +499,8 @@ const metaGuides = [
       weak: ['High healing that outraces Burn']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' }
     ]
   },
   {
@@ -555,8 +555,8 @@ const metaGuides = [
       weak: ['Fast aggro before Freeze comes online']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '▤' }
     ]
   },
   {
@@ -611,8 +611,8 @@ const metaGuides = [
       weak: ['Disruption effects']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=dooley', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=dooley', icon: '▤' }
     ]
   },
   // Stelle Builds
@@ -669,8 +669,8 @@ const metaGuides = [
       weak: ['Freeze on Lightning Rod itself']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=stelle', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=stelle', icon: '▤' }
     ]
   },
   {
@@ -725,8 +725,8 @@ const metaGuides = [
       weak: ['Wide boards that spread damage']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=stelle', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=stelle', icon: '▤' }
     ]
   },
   // Jules Builds
@@ -783,8 +783,8 @@ const metaGuides = [
       weak: ['Anti-heal against your food']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '▤' }
     ]
   },
   {
@@ -839,8 +839,8 @@ const metaGuides = [
       weak: ['Burst that ignores your healing']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '▤' }
     ]
   },
   {
@@ -895,8 +895,8 @@ const metaGuides = [
       weak: ['Fast aggro before control establishes']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=jules', icon: '▤' }
     ]
   },
   // Additional Vanessa builds from current meta
@@ -952,8 +952,8 @@ const metaGuides = [
       weak: ['Single large item that tanks everything']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' }
     ]
   },
   {
@@ -1008,8 +1008,8 @@ const metaGuides = [
       weak: ['Builds that scale harder late game']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' }
     ]
   },
   // Dooley additional builds
@@ -1065,8 +1065,8 @@ const metaGuides = [
       weak: ['Builds that outscale late']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '🏗' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=dooley', icon: '📊' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
+      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=dooley', icon: '▤' }
     ]
   }
 ];
@@ -2887,9 +2887,9 @@ const heroData = {
       ]
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=vanessa', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=vanessa', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   },
   pygmalien: {
@@ -2943,9 +2943,9 @@ const heroData = {
       ]
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   },
   dooley: {
@@ -2998,9 +2998,9 @@ const heroData = {
       metaNote: 'Core rework knocked Dooltron from S-tier. Philosophy shift: in-combat scaling instead of permanent scaling.'
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=dooley', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=dooley', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   },
   mak: {
@@ -3052,9 +3052,9 @@ const heroData = {
       metaNote: 'Poppy Field and Magnus\' Femur are now A-tier. Potions dropped to C-tier after Catalyst rework.'
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=mak', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=mak', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   },
   stelle: {
@@ -3100,9 +3100,9 @@ const heroData = {
       metaNote: 'Lightning Rod is S-tier. Flying archetype with Stellar Swallowtail is strong (A-tier).'
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=stelle', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=stelle', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   },
   jules: {
@@ -3149,9 +3149,9 @@ const heroData = {
       metaNote: 'Newest hero. Burn is S-tier but requires 2nd Stove at Level 9. 60+ food/cooking items available.'
     },
     links: [
-      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=jules', icon: '📊' },
-      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '📖' },
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '🏗' }
+      { name: 'BazaarDB', url: 'https://bazaardb.gg/?hero=jules', icon: '▤' },
+      { name: 'Mobalytics', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' },
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/', icon: '⚒' }
     ]
   }
 };
@@ -3215,7 +3215,7 @@ function getMasteryBadge(level) {
   if (level >= 15) return { name: 'Expert', color: '#E5E4E2', icon: '💎' };
   if (level >= 10) return { name: 'Veteran', color: '#CD7F32', icon: '⭐' };
   if (level >= 5) return { name: 'Skilled', color: '#16C79A', icon: '✨' };
-  if (level >= 2) return { name: 'Apprentice', color: '#6C63FF', icon: '📖' };
+  if (level >= 2) return { name: 'Apprentice', color: '#6C63FF', icon: '⚐' };
   return { name: 'Novice', color: '#888', icon: '🌱' };
 }
 
@@ -4499,14 +4499,14 @@ function highlightMatch(text, query) {
 // Get hero emoji
 function getHeroEmoji(heroId) {
   const emojis = {
-    vanessa: '🔥',
-    pygmalien: '🛡',
-    dooley: '🤖',
-    mak: '🧪',
+    vanessa: '▲',
+    pygmalien: '◈',
+    dooley: '⚙',
+    mak: '⚗',
     stelle: '✈',
-    jules: '🍕'
+    jules: '◉'
   };
-  return emojis[heroId] || '👤';
+  return emojis[heroId] || '◆';
 }
 
 // Select a result
@@ -4762,7 +4762,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Burn chain: Incendiary → Keg → Oni → Signal',
           'Crit multiplies burn damage',
@@ -4841,7 +4841,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Poppy Field: Self-poison → Poppy → Scalers',
           'Poppy Field: Self-poison ≠ healing (bypasses anti-heal)',
@@ -4899,7 +4899,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Shield Stack: Business Card → Shields → Drum → ATM',
           'Economy = more shop options',
@@ -4964,7 +4964,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Chain: Core → Friends → GPU → CDR',
           'Positioning is EVERYTHING (Core buffs RIGHT)',
@@ -5029,7 +5029,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Lightning chains between YOUR vehicles',
           'More vehicles = more targets',
@@ -5094,7 +5094,7 @@ const heroLearningChecklists = {
       },
       {
         name: 'Synergy Patterns',
-        icon: '🔗',
+        icon: '⚯',
         items: [
           'Burn: Grill → Food spam → Hot Box + Imu',
           'Lollipop: Dishwasher → Sweets → Excellent Vintage',

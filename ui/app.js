@@ -3325,6 +3325,389 @@ const heroProgression = {
   }
 };
 
+// Comprehensive item knowledge base for each hero
+const heroItemKnowledge = {
+  vanessa: {
+    items: [
+      {
+        name: 'Incendiary Rounds',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['weapon', 'burn', 'core'],
+        description: 'Enables burn-based builds. Your weapons apply burn on hit.',
+        synergies: ['Powder Keg', 'Flamethrower', 'Grill', 'Any Weapon'],
+        combos: [
+          { items: ['Incendiary Rounds', 'Powder Keg'], effect: 'Burn stacking becomes your primary win condition' },
+          { items: ['Incendiary Rounds', 'Flamethrower'], effect: 'Massive AoE burn application' }
+        ]
+      },
+      {
+        name: 'Powder Keg',
+        tier: { early: 'A', mid: 'S', late: 'S' },
+        tags: ['burn', 'scaling', 'core'],
+        description: 'Scales burn damage exponentially. Essential for burn builds.',
+        synergies: ['Incendiary Rounds', 'Grill', 'Flamethrower', 'Any burn source'],
+        combos: [
+          { items: ['Powder Keg', 'Incendiary Rounds', 'Grill'], effect: 'Triple burn stacking for maximum damage' }
+        ]
+      },
+      {
+        name: 'Flamethrower',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['weapon', 'burn', 'aoe'],
+        description: 'AoE weapon that applies burn. Game-ending in late game.',
+        synergies: ['Incendiary Rounds', 'Powder Keg', 'Crit items'],
+        combos: [
+          { items: ['Flamethrower', 'Powder Keg', 'Crit Multiplier'], effect: 'Wipe entire boards with crit burns' }
+        ]
+      },
+      {
+        name: 'Ray Gun',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'burn'],
+        description: 'Consistent weapon with burn synergy.',
+        synergies: ['Incendiary Rounds', 'Powder Keg', 'CDR sources'],
+        combos: []
+      },
+      {
+        name: 'Aquarium',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['economy', 'multiweapon'],
+        description: 'Each weapon gives gold. Enables economic advantage and multiweapon builds.',
+        synergies: ['Multiple weapons', 'Board expansion items'],
+        combos: [
+          { items: ['Aquarium', '3+ Weapons'], effect: 'Massive gold generation for scaling' }
+        ]
+      },
+      {
+        name: 'Crit Items',
+        tier: { early: 'A', mid: 'A', late: 'S' },
+        tags: ['crit', 'scaling'],
+        description: 'Crit chance and multiplier items. Scales all damage output.',
+        synergies: ['Any weapon', 'Flamethrower', 'Burn builds'],
+        combos: [
+          { items: ['Crit', 'Flamethrower', 'Powder Keg'], effect: 'One-shot potential with crit burns' }
+        ]
+      },
+      {
+        name: 'Grill',
+        tier: { early: 'A', mid: 'S', late: 'A' },
+        tags: ['burn', 'food'],
+        description: 'Food items apply burn. Works with Jules synergy or food-heavy boards.',
+        synergies: ['Incendiary Rounds', 'Powder Keg', 'Food items'],
+        combos: []
+      },
+      {
+        name: 'CDR Items',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['cooldown', 'scaling'],
+        description: 'Cooldown reduction for more weapon activations.',
+        synergies: ['Multiple weapons', 'Active items'],
+        combos: []
+      }
+    ]
+  },
+  pygmalien: {
+    items: [
+      {
+        name: 'Business Card',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['economy', 'core'],
+        description: 'Early game economy engine. +1 gold per turn.',
+        synergies: ['Safe', 'Showcase', 'Economy items'],
+        combos: [
+          { items: ['Business Card', 'Safe'], effect: 'Compound gold generation' }
+        ]
+      },
+      {
+        name: 'Jabalian Drum',
+        tier: { early: 'B', mid: 'S', late: 'S' },
+        tags: ['shield', 'damage', 'core'],
+        description: 'Converts shield into damage. Build-defining item.',
+        synergies: ['Shield items', 'CDR', 'Board expansion'],
+        combos: [
+          { items: ['Jabalian Drum', 'Massive Shield Stack'], effect: 'Deal damage equal to total shield' }
+        ]
+      },
+      {
+        name: 'Shield Items',
+        tier: { early: 'A', mid: 'S', late: 'S' },
+        tags: ['shield', 'defense'],
+        description: 'Any shield-granting items. Feed the Drum.',
+        synergies: ['Jabalian Drum', 'CDR'],
+        combos: []
+      },
+      {
+        name: 'Showcase',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['economy', 'scaling'],
+        description: 'Scales with expensive items. Economy engine.',
+        synergies: ['Diamond items', 'Expensive items'],
+        combos: []
+      },
+      {
+        name: 'Safe',
+        tier: { early: 'A', mid: 'B', late: 'C' },
+        tags: ['economy', 'gold'],
+        description: 'Generates interest on gold. Early scaling.',
+        synergies: ['Business Card', 'Economy items'],
+        combos: []
+      },
+      {
+        name: 'Diamond Items',
+        tier: { early: 'C', mid: 'B', late: 'A' },
+        tags: ['luxury', 'expensive'],
+        description: 'High-cost luxury items. Scale with wealth.',
+        synergies: ['Showcase', 'Economy items'],
+        combos: []
+      }
+    ]
+  },
+  dooley: {
+    items: [
+      {
+        name: 'Friends (Small)',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['tech', 'adjacent', 'core'],
+        description: 'Cheap items that benefit from adjacency. Core for chains.',
+        synergies: ['Core', 'GPU', 'Tech items'],
+        combos: [
+          { items: ['Friends', 'Core'], effect: 'Buffed cheap items create value chains' }
+        ]
+      },
+      {
+        name: 'Core',
+        tier: { early: 'A', mid: 'S', late: 'A' },
+        tags: ['tech', 'buff', 'core'],
+        description: 'Buffs adjacent tech items. Enables positioning strategies.',
+        synergies: ['Friends', 'GPU', 'Tech items'],
+        combos: []
+      },
+      {
+        name: 'GPU',
+        tier: { early: 'B', mid: 'S', late: 'S' },
+        tags: ['tech', 'crit', 'core'],
+        description: 'Crit scaling for tech items. Explosive damage potential.',
+        synergies: ['Core', 'Friends', 'Tech items'],
+        combos: [
+          { items: ['GPU', 'Core', 'Tech Board'], effect: 'Critical hits across all tech items' }
+        ]
+      },
+      {
+        name: 'Tech Items',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['tech'],
+        description: 'Any tech-tagged items for Dooley synergies.',
+        synergies: ['Core', 'GPU'],
+        combos: []
+      },
+      {
+        name: 'Positioning Items',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['utility', 'positioning'],
+        description: 'Items that let you rearrange board for optimal chains.',
+        synergies: ['Core', 'Adjacent synergies'],
+        combos: []
+      },
+      {
+        name: 'CDR Stacking',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['cooldown', 'scaling'],
+        description: 'Stack cooldown reduction for rapid chain activations.',
+        synergies: ['All items'],
+        combos: []
+      }
+    ]
+  },
+  mak: {
+    items: [
+      {
+        name: 'Potions',
+        tier: { early: 'S', mid: 'A', late: 'A' },
+        tags: ['potion', 'sustain', 'core'],
+        description: 'Any potion items. Trigger Mak passive and provide sustain.',
+        synergies: ['Vial Launcher', 'Library', 'Healing items'],
+        combos: []
+      },
+      {
+        name: 'Peacewrought',
+        tier: { early: 'B', mid: 'S', late: 'S' },
+        tags: ['weapon', 'healing', 'core'],
+        description: 'Build-defining weapon. Scales with healing.',
+        synergies: ['Potions', 'Healing items', 'Haste'],
+        combos: [
+          { items: ['Peacewrought', 'Rainbow Staff'], effect: 'Infinite haste scaling with healing' }
+        ]
+      },
+      {
+        name: 'Rainbow Staff',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['haste', 'scaling', 'core'],
+        description: 'Generates haste. Game-ending when stacked.',
+        synergies: ['Peacewrought', 'Potions'],
+        combos: []
+      },
+      {
+        name: 'Vial Launcher',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['potion', 'weapon'],
+        description: 'Weaponizes potions. Good potion synergy.',
+        synergies: ['Potions', 'Library'],
+        combos: []
+      },
+      {
+        name: 'Library',
+        tier: { early: 'C', mid: 'B', late: 'A' },
+        tags: ['potion', 'generation'],
+        description: 'Generates potions. Infinite resource late game.',
+        synergies: ['Potions', 'Vial Launcher'],
+        combos: []
+      },
+      {
+        name: 'Healing Items',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['healing', 'sustain'],
+        description: 'Any healing sources. Survive early, scale Peacewrought.',
+        synergies: ['Peacewrought', 'Potions'],
+        combos: []
+      },
+      {
+        name: 'Haste Sources',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['haste', 'scaling'],
+        description: 'Items that grant haste. More weapon swings.',
+        synergies: ['Peacewrought', 'Rainbow Staff'],
+        combos: []
+      },
+      {
+        name: 'Crit Items',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['crit', 'damage'],
+        description: 'Crit scaling for massive damage spikes.',
+        synergies: ['Peacewrought', 'Haste'],
+        combos: []
+      }
+    ]
+  },
+  stelle: {
+    items: [
+      {
+        name: 'Lightning Rod',
+        tier: { early: 'B', mid: 'S', late: 'S' },
+        tags: ['vehicle', 'chain', 'core'],
+        description: 'Chain lightning across vehicles. Build-defining.',
+        synergies: ['Vehicles', 'CDR', 'Ornithopter'],
+        combos: [
+          { items: ['Lightning Rod', '5+ Vehicles'], effect: 'Chain lightning across entire board' }
+        ]
+      },
+      {
+        name: 'Flycycle',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['vehicle', 'cheap'],
+        description: 'Cheap vehicle for early chains. Good early value.',
+        synergies: ['Lightning Rod', 'More vehicles'],
+        combos: []
+      },
+      {
+        name: 'Ornithopter',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['vehicle', 'flying'],
+        description: 'Strong vehicle with good stats and synergy.',
+        synergies: ['Lightning Rod', 'Vehicles'],
+        combos: []
+      },
+      {
+        name: 'Small Vehicles',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['vehicle', 'cheap'],
+        description: 'Low-cost vehicles to start chains early.',
+        synergies: ['Lightning Rod'],
+        combos: []
+      },
+      {
+        name: 'Vehicle Army',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['vehicle', 'scaling'],
+        description: 'Stack as many vehicles as possible. Late game power.',
+        synergies: ['Lightning Rod', 'CDR'],
+        combos: []
+      },
+      {
+        name: 'CDR',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['cooldown'],
+        description: 'Cooldown reduction for rapid chain activations.',
+        synergies: ['Lightning Rod', 'Vehicles'],
+        combos: []
+      },
+      {
+        name: 'Crit',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['crit', 'damage'],
+        description: 'Crit for chain damage spikes.',
+        synergies: ['Lightning Rod', 'Vehicles'],
+        combos: []
+      }
+    ]
+  },
+  jules: {
+    items: [
+      {
+        name: 'Giant Lollipop',
+        tier: { early: 'C', mid: 'S', late: 'S' },
+        tags: ['weapon', 'sweet', 'core'],
+        description: 'Scales with sweets consumed. Build-defining weapon.',
+        synergies: ['Sweet items', 'Food items'],
+        combos: [
+          { items: ['Giant Lollipop', 'Max Sweets'], effect: 'Massive weapon damage from sweets scaling' }
+        ]
+      },
+      {
+        name: 'Grill',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['food', 'burn', 'core'],
+        description: 'Food items apply burn. Strong with food builds.',
+        synergies: ['Food items', 'Burn amplifiers'],
+        combos: []
+      },
+      {
+        name: 'Freezer',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['food', 'freeze', 'control'],
+        description: 'Food items apply freeze. Control and damage.',
+        synergies: ['Food items', 'Freeze amplifiers'],
+        combos: [
+          { items: ['Freezer', 'Food Board', 'Grill'], effect: 'Apply burn and freeze simultaneously' }
+        ]
+      },
+      {
+        name: 'Food Items',
+        tier: { early: 'S', mid: 'A', late: 'A' },
+        tags: ['food', 'sustain'],
+        description: 'Any food items. Trigger Jules passive and Grill/Freezer.',
+        synergies: ['Grill', 'Freezer', 'Giant Lollipop'],
+        combos: []
+      },
+      {
+        name: 'Sweet Items',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['sweet', 'scaling'],
+        description: 'Sweet-tagged items to feed Giant Lollipop.',
+        synergies: ['Giant Lollipop'],
+        combos: []
+      },
+      {
+        name: 'Spices',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['food', 'damage'],
+        description: 'Spices boost food damage. Good early scaling.',
+        synergies: ['Food items', 'Grill'],
+        combos: []
+      }
+    ]
+  }
+};
+
 function renderHeroGrid() {
   const grid = document.getElementById('heroGrid');
   const detail = document.getElementById('heroDetail');
@@ -3557,7 +3940,7 @@ function showHeroDetail(heroId) {
 
         ${pn.buffs && pn.buffs.length > 0 ? `
           <div class="patch-section">
-            <h4>⬆️ Buffs</h4>
+            <h4>▲ Buffs</h4>
             <ul class="patch-list buffs">
               ${pn.buffs.map(b => `<li>${b}</li>`).join('')}
             </ul>
@@ -3566,7 +3949,7 @@ function showHeroDetail(heroId) {
 
         ${pn.nerfs && pn.nerfs.length > 0 ? `
           <div class="patch-section">
-            <h4>⬇️ Nerfs</h4>
+            <h4>▼ Nerfs</h4>
             <ul class="patch-list nerfs">
               ${pn.nerfs.map(n => `<li>${n}</li>`).join('')}
             </ul>
@@ -3646,7 +4029,7 @@ function showHeroDetail(heroId) {
       <div class="progression-phases">
         <div class="progression-phase early-phase">
           <div class="phase-header">
-            <span class="phase-icon">🌅</span>
+            <span class="phase-icon">◐</span>
             <span class="phase-name">Early Game</span>
             <span class="phase-days">Days 1-3</span>
           </div>
@@ -3667,7 +4050,7 @@ function showHeroDetail(heroId) {
 
         <div class="progression-phase mid-phase">
           <div class="phase-header">
-            <span class="phase-icon">☀️</span>
+            <span class="phase-icon">☀</span>
             <span class="phase-name">Mid Game</span>
             <span class="phase-days">Days 4-6</span>
           </div>
@@ -3688,7 +4071,7 @@ function showHeroDetail(heroId) {
 
         <div class="progression-phase late-phase">
           <div class="phase-header">
-            <span class="phase-icon">🌙</span>
+            <span class="phase-icon">☽</span>
             <span class="phase-name">Late Game</span>
             <span class="phase-days">Days 7+</span>
           </div>
@@ -3706,6 +4089,106 @@ function showHeroDetail(heroId) {
         </div>
       </div>
     `;
+  }
+
+  // ITEM KNOWLEDGE BASE
+  const itemKnowledge = heroItemKnowledge[heroId];
+  if (itemKnowledge) {
+    const getTierClass = (tier) => {
+      return `tier-${tier.toLowerCase()}`;
+    };
+
+    const getTierBadge = (tier) => {
+      const badges = { 'S': '◆', 'A': '▲', 'B': '▼', 'C': '○', 'D': '◌' };
+      return badges[tier] || tier;
+    };
+
+    document.getElementById('heroItemKnowledge').innerHTML = `
+      <div class="item-knowledge-header">
+        <h3>Item Knowledge Base</h3>
+        <div class="knowledge-filters">
+          <button class="knowledge-filter active" data-stage="all">All Stages</button>
+          <button class="knowledge-filter" data-stage="early">Early</button>
+          <button class="knowledge-filter" data-stage="mid">Mid</button>
+          <button class="knowledge-filter" data-stage="late">Late</button>
+        </div>
+      </div>
+
+      <div class="item-knowledge-grid">
+        ${itemKnowledge.items.map(item => `
+          <div class="knowledge-item-card" data-tags="${item.tags.join(' ')}" data-early-tier="${item.tier.early}" data-mid-tier="${item.tier.mid}" data-late-tier="${item.tier.late}">
+            <div class="knowledge-item-header">
+              <h4 class="knowledge-item-name">${item.name}</h4>
+              <div class="knowledge-item-tiers">
+                <span class="tier-badge ${getTierClass(item.tier.early)}" title="Early Game">
+                  <span class="tier-label">E</span> ${getTierBadge(item.tier.early)}
+                </span>
+                <span class="tier-badge ${getTierClass(item.tier.mid)}" title="Mid Game">
+                  <span class="tier-label">M</span> ${getTierBadge(item.tier.mid)}
+                </span>
+                <span class="tier-badge ${getTierClass(item.tier.late)}" title="Late Game">
+                  <span class="tier-label">L</span> ${getTierBadge(item.tier.late)}
+                </span>
+              </div>
+            </div>
+
+            <div class="knowledge-item-tags">
+              ${item.tags.map(tag => `<span class="item-tag tag-${tag}">${tag}</span>`).join('')}
+            </div>
+
+            <p class="knowledge-item-desc">${item.description}</p>
+
+            ${item.synergies.length > 0 ? `
+              <div class="knowledge-synergies">
+                <div class="synergy-label">Synergies:</div>
+                <div class="synergy-list">
+                  ${item.synergies.map(syn => `<span class="synergy-item">${syn}</span>`).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${item.combos.length > 0 ? `
+              <div class="knowledge-combos">
+                ${item.combos.map(combo => `
+                  <div class="combo-item">
+                    <div class="combo-items">${combo.items.join(' + ')}</div>
+                    <div class="combo-effect">${combo.effect}</div>
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    // Add filter functionality
+    const filters = document.querySelectorAll('.knowledge-filter');
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        // Update active filter
+        filters.forEach(f => f.classList.remove('active'));
+        filter.classList.add('active');
+
+        const stage = filter.dataset.stage;
+        const cards = document.querySelectorAll('.knowledge-item-card');
+
+        cards.forEach(card => {
+          if (stage === 'all') {
+            card.style.display = '';
+          } else {
+            const tierKey = `${stage}Tier`;
+            const tier = card.dataset[tierKey];
+            // Show items that are A or S tier for the selected stage
+            if (tier === 'S' || tier === 'A') {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
   }
 
   // MATCHUP MATRIX

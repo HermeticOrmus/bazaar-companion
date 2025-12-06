@@ -6336,7 +6336,7 @@ body {
   height: fit-content;
 }
 
-.knowledge-item-card:hover {
+.knowledge-item-card:hover:not(.synergy-dimmed) {
   border-color: var(--accent);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
@@ -6634,6 +6634,30 @@ body {
   font-size: 0.75rem;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+/* Synergy highlighting on click */
+.knowledge-item-card {
+  transition: all 0.3s ease;
+}
+
+.knowledge-item-card.synergy-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(255, 127, 126, 0.4);
+  transform: scale(1.02);
+  z-index: 10;
+  position: relative;
+}
+
+.knowledge-item-card.synergy-match {
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(255, 215, 0, 0.05) 100%);
+}
+
+.knowledge-item-card.synergy-dimmed {
+  opacity: 0.3;
+  filter: grayscale(0.5);
 }
 
 /* Responsive adjustments */

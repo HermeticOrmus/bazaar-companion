@@ -5468,6 +5468,11 @@ function showHeroDetail(heroId) {
         const stage = filter.dataset.stage;
         const cards = document.querySelectorAll('.knowledge-item-card');
 
+        // Clear synergy highlighting
+        cards.forEach(card => {
+          card.classList.remove('synergy-selected', 'synergy-match', 'synergy-dimmed');
+        });
+
         cards.forEach(card => {
           if (stage === 'all') {
             card.style.display = '';
@@ -5480,6 +5485,56 @@ function showHeroDetail(heroId) {
             } else {
               card.style.display = 'none';
             }
+          }
+        });
+      });
+    });
+
+    // Add synergy highlighting on item click
+    const itemCards = document.querySelectorAll('.knowledge-item-card');
+    itemCards.forEach((card, index) => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        // Don't trigger if clicking on synergy/combo items
+        if (e.target.classList.contains('synergy-item') || e.target.classList.contains('combo-items')) {
+          return;
+        }
+
+        const clickedItem = sortedItems[index];
+        const isAlreadySelected = card.classList.contains('synergy-selected');
+
+        // Clear all highlighting
+        itemCards.forEach(c => {
+          c.classList.remove('synergy-selected', 'synergy-match', 'synergy-dimmed');
+        });
+
+        if (isAlreadySelected) {
+          // Clicking again deselects
+          return;
+        }
+
+        // Mark this card as selected
+        card.classList.add('synergy-selected');
+
+        // Find items that synergize with the clicked item
+        const clickedItemName = clickedItem.name;
+        const clickedSynergies = clickedItem.synergies.map(s => s.toLowerCase());
+
+        itemCards.forEach((otherCard, otherIndex) => {
+          if (otherIndex === index) return; // Skip the selected item itself
+
+          const otherItem = sortedItems[otherIndex];
+          const otherItemName = otherItem.name.toLowerCase();
+          const otherSynergies = otherItem.synergies.map(s => s.toLowerCase());
+
+          // Check if items synergize (bidirectional)
+          const clickedListsOther = clickedSynergies.includes(otherItemName);
+          const otherListsClicked = otherSynergies.includes(clickedItemName.toLowerCase());
+
+          if (clickedListsOther || otherListsClicked) {
+            otherCard.classList.add('synergy-match');
+          } else {
+            otherCard.classList.add('synergy-dimmed');
           }
         });
       });

@@ -7562,6 +7562,99 @@ body {
   text-decoration: underline;
 }
 
+/* OAuth Buttons */
+.oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-oauth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-oauth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-oauth.google {
+  background: #ffffff;
+  color: #1f1f1f;
+  border-color: #dadce0;
+}
+
+.btn-oauth.google:hover {
+  background: #f8f9fa;
+  border-color: #4285f4;
+}
+
+.btn-oauth.twitch {
+  background: #9146ff;
+  color: #ffffff;
+  border-color: #9146ff;
+}
+
+.btn-oauth.twitch:hover {
+  background: #772ce8;
+  border-color: #772ce8;
+}
+
+.btn-oauth.discord {
+  background: #5865f2;
+  color: #ffffff;
+  border-color: #5865f2;
+}
+
+.btn-oauth.discord:hover {
+  background: #4752c4;
+  border-color: #4752c4;
+}
+
+.oauth-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-oauth.google .oauth-icon {
+  color: #4285f4;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-muted);
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+}
+
+.auth-divider span {
+  padding: 0 1rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .auth-modal-content {

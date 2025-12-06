@@ -136,6 +136,26 @@ function setupAuthListeners() {
       console.error('Logout error:', error);
     }
   });
+
+  // OAuth providers
+  document.getElementById('googleSignIn')?.addEventListener('click', () => signInWithOAuth('google'));
+  document.getElementById('twitchSignIn')?.addEventListener('click', () => signInWithOAuth('twitch'));
+  document.getElementById('discordSignIn')?.addEventListener('click', () => signInWithOAuth('discord'));
+}
+
+// OAuth sign-in function
+async function signInWithOAuth(provider) {
+  const { data, error } = await supabaseClient.auth.signInWithOAuth({
+    provider: provider,
+    options: {
+      redirectTo: window.location.origin
+    }
+  });
+
+  if (error) {
+    console.error(`${provider} sign-in error:`, error);
+    alert(`Failed to sign in with ${provider}: ` + error.message);
+  }
 }
 
 // Show login or signup tab

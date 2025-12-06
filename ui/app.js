@@ -5389,6 +5389,15 @@ function showHeroDetail(heroId) {
       return badges[tier] || tier;
     };
 
+    // Sort items by power level (late > mid > early)
+    const tierValue = { 'S': 5, 'A': 4, 'B': 3, 'C': 2, 'D': 1 };
+    const sortedItems = [...itemKnowledge.items].sort((a, b) => {
+      const scoreA = tierValue[a.tier.late] * 100 + tierValue[a.tier.mid] * 10 + tierValue[a.tier.early];
+      const scoreB = tierValue[b.tier.late] * 100 + tierValue[b.tier.mid] * 10 + tierValue[b.tier.early];
+      if (scoreB !== scoreA) return scoreB - scoreA;
+      return a.name.localeCompare(b.name); // Alphabetical if same tier
+    });
+
     document.getElementById('heroItemKnowledge').innerHTML = `
       <div class="item-knowledge-header">
         <h3>Item Knowledge Base</h3>
@@ -5401,7 +5410,7 @@ function showHeroDetail(heroId) {
       </div>
 
       <div class="item-knowledge-grid">
-        ${itemKnowledge.items.map(item => `
+        ${sortedItems.map(item => `
           <div class="knowledge-item-card" data-tags="${item.tags.join(' ')}" data-early-tier="${item.tier.early}" data-mid-tier="${item.tier.mid}" data-late-tier="${item.tier.late}">
             <div class="knowledge-item-header">
               <h4 class="knowledge-item-name">${item.name}</h4>

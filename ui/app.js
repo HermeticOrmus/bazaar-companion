@@ -3332,7 +3332,7 @@ const heroItemKnowledge = {
       {
         name: 'Incendiary Rounds',
         tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['weapon', 'burn', 'core'],
+        tags: ['ammo', 'burn', 'core'],
         description: 'Enables burn-based builds. Your weapons apply burn on hit.',
         synergies: ['Powder Keg', 'Flamethrower', 'Grill', 'Any Weapon'],
         combos: [
@@ -3361,56 +3361,14 @@ const heroItemKnowledge = {
         ]
       },
       {
-        name: 'Ray Gun',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['weapon', 'burn'],
-        description: 'Consistent weapon with burn synergy.',
-        synergies: ['Incendiary Rounds', 'Powder Keg', 'CDR sources'],
-        combos: []
-      },
-      {
         name: 'Aquarium',
         tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['economy', 'multiweapon'],
+        tags: ['economy', 'multiweapon', 'aquatic'],
         description: 'Each weapon gives gold. Enables economic advantage and multiweapon builds.',
         synergies: ['Multiple weapons', 'Board expansion items'],
         combos: [
           { items: ['Aquarium', '3+ Weapons'], effect: 'Massive gold generation for scaling' }
         ]
-      },
-      {
-        name: 'Crit Items',
-        tier: { early: 'A', mid: 'A', late: 'S' },
-        tags: ['crit', 'scaling'],
-        description: 'Crit chance and multiplier items. Scales all damage output.',
-        synergies: ['Any weapon', 'Flamethrower', 'Burn builds'],
-        combos: [
-          { items: ['Crit', 'Flamethrower', 'Powder Keg'], effect: 'One-shot potential with crit burns' }
-        ]
-      },
-      {
-        name: 'Grill',
-        tier: { early: 'A', mid: 'S', late: 'A' },
-        tags: ['burn', 'food'],
-        description: 'Food items apply burn. Works with Jules synergy or food-heavy boards.',
-        synergies: ['Incendiary Rounds', 'Powder Keg', 'Food items'],
-        combos: []
-      },
-      {
-        name: 'CDR Items',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['cooldown', 'scaling'],
-        description: 'Cooldown reduction for more weapon activations.',
-        synergies: ['Multiple weapons', 'Active items'],
-        combos: []
-      },
-      {
-        name: 'Cannon',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['weapon', 'reliable'],
-        description: 'Reliable damage weapon with good CDR. Solid choice for weapon builds.',
-        synergies: ['Aquarium', 'CDR', 'Multiweapon builds'],
-        combos: []
       },
       {
         name: 'Oni Mask',
@@ -3435,7 +3393,215 @@ const heroItemKnowledge = {
         tier: { early: 'C', mid: 'A', late: 'A' },
         tags: ['weapon', 'damage'],
         description: 'High damage weapon. Good with crit builds.',
-        synergies: ['Crit items', 'Burn builds'],
+        synergies: ['Crit items', 'Aquarium'],
+        combos: []
+      },
+      {
+        name: 'Cannon',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'reliable'],
+        description: 'Reliable damage weapon. Solid choice for weapon builds.',
+        synergies: ['Aquarium', 'CDR', 'Multiweapon builds'],
+        combos: []
+      },
+      {
+        name: 'Revolver',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'small'],
+        description: 'Small slot weapon with decent damage output.',
+        synergies: ['Aquarium', 'Multiweapon'],
+        combos: []
+      },
+      {
+        name: 'Handaxe',
+        tier: { early: 'B', mid: 'B', late: 'C' },
+        tags: ['weapon', 'small'],
+        description: 'Basic small weapon for early game.',
+        synergies: ['Aquarium', 'Weapon builds'],
+        combos: []
+      },
+      {
+        name: 'Grappling Hook',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'utility'],
+        description: 'Weapon with utility effects. Good early value.',
+        synergies: ['Multiweapon', 'Aquarium'],
+        combos: []
+      },
+      {
+        name: 'Butterfly Swords',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['weapon', 'fast'],
+        description: 'Fast attacking weapon. Good with CDR.',
+        synergies: ['CDR', 'Aquarium', 'Crit'],
+        combos: []
+      },
+      {
+        name: 'Concealed Dagger',
+        tier: { early: 'B', mid: 'B', late: 'C' },
+        tags: ['weapon', 'stealth'],
+        description: 'Small weapon with special mechanics.',
+        synergies: ['Multiweapon builds'],
+        combos: []
+      },
+      {
+        name: 'Throwing Knives',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'ammo'],
+        description: 'Ammo-based weapon. Good burst damage.',
+        synergies: ['Ammo generation', 'Aquarium'],
+        combos: []
+      },
+      {
+        name: 'Blowgun',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['weapon', 'poison'],
+        description: 'Poison application weapon.',
+        synergies: ['Poison builds', 'DoT effects'],
+        combos: []
+      },
+      {
+        name: 'Bolas',
+        tier: { early: 'A', mid: 'B', late: 'C' },
+        tags: ['weapon', 'slow'],
+        description: 'Applies slow to enemies.',
+        synergies: ['Slow builds', 'Control'],
+        combos: []
+      },
+      {
+        name: 'Harpoon',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'aquatic'],
+        description: 'Aquatic weapon with good scaling.',
+        synergies: ['Aquatic items', 'Aquarium'],
+        combos: []
+      },
+      {
+        name: 'Cannonball',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['ammo', 'damage'],
+        description: 'High damage ammo for Cannon.',
+        synergies: ['Cannon', 'Weapon builds'],
+        combos: []
+      },
+      {
+        name: 'Grapeshot',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['ammo', 'aoe'],
+        description: 'AoE ammo type.',
+        synergies: ['Cannon', 'Multi-target'],
+        combos: []
+      },
+      {
+        name: 'Custom Scope',
+        tier: { early: 'A', mid: 'A', late: 'S' },
+        tags: ['crit', 'upgrade'],
+        description: 'Increases crit chance on weapons.',
+        synergies: ['Sniper Rifle', 'Crit builds'],
+        combos: []
+      },
+      {
+        name: 'Silencer',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['damage', 'utility'],
+        description: 'Damage boost for weapons.',
+        synergies: ['All weapons'],
+        combos: []
+      },
+      {
+        name: 'Holsters',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['apparel', 'cdr'],
+        description: 'Cooldown reduction for weapons.',
+        synergies: ['Multiweapon', 'Fast builds'],
+        combos: []
+      },
+      {
+        name: 'Lighter',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['burn', 'utility'],
+        description: 'Applies burn. Small utility item.',
+        synergies: ['Burn builds', 'Powder Keg'],
+        combos: []
+      },
+      {
+        name: 'Powder Flask',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'burn'],
+        description: 'Burn amplification tool.',
+        synergies: ['Burn builds', 'Powder Keg'],
+        combos: []
+      },
+      {
+        name: 'Catfish',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['aquatic', 'utility'],
+        description: 'Aquatic support item.',
+        synergies: ['Aquarium', 'Aquatic builds'],
+        combos: []
+      },
+      {
+        name: 'Jellyfish',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['aquatic', 'damage'],
+        description: 'Aquatic damage dealer.',
+        synergies: ['Aquarium', 'Aquatic builds'],
+        combos: []
+      },
+      {
+        name: 'Piranha',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['aquatic', 'weapon'],
+        description: 'Aggressive aquatic weapon.',
+        synergies: ['Aquarium', 'Multiweapon'],
+        combos: []
+      },
+      {
+        name: 'Narwhal',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['aquatic', 'weapon'],
+        description: 'Strong aquatic weapon.',
+        synergies: ['Aquarium', 'Aquatic builds'],
+        combos: []
+      },
+      {
+        name: 'Mantis Shrimp',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['aquatic', 'weapon', 'fast'],
+        description: 'Fast aquatic weapon with multi-hit.',
+        synergies: ['Aquarium', 'Crit builds'],
+        combos: []
+      },
+      {
+        name: 'Coral',
+        tier: { early: 'B', mid: 'B', late: 'C' },
+        tags: ['aquatic', 'defense'],
+        description: 'Aquatic defensive item.',
+        synergies: ['Aquatic builds'],
+        combos: []
+      },
+      {
+        name: 'Seaweed',
+        tier: { early: 'C', mid: 'B', late: 'B' },
+        tags: ['aquatic', 'utility'],
+        description: 'Aquatic utility item.',
+        synergies: ['Aquatic builds'],
+        combos: []
+      },
+      {
+        name: 'Ambergris',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['aquatic', 'economy'],
+        description: 'Aquatic economy item.',
+        synergies: ['Aquarium', 'Economy'],
+        combos: []
+      },
+      {
+        name: 'Dive Weights',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['tool', 'aquatic'],
+        description: 'Aquatic support tool.',
+        synergies: ['Aquatic builds'],
         combos: []
       }
     ]
@@ -3443,71 +3609,289 @@ const heroItemKnowledge = {
   pygmalien: {
     items: [
       {
-        name: 'Business Card',
-        tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['economy', 'core'],
-        description: 'Early game economy engine. +1 gold per turn.',
-        synergies: ['Safe', 'Showcase', 'Economy items'],
-        combos: [
-          { items: ['Business Card', 'Safe'], effect: 'Compound gold generation' }
-        ]
-      },
-      {
         name: 'Jabalian Drum',
         tier: { early: 'B', mid: 'S', late: 'S' },
         tags: ['shield', 'damage', 'core'],
         description: 'Converts shield into damage. Build-defining item.',
-        synergies: ['Shield items', 'CDR', 'Board expansion'],
+        synergies: ['Shield items', 'ATM', 'Spiky Shield'],
         combos: [
           { items: ['Jabalian Drum', 'Massive Shield Stack'], effect: 'Deal damage equal to total shield' }
         ]
       },
       {
-        name: 'Shield Items',
-        tier: { early: 'A', mid: 'S', late: 'S' },
-        tags: ['shield', 'defense'],
-        description: 'Any shield-granting items. Feed the Drum.',
-        synergies: ['Jabalian Drum', 'CDR'],
+        name: 'Business Card',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['economy', 'core'],
+        description: 'Early game economy engine. Gold per turn scaling.',
+        synergies: ['Safe', 'Showcase', 'Money Tree'],
+        combos: [
+          { items: ['Business Card', 'Safe'], effect: 'Compound gold generation' }
+        ]
+      },
+      {
+        name: 'ATM',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['property', 'shield', 'economy'],
+        description: 'Converts shield into gold and provides shield.',
+        synergies: ['Shield items', 'Jabalian Drum'],
         combos: []
       },
       {
         name: 'Showcase',
         tier: { early: 'B', mid: 'A', late: 'A' },
         tags: ['economy', 'scaling'],
-        description: 'Scales with expensive items. Economy engine.',
+        description: 'Scales with expensive items. Value amplifier.',
         synergies: ['Diamond items', 'Expensive items'],
         combos: []
       },
       {
-        name: 'Safe',
-        tier: { early: 'A', mid: 'B', late: 'C' },
-        tags: ['economy', 'gold'],
-        description: 'Generates interest on gold. Early scaling.',
-        synergies: ['Business Card', 'Economy items'],
-        combos: []
-      },
-      {
-        name: 'Diamond Items',
-        tier: { early: 'C', mid: 'B', late: 'A' },
-        tags: ['luxury', 'expensive'],
-        description: 'High-cost luxury items. Scale with wealth.',
-        synergies: ['Showcase', 'Economy items'],
-        combos: []
-      },
-      {
-        name: 'ATM',
-        tier: { early: 'C', mid: 'A', late: 'A' },
-        tags: ['economy', 'gold'],
-        description: 'Generates gold from shields. Shield build economy engine.',
-        synergies: ['Shield items', 'Jabalian Drum'],
-        combos: []
-      },
-      {
-        name: 'Landscraper',
+        name: 'Skyscraper',
         tier: { early: 'D', mid: 'B', late: 'S' },
-        tags: ['economy', 'burst'],
-        description: 'Late game economy burst. Massive gold generation.',
-        synergies: ['Business Card', 'Showcase', 'Gold builds'],
+        tags: ['property', 'scaling', 'weapon'],
+        description: 'Massive scaling weapon. End-game carry.',
+        synergies: ['Economy items', 'Late game'],
+        combos: []
+      },
+      {
+        name: 'Spiky Shield',
+        tier: { early: 'A', mid: 'S', late: 'S' },
+        tags: ['shield', 'weapon', 'core'],
+        description: 'Shield that deals damage. Perfect for Drum builds.',
+        synergies: ['Jabalian Drum', 'Shield stacking'],
+        combos: [
+          { items: ['Spiky Shield', 'Jabalian Drum'], effect: 'Shield AND damage combo' }
+        ]
+      },
+      {
+        name: 'Jabalian Longbow',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['weapon', 'health'],
+        description: 'Weapon that scales with Health advantage.',
+        synergies: ['Health items', 'Economy'],
+        combos: []
+      },
+      {
+        name: 'Golf Clubs',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['weapon', 'healing'],
+        description: 'Gains damage when healing.',
+        synergies: ['Healing items', 'Sustain builds'],
+        combos: []
+      },
+      {
+        name: 'Flail',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'multicast'],
+        description: 'Multicast weapon for multiple hits.',
+        synergies: ['Crit items', 'Damage scaling'],
+        combos: []
+      },
+      {
+        name: 'Double Whammy',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'health'],
+        description: 'Damage based on max health percentage.',
+        synergies: ['Health stacking', 'Lemonade Stand'],
+        combos: []
+      },
+      {
+        name: 'Lion Cane',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'health'],
+        description: 'Health scaling weapon with health gain on level.',
+        synergies: ['Health builds'],
+        combos: []
+      },
+      {
+        name: 'Monocle',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['shield', 'economy'],
+        description: 'Shield equal to current gold.',
+        synergies: ['Economy builds', 'Gold stacking'],
+        combos: []
+      },
+      {
+        name: 'Lemonade Stand',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['property', 'healing', 'health'],
+        description: 'Healing and health scaling from selling small items.',
+        synergies: ['Small items', 'Health builds'],
+        combos: []
+      },
+      {
+        name: 'Pawn Shop',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['property', 'economy', 'health'],
+        description: 'Increases value when selling. Health scaling.',
+        synergies: ['Economy', 'Selling strategy'],
+        combos: []
+      },
+      {
+        name: 'Fixer Upper',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['shield', 'upgrade'],
+        description: 'Shield based on value. Auto-upgrades daily.',
+        synergies: ['Economy builds'],
+        combos: []
+      },
+      {
+        name: 'Weights',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'damage', 'heal'],
+        description: 'Boosts weapon damage and heal items.',
+        synergies: ['Weapons', 'Healing'],
+        combos: []
+      },
+      {
+        name: 'Bandages',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['heal', 'shield'],
+        description: 'Healing and shield combo.',
+        synergies: ['Sustain builds'],
+        combos: []
+      },
+      {
+        name: 'Money Tree',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['economy', 'property'],
+        description: 'Passive gold generation.',
+        synergies: ['Business Card', 'Economy'],
+        combos: []
+      },
+      {
+        name: 'Cash Register',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['economy', 'tool'],
+        description: 'Economy tool for gold generation.',
+        synergies: ['Economy builds'],
+        combos: []
+      },
+      {
+        name: 'Vending Machine',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['economy', 'property'],
+        description: 'Passive economy generation.',
+        synergies: ['Economy builds'],
+        combos: []
+      },
+      {
+        name: 'Spare Change',
+        tier: { early: 'S', mid: 'B', late: 'C' },
+        tags: ['economy', 'cheap'],
+        description: 'Cheap early economy item.',
+        synergies: ['Early economy'],
+        combos: []
+      },
+      {
+        name: 'Ledger',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['economy', 'tool'],
+        description: 'Economy tracking and bonuses.',
+        synergies: ['Economy builds'],
+        combos: []
+      },
+      {
+        name: 'Rewards Card',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['economy', 'utility'],
+        description: 'Economy utility item.',
+        synergies: ['Shopping strategy'],
+        combos: []
+      },
+      {
+        name: 'Badblocker',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['shield', 'defense'],
+        description: 'Shield generation item.',
+        synergies: ['Jabalian Drum', 'Shield builds'],
+        combos: []
+      },
+      {
+        name: 'Robe',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['shield', 'apparel'],
+        description: 'Shield apparel.',
+        synergies: ['Shield builds'],
+        combos: []
+      },
+      {
+        name: 'Silk Scarf',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['shield', 'apparel'],
+        description: 'Shield accessory.',
+        synergies: ['Shield builds'],
+        combos: []
+      },
+      {
+        name: 'Wrist Warrior',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['shield', 'apparel'],
+        description: 'Shield bracelet.',
+        synergies: ['Shield stacking'],
+        combos: []
+      },
+      {
+        name: 'Heirlooms',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['shield', 'value'],
+        description: 'Shield with value scaling.',
+        synergies: ['Shield builds', 'Economy'],
+        combos: []
+      },
+      {
+        name: 'Tea Set',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['heal', 'regen'],
+        description: 'Healing and regeneration.',
+        synergies: ['Sustain builds'],
+        combos: []
+      },
+      {
+        name: 'Succulents',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['heal', 'regen'],
+        description: 'Passive healing item.',
+        synergies: ['Sustain'],
+        combos: []
+      },
+      {
+        name: 'Crystal Bonsai',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['heal', 'regen', 'property'],
+        description: 'Regeneration property.',
+        synergies: ['Sustain builds'],
+        combos: []
+      },
+      {
+        name: 'Blue Piggles',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['toy', 'utility'],
+        description: 'Toy with special effects.',
+        synergies: ['Toy builds'],
+        combos: []
+      },
+      {
+        name: 'Red Piggles',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['toy', 'utility'],
+        description: 'Toy with damage effects.',
+        synergies: ['Toy builds'],
+        combos: []
+      },
+      {
+        name: 'Yellow Piggles',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['toy', 'utility'],
+        description: 'Toy with utility effects.',
+        synergies: ['Toy builds'],
+        combos: []
+      },
+      {
+        name: 'Marbles',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['toy', 'utility'],
+        description: 'Small toy item.',
+        synergies: ['Toy builds'],
         combos: []
       }
     ]
@@ -3515,55 +3899,295 @@ const heroItemKnowledge = {
   dooley: {
     items: [
       {
-        name: 'Friends (Small)',
-        tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['tech', 'adjacent', 'core'],
-        description: 'Cheap items that benefit from adjacency. Core for chains.',
-        synergies: ['Core', 'GPU', 'Tech items'],
-        combos: [
-          { items: ['Friends', 'Core'], effect: 'Buffed cheap items create value chains' }
-        ]
-      },
-      {
-        name: 'Core',
+        name: 'The Core',
         tier: { early: 'A', mid: 'S', late: 'A' },
-        tags: ['tech', 'buff', 'core'],
-        description: 'Buffs adjacent tech items. Enables positioning strategies.',
+        tags: ['core', 'buff', 'core-mechanic'],
+        description: 'Buffs adjacent tech items. Positioning-based power.',
         synergies: ['Friends', 'GPU', 'Tech items'],
-        combos: []
+        combos: [
+          { items: ['The Core', 'Friends'], effect: 'Buffed cheap items create value chains' }
+        ]
       },
       {
         name: 'GPU',
         tier: { early: 'B', mid: 'S', late: 'S' },
         tags: ['tech', 'crit', 'core'],
-        description: 'Crit scaling for tech items. Explosive damage potential.',
-        synergies: ['Core', 'Friends', 'Tech items'],
+        description: 'Crit scaling for tech items. Explosive damage.',
+        synergies: ['The Core', 'Friends', 'Tech items'],
         combos: [
-          { items: ['GPU', 'Core', 'Tech Board'], effect: 'Critical hits across all tech items' }
+          { items: ['GPU', 'The Core', 'Tech Board'], effect: 'Critical hits across all tech items' }
         ]
       },
       {
-        name: 'Tech Items',
+        name: 'Critical Core',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['core', 'crit', 'weapon'],
+        description: 'Core that provides crit to right-side items.',
+        synergies: ['Weapons', 'Damage items'],
+        combos: []
+      },
+      {
+        name: 'Weaponized Core',
         tier: { early: 'A', mid: 'A', late: 'A' },
-        tags: ['tech'],
-        description: 'Any tech-tagged items for Dooley synergies.',
-        synergies: ['Core', 'GPU'],
+        tags: ['core', 'weapon', 'buff'],
+        description: 'Weapon core that buffs adjacent weapons.',
+        synergies: ['Weapons', 'The Core'],
         combos: []
       },
       {
-        name: 'Positioning Items',
+        name: 'Companion Core',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['core', 'friend', 'haste'],
+        description: 'Hastes friends. Charges from friend usage.',
+        synergies: ['Friends', 'Friend builds'],
+        combos: []
+      },
+      {
+        name: 'Armored Core',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['core', 'shield', 'defense'],
+        description: 'Shield core. Charges from left item.',
+        synergies: ['Shield builds', 'Defense'],
+        combos: []
+      },
+      {
+        name: 'Combat Core',
         tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['utility', 'positioning'],
-        description: 'Items that let you rearrange board for optimal chains.',
-        synergies: ['Core', 'Adjacent synergies'],
+        tags: ['core', 'weapon'],
+        description: 'Offensive core for combat builds.',
+        synergies: ['Weapons', 'Damage'],
         combos: []
       },
       {
-        name: 'CDR Stacking',
-        tier: { early: 'C', mid: 'B', late: 'S' },
-        tags: ['cooldown', 'scaling'],
-        description: 'Stack cooldown reduction for rapid chain activations.',
-        synergies: ['All items'],
+        name: 'Ignition Core',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['core', 'burn'],
+        description: 'Burn-focused core.',
+        synergies: ['Burn builds', 'DoT'],
+        combos: []
+      },
+      {
+        name: 'Motherboard',
+        tier: { early: 'A', mid: 'S', late: 'S' },
+        tags: ['tech', 'scaling'],
+        description: 'Tech scaling engine. Core enabler.',
+        synergies: ['The Core', 'GPU', 'All tech'],
+        combos: []
+      },
+      {
+        name: 'Flamethrower',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'burn', 'tool'],
+        description: 'AoE burn weapon. Scales with burn.',
+        synergies: ['Burn items', 'Ignition Core'],
+        combos: []
+      },
+      {
+        name: 'Laser Pistol',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tech'],
+        description: 'Basic tech weapon.',
+        synergies: ['The Core', 'Tech builds'],
+        combos: []
+      },
+      {
+        name: 'Railgun',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'tech', 'damage'],
+        description: 'High damage tech weapon.',
+        synergies: ['GPU', 'Crit builds'],
+        combos: []
+      },
+      {
+        name: 'Kinetic Cannon',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tech'],
+        description: 'Solid tech weapon.',
+        synergies: ['The Core', 'Tech'],
+        combos: []
+      },
+      {
+        name: 'Rocket Launcher',
+        tier: { early: 'C', mid: 'B', late: 'A' },
+        tags: ['weapon', 'tech', 'aoe'],
+        description: 'AoE tech weapon.',
+        synergies: ['Tech builds'],
+        combos: []
+      },
+      {
+        name: 'Plasma Rifle',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tech'],
+        description: 'Energy weapon.',
+        synergies: ['The Core', 'Tech'],
+        combos: []
+      },
+      {
+        name: 'Tesla Coil',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tech', 'chain'],
+        description: 'Chain lightning tech weapon.',
+        synergies: ['Tech builds'],
+        combos: []
+      },
+      {
+        name: 'Crane',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tool', 'friend'],
+        description: 'Multi-tag utility weapon.',
+        synergies: ['The Core', 'Friends'],
+        combos: []
+      },
+      {
+        name: 'Forklift',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tool'],
+        description: 'Utility weapon.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Hacksaw',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tool'],
+        description: 'Tool weapon with fast attacks.',
+        synergies: ['Tool builds', 'CDR'],
+        combos: []
+      },
+      {
+        name: 'Claw Arm',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tech'],
+        description: 'Gains damage from adjacent haste.',
+        synergies: ['Haste builds', 'The Core'],
+        combos: []
+      },
+      {
+        name: 'Chris Army Knife',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tool', 'friend'],
+        description: 'Small multi-tag weapon.',
+        synergies: ['Multi-tag builds'],
+        combos: []
+      },
+      {
+        name: 'Diana-Saur',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'friend', 'dinosaur'],
+        description: 'Friend weapon dinosaur.',
+        synergies: ['Friend builds', 'Companion Core'],
+        combos: []
+      },
+      {
+        name: 'Trollosaur',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'friend', 'dinosaur', 'dragon'],
+        description: 'Multi-tag friend.',
+        synergies: ['Friend builds'],
+        combos: []
+      },
+      {
+        name: 'Balloon Bot',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['friend', 'tech'],
+        description: 'Tech friend for chains.',
+        synergies: ['Companion Core', 'The Core'],
+        combos: []
+      },
+      {
+        name: 'Angry Balloon Bot',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['friend', 'tech'],
+        description: 'Offensive tech friend.',
+        synergies: ['Companion Core', 'The Core'],
+        combos: []
+      },
+      {
+        name: 'Brick Buddy',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['friend', 'tech'],
+        description: 'Defensive tech friend.',
+        synergies: ['Companion Core', 'The Core'],
+        combos: []
+      },
+      {
+        name: 'Clawrence',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['friend', 'tech'],
+        description: 'Tech friend.',
+        synergies: ['Friend builds'],
+        combos: []
+      },
+      {
+        name: 'Bellelista',
+        tier: { early: 'B', mid: 'A', late: 'B' },
+        tags: ['friend', 'weapon'],
+        description: 'Friend weapon hybrid.',
+        synergies: ['Companion Core'],
+        combos: []
+      },
+      {
+        name: 'Momma-Saur',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['friend', 'dinosaur'],
+        description: 'Dinosaur friend generator.',
+        synergies: ['Friend builds'],
+        combos: []
+      },
+      {
+        name: '3D Printer',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['tech', 'property'],
+        description: 'Tech generation property.',
+        synergies: ['Tech builds', 'Scaling'],
+        combos: []
+      },
+      {
+        name: 'Charging Station',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tech', 'charge'],
+        description: 'Charge generation for tech.',
+        synergies: ['Charge builds'],
+        combos: []
+      },
+      {
+        name: 'Atomic Clock',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tech', 'cdr'],
+        description: 'CDR for tech builds.',
+        synergies: ['Fast builds', 'Tech'],
+        combos: []
+      },
+      {
+        name: 'Defense Matrix',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tech', 'shield'],
+        description: 'Tech shield item.',
+        synergies: ['Shield builds', 'Tech'],
+        combos: []
+      },
+      {
+        name: 'Hologram Projector',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tech', 'utility'],
+        description: 'Tech utility item.',
+        synergies: ['Tech builds'],
+        combos: []
+      },
+      {
+        name: 'Solar Farm',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['tech', 'property', 'economy'],
+        description: 'Tech economy scaling.',
+        synergies: ['Late game', 'Economy'],
+        combos: []
+      },
+      {
+        name: 'Crypto',
+        tier: { early: 'C', mid: 'B', late: 'A' },
+        tags: ['tech', 'value'],
+        description: 'Random value tech item.',
+        synergies: ['High-roll builds'],
         combos: []
       }
     ]
@@ -3571,100 +4195,13 @@ const heroItemKnowledge = {
   mak: {
     items: [
       {
-        name: 'Potions',
-        tier: { early: 'S', mid: 'A', late: 'A' },
-        tags: ['potion', 'sustain', 'core'],
-        description: 'Any potion items. Trigger Mak passive and provide sustain.',
-        synergies: ['Vial Launcher', 'Library', 'Healing items'],
-        combos: []
-      },
-      {
         name: 'Peacewrought',
         tier: { early: 'B', mid: 'S', late: 'S' },
         tags: ['weapon', 'healing', 'core'],
         description: 'Build-defining weapon. Scales with healing.',
-        synergies: ['Potions', 'Healing items', 'Haste'],
+        synergies: ['Potions', 'Rainbow Staff', 'Staff of the Moose'],
         combos: [
           { items: ['Peacewrought', 'Rainbow Staff'], effect: 'Infinite haste scaling with healing' }
-        ]
-      },
-      {
-        name: 'Rainbow Staff',
-        tier: { early: 'C', mid: 'B', late: 'S' },
-        tags: ['haste', 'scaling', 'core'],
-        description: 'Generates haste. Game-ending when stacked.',
-        synergies: ['Peacewrought', 'Potions'],
-        combos: []
-      },
-      {
-        name: 'Vial Launcher',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['potion', 'weapon'],
-        description: 'Weaponizes potions. Good potion synergy.',
-        synergies: ['Potions', 'Library'],
-        combos: []
-      },
-      {
-        name: 'Library',
-        tier: { early: 'C', mid: 'B', late: 'A' },
-        tags: ['potion', 'generation'],
-        description: 'Generates potions. Infinite resource late game.',
-        synergies: ['Potions', 'Vial Launcher'],
-        combos: []
-      },
-      {
-        name: 'Healing Items',
-        tier: { early: 'A', mid: 'A', late: 'B' },
-        tags: ['healing', 'sustain'],
-        description: 'Any healing sources. Survive early, scale Peacewrought.',
-        synergies: ['Peacewrought', 'Potions'],
-        combos: []
-      },
-      {
-        name: 'Haste Sources',
-        tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['haste', 'scaling'],
-        description: 'Items that grant haste. More weapon swings.',
-        synergies: ['Peacewrought', 'Rainbow Staff'],
-        combos: []
-      },
-      {
-        name: 'Crit Items',
-        tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['crit', 'damage'],
-        description: 'Crit scaling for massive damage spikes.',
-        synergies: ['Peacewrought', 'Haste'],
-        combos: []
-      },
-      {
-        name: 'Staff of the Moose',
-        tier: { early: 'C', mid: 'A', late: 'S' },
-        tags: ['regen', 'scaling', 'core'],
-        description: 'Doubles Regen. Build-defining with Peacewrought.',
-        synergies: ['Peacewrought', 'Barbed Claws', 'Healing items'],
-        combos: [
-          { items: ['Staff of the Moose', 'Peacewrought'], effect: '2x Regen = 2x healing = unkillable sustain' },
-          { items: ['Staff of the Moose', 'Barbed Claws'], effect: 'Doubled Regen means doubled damage from Claws' }
-        ]
-      },
-      {
-        name: 'Barbed Claws',
-        tier: { early: 'C', mid: 'A', late: 'S' },
-        tags: ['damage', 'regen', 'scaling'],
-        description: 'Adds damage per Regen. Scales infinitely with Regen stacking.',
-        synergies: ['Peacewrought', 'Staff of the Moose', 'Regen sources'],
-        combos: [
-          { items: ['Barbed Claws', 'Peacewrought', 'Staff of the Moose'], effect: 'Massive damage scaling from Regen doubling' }
-        ]
-      },
-      {
-        name: 'Aludel',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['catalyst', 'generation', 'economy'],
-        description: 'Generates catalysts. Feed to Peacewrought for passive gold.',
-        synergies: ['Peacewrought', 'Mortar & Pestle'],
-        combos: [
-          { items: ['Aludel', 'Peacewrought'], effect: 'Infinite catalyst feeding for gold generation' }
         ]
       },
       {
@@ -3679,6 +4216,16 @@ const heroItemKnowledge = {
         ]
       },
       {
+        name: 'Magnus Femur',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'slow', 'core'],
+        description: 'Gains +25 damage per tier each Slow. Self-charges. Slow-based S-tier build.',
+        synergies: ['Incense', 'Amber', 'Slow sources'],
+        combos: [
+          { items: ['Magnus Femur', 'Incense'], effect: 'Each Incense tick charges Magnus Femur for massive damage' }
+        ]
+      },
+      {
         name: 'Spider Mace',
         tier: { early: 'B', mid: 'S', late: 'S' },
         tags: ['poison', 'weapon', 'slow'],
@@ -3687,11 +4234,93 @@ const heroItemKnowledge = {
         combos: []
       },
       {
+        name: 'Vial Launcher',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['potion', 'weapon'],
+        description: 'Weaponizes potions. Good potion synergy.',
+        synergies: ['Potions', 'Library'],
+        combos: []
+      },
+      {
+        name: 'Barbed Claws',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'regen', 'scaling'],
+        description: 'Adds damage per Regen. Scales infinitely with Regen stacking.',
+        synergies: ['Peacewrought', 'Staff of the Moose', 'Regen sources'],
+        combos: [
+          { items: ['Barbed Claws', 'Peacewrought', 'Staff of the Moose'], effect: 'Massive damage scaling from Regen doubling' }
+        ]
+      },
+      {
         name: 'Floor Spike',
         tier: { early: 'A', mid: 'A', late: 'B' },
         tags: ['poison', 'weapon'],
         description: 'Poison weapon. Works well in multiples for poison stacking.',
         synergies: ['Poppy Field', 'Spider Mace', 'Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Basilisk Fang',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'poison'],
+        description: 'Poison weapon.',
+        synergies: ['Poppy Field', 'Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Ritual Dagger',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['weapon', 'utility'],
+        description: 'Small weapon with special effects.',
+        synergies: ['Weapon builds'],
+        combos: []
+      },
+      {
+        name: 'Letter Opener',
+        tier: { early: 'B', mid: 'B', late: 'C' },
+        tags: ['weapon', 'small'],
+        description: 'Basic small weapon.',
+        synergies: ['Weapon builds'],
+        combos: []
+      },
+      {
+        name: 'Energy Potion',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['potion', 'haste', 'cheap'],
+        description: 'Haste + cheap sacrifice fodder for Peacewrought.',
+        synergies: ['Peacewrought', 'Haste builds'],
+        combos: []
+      },
+      {
+        name: 'Fire Potion',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'burn'],
+        description: 'Burn potion.',
+        synergies: ['Burn builds', 'Vial Launcher'],
+        combos: []
+      },
+      {
+        name: 'Frost Potion',
+        tier: { early: 'A', mid: 'S', late: 'A' },
+        tags: ['potion', 'freeze'],
+        description: 'Freeze potion. Core for freeze builds.',
+        synergies: ['Freeze builds', 'Vial Launcher'],
+        combos: []
+      },
+      {
+        name: 'Strength Potion',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'damage'],
+        description: 'Damage boost potion.',
+        synergies: ['Weapon builds'],
+        combos: []
+      },
+      {
+        name: 'Regeneration Potion',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'regen', 'heal'],
+        description: 'Regen and healing potion.',
+        synergies: ['Peacewrought', 'Staff of the Moose'],
         combos: []
       },
       {
@@ -3703,9 +4332,81 @@ const heroItemKnowledge = {
         combos: []
       },
       {
+        name: 'Vitality Potion',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'health'],
+        description: 'Health boost potion.',
+        synergies: ['Sustain builds'],
+        combos: []
+      },
+      {
+        name: 'Invulnerability Potion',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['potion', 'defense'],
+        description: 'Defensive potion. Powerful late game.',
+        synergies: ['Defensive builds'],
+        combos: []
+      },
+      {
+        name: 'Noxious Potion',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'poison'],
+        description: 'Poison potion.',
+        synergies: ['Poppy Field', 'Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Sleeping Potion',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['potion', 'control'],
+        description: 'Control potion.',
+        synergies: ['Control builds'],
+        combos: []
+      },
+      {
+        name: 'Shrinking Potion',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['potion', 'utility'],
+        description: 'Utility potion with special effects.',
+        synergies: ['Potion builds'],
+        combos: []
+      },
+      {
+        name: 'Bottled Lightning',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'damage'],
+        description: 'Damage potion.',
+        synergies: ['Vial Launcher'],
+        combos: []
+      },
+      {
+        name: 'Bottled Tornado',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['potion', 'aoe'],
+        description: 'AoE potion.',
+        synergies: ['Vial Launcher'],
+        combos: []
+      },
+      {
+        name: 'Rainbow Potion',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['potion', 'utility'],
+        description: 'Multi-effect potion.',
+        synergies: ['Potion builds'],
+        combos: []
+      },
+      {
+        name: 'Infinite Potion',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['potion', 'scaling'],
+        description: 'Scales infinitely. Late game carry.',
+        synergies: ['Late game scaling'],
+        combos: []
+      },
+      {
         name: 'Foul Mushroom',
         tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['poison', 'self-poison'],
+        tags: ['poison', 'self-poison', 'reagent'],
         description: 'Self-poison enabler. Triggers damage scaling from poison stacks.',
         synergies: ['Rainbow Staff', 'Lifesteal', 'Poison scaling'],
         combos: [
@@ -3713,22 +4414,23 @@ const heroItemKnowledge = {
         ]
       },
       {
-        name: 'Energy Potion',
-        tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['potion', 'haste', 'cheap'],
-        description: 'Haste + cheap sacrifice fodder for Peacewrought.',
-        synergies: ['Peacewrought', 'Haste builds'],
-        combos: []
+        name: 'Staff of the Moose',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['regen', 'scaling', 'core'],
+        description: 'Doubles Regen. Build-defining with Peacewrought.',
+        synergies: ['Peacewrought', 'Barbed Claws', 'Healing items'],
+        combos: [
+          { items: ['Staff of the Moose', 'Peacewrought'], effect: '2x Regen = 2x healing = unkillable sustain' },
+          { items: ['Staff of the Moose', 'Barbed Claws'], effect: 'Doubled Regen means doubled damage from Claws' }
+        ]
       },
       {
-        name: 'Magnus Femur',
-        tier: { early: 'C', mid: 'A', late: 'S' },
-        tags: ['weapon', 'slow', 'core'],
-        description: 'Gains +25 damage per tier each Slow. Self-charges. Slow-based S-tier build.',
-        synergies: ['Incense', 'Amber', 'Slow sources'],
-        combos: [
-          { items: ['Magnus Femur', 'Incense'], effect: 'Each Incense tick charges Magnus Femur for massive damage' }
-        ]
+        name: 'Rainbow Staff',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['haste', 'scaling', 'core'],
+        description: 'Generates haste. Game-ending when stacked.',
+        synergies: ['Peacewrought', 'Potions'],
+        combos: []
       },
       {
         name: 'Incense',
@@ -3741,9 +4443,131 @@ const heroItemKnowledge = {
       {
         name: 'Amber',
         tier: { early: 'A', mid: 'A', late: 'A' },
-        tags: ['slow', 'duration'],
+        tags: ['slow', 'duration', 'relic'],
         description: 'Extends Slow duration. Decent Slow itself.',
         synergies: ['Magnus Femur', 'Incense', 'Slow builds'],
+        combos: []
+      },
+      {
+        name: 'Aludel',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'catalyst', 'generation'],
+        description: 'Generates catalysts. Feed to Peacewrought for passive gold.',
+        synergies: ['Peacewrought', 'Mortar & Pestle'],
+        combos: [
+          { items: ['Aludel', 'Peacewrought'], effect: 'Infinite catalyst feeding for gold generation' }
+        ]
+      },
+      {
+        name: 'Alembic',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'alchemy'],
+        description: 'Alchemy tool for reagents.',
+        synergies: ['Reagents', 'Potions'],
+        combos: []
+      },
+      {
+        name: 'Laboratory',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['tool', 'property'],
+        description: 'Alchemy workspace.',
+        synergies: ['Potions', 'Reagents'],
+        combos: []
+      },
+      {
+        name: 'Mortar & Pestle',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'catalyst'],
+        description: 'Catalyst generation tool.',
+        synergies: ['Aludel', 'Reagents'],
+        combos: []
+      },
+      {
+        name: 'Emerald',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['relic', 'value'],
+        description: 'Valuable relic.',
+        synergies: ['Value builds'],
+        combos: []
+      },
+      {
+        name: 'Ruby',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['relic', 'value'],
+        description: 'Valuable relic.',
+        synergies: ['Value builds'],
+        combos: []
+      },
+      {
+        name: 'Sapphire',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['relic', 'value'],
+        description: 'Valuable relic.',
+        synergies: ['Value builds'],
+        combos: []
+      },
+      {
+        name: 'Philosopher Stone',
+        tier: { early: 'C', mid: 'B', late: 'S' },
+        tags: ['relic', 'alchemy', 'scaling'],
+        description: 'Ultimate alchemy item. Late game power.',
+        synergies: ['Reagents', 'Alchemy builds'],
+        combos: []
+      },
+      {
+        name: 'Soul Ring',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['relic', 'utility'],
+        description: 'Utility relic.',
+        synergies: ['Relic builds'],
+        combos: []
+      },
+      {
+        name: 'Hemlock',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['reagent', 'poison'],
+        description: 'Poison reagent.',
+        synergies: ['Poison builds', 'Alchemy'],
+        combos: []
+      },
+      {
+        name: 'Myrrh',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['reagent', 'utility'],
+        description: 'Utility reagent.',
+        synergies: ['Alchemy'],
+        combos: []
+      },
+      {
+        name: 'Sulphur',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['reagent', 'burn'],
+        description: 'Burn reagent.',
+        synergies: ['Burn builds', 'Alchemy'],
+        combos: []
+      },
+      {
+        name: 'Death Caps',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['reagent', 'poison'],
+        description: 'Poison reagent.',
+        synergies: ['Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Nightshade',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['reagent', 'poison'],
+        description: 'Poison reagent.',
+        synergies: ['Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Mothmeal',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['reagent', 'utility'],
+        description: 'Utility reagent.',
+        synergies: ['Alchemy'],
         combos: []
       }
     ]
@@ -3761,62 +4585,6 @@ const heroItemKnowledge = {
         ]
       },
       {
-        name: 'Flycycle',
-        tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['vehicle', 'cheap'],
-        description: 'Cheap vehicle for early chains. Good early value.',
-        synergies: ['Lightning Rod', 'More vehicles'],
-        combos: []
-      },
-      {
-        name: 'Ornithopter',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['vehicle', 'flying'],
-        description: 'Strong vehicle with good stats and synergy.',
-        synergies: ['Lightning Rod', 'Vehicles'],
-        combos: []
-      },
-      {
-        name: 'Small Vehicles',
-        tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['vehicle', 'cheap'],
-        description: 'Low-cost vehicles to start chains early.',
-        synergies: ['Lightning Rod'],
-        combos: []
-      },
-      {
-        name: 'Vehicle Army',
-        tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['vehicle', 'scaling'],
-        description: 'Stack as many vehicles as possible. Late game power.',
-        synergies: ['Lightning Rod', 'CDR'],
-        combos: []
-      },
-      {
-        name: 'CDR',
-        tier: { early: 'C', mid: 'A', late: 'S' },
-        tags: ['cooldown'],
-        description: 'Cooldown reduction for rapid chain activations.',
-        synergies: ['Lightning Rod', 'Vehicles'],
-        combos: []
-      },
-      {
-        name: 'Crit',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['crit', 'damage'],
-        description: 'Crit for chain damage spikes.',
-        synergies: ['Lightning Rod', 'Vehicles'],
-        combos: []
-      },
-      {
-        name: 'Helicopter',
-        tier: { early: 'C', mid: 'A', late: 'S' },
-        tags: ['vehicle', 'strong'],
-        description: 'Strong late game vehicle with good stats.',
-        synergies: ['Lightning Rod', 'Other vehicles'],
-        combos: []
-      },
-      {
         name: 'Space Laser',
         tier: { early: 'D', mid: 'B', late: 'S' },
         tags: ['weapon', 'burst', 'charge'],
@@ -3825,6 +4593,238 @@ const heroItemKnowledge = {
         combos: [
           { items: ['Space Laser', 'Drone Workshop'], effect: 'Drones charge laser faster for burst damage' }
         ]
+      },
+      {
+        name: 'Aerial Turret',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['drone', 'weapon', 'flying'],
+        description: 'Flying weapon with scaling. Needs setup time.',
+        synergies: ['Flying items', 'Private Runabout'],
+        combos: []
+      },
+      {
+        name: 'Private Runabout',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['vehicle', 'flying', 'core'],
+        description: 'Powerful payoff for full board of Flying items.',
+        synergies: ['Flying items', 'Aerial Turret'],
+        combos: []
+      },
+      {
+        name: 'Ornithopter',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['vehicle', 'flying', 'small'],
+        description: 'Small flying vehicle.',
+        synergies: ['Lightning Rod', 'Flying builds'],
+        combos: []
+      },
+      {
+        name: 'Paper Airplane',
+        tier: { early: 'B', mid: 'B', late: 'C' },
+        tags: ['vehicle', 'flying', 'small'],
+        description: 'Cheap flying vehicle.',
+        synergies: ['Flying builds', 'Early game'],
+        combos: []
+      },
+      {
+        name: 'Battle Balloon',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['vehicle', 'flying'],
+        description: 'Medium flying vehicle.',
+        synergies: ['Lightning Rod', 'Flying builds'],
+        combos: []
+      },
+      {
+        name: 'Daggerwing',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['vehicle', 'flying', 'weapon'],
+        description: 'Flying vehicle with weapon properties.',
+        synergies: ['Flying builds', 'Lightning Rod'],
+        combos: []
+      },
+      {
+        name: 'Weather Machine',
+        tier: { early: 'D', mid: 'B', late: 'S' },
+        tags: ['vehicle', 'property', 'large'],
+        description: 'Large vehicle with powerful late-game effects.',
+        synergies: ['Vehicle builds'],
+        combos: []
+      },
+      {
+        name: 'Propeller',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['vehicle', 'utility'],
+        description: 'Vehicle utility item.',
+        synergies: ['Vehicle builds'],
+        combos: []
+      },
+      {
+        name: 'Gatling Gun',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['weapon', 'drone'],
+        description: 'Drone weapon with rapid fire.',
+        synergies: ['Drone builds'],
+        combos: []
+      },
+      {
+        name: 'Flare Gun',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tool', 'burn'],
+        description: 'Tool weapon with burn.',
+        synergies: ['Burn builds', 'Tools'],
+        combos: []
+      },
+      {
+        name: 'Fire Bomb',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'burn', 'small'],
+        description: 'Small burn tool.',
+        synergies: ['Burn builds'],
+        combos: []
+      },
+      {
+        name: 'Ice Bomb',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'freeze', 'small'],
+        description: 'Small freeze tool.',
+        synergies: ['Freeze builds'],
+        combos: []
+      },
+      {
+        name: 'Flashbang',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'control'],
+        description: 'Control tool.',
+        synergies: ['Control builds'],
+        combos: []
+      },
+      {
+        name: 'Blow Torch',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'burn'],
+        description: 'Burn tool.',
+        synergies: ['Burn builds'],
+        combos: []
+      },
+      {
+        name: 'Wrench',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'small'],
+        description: 'Small tool item.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Hammer',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['tool', 'weapon'],
+        description: 'Tool weapon hybrid.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Multitool',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['tool', 'utility'],
+        description: 'Utility tool.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Rivet Gun',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'weapon'],
+        description: 'Tool weapon.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Box Cutter',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['tool', 'weapon', 'small'],
+        description: 'Small tool weapon.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Toolbox',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'utility'],
+        description: 'Tool storage and generation.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Goggles',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['apparel', 'utility'],
+        description: 'Utility apparel.',
+        synergies: ['Vehicle builds'],
+        combos: []
+      },
+      {
+        name: 'Hydraulic Squeezer',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'weapon'],
+        description: 'Compression tool weapon.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Propane Tank',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'burn'],
+        description: 'Burn fuel tool.',
+        synergies: ['Burn builds'],
+        combos: []
+      },
+      {
+        name: 'Sirens',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'control'],
+        description: 'Control tool.',
+        synergies: ['Control builds'],
+        combos: []
+      },
+      {
+        name: 'Marshalling Lights',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'utility'],
+        description: 'Utility lighting tool.',
+        synergies: ['Vehicle builds'],
+        combos: []
+      },
+      {
+        name: 'Orbital Polisher',
+        tier: { early: 'B', mid: 'B', late: 'B' },
+        tags: ['tool', 'utility'],
+        description: 'Tool utility item.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Precision Callipers',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'utility'],
+        description: 'Precision tool.',
+        synergies: ['Tool builds'],
+        combos: []
+      },
+      {
+        name: 'Eject Button',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['tool', 'utility'],
+        description: 'Emergency eject tool.',
+        synergies: ['Vehicle builds'],
+        combos: []
+      },
+      {
+        name: 'Flycycle',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['vehicle', 'cheap'],
+        description: 'Cheap vehicle for early chains. Good early value.',
+        synergies: ['Lightning Rod', 'More vehicles'],
+        combos: []
       },
       {
         name: 'Drone Workshop',
@@ -3843,65 +4843,93 @@ const heroItemKnowledge = {
         tier: { early: 'C', mid: 'S', late: 'S' },
         tags: ['weapon', 'sweet', 'core'],
         description: 'Scales with sweets consumed. Build-defining weapon.',
-        synergies: ['Sweet items', 'Food items'],
+        synergies: ['Sweet items', 'Chocolate Bar', 'Truffles'],
         combos: [
           { items: ['Giant Lollipop', 'Max Sweets'], effect: 'Massive weapon damage from sweets scaling' }
         ]
       },
       {
         name: 'Grill',
-        tier: { early: 'A', mid: 'A', late: 'A' },
-        tags: ['food', 'burn', 'core'],
+        tier: { early: 'A', mid: 'S', late: 'A' },
+        tags: ['tool', 'burn', 'core'],
         description: 'Food items apply burn. Strong with food builds.',
-        synergies: ['Food items', 'Burn amplifiers'],
-        combos: []
+        synergies: ['Food items', 'Hot Sauce', 'Curry'],
+        combos: [
+          { items: ['Grill', 'Food Board'], effect: 'All food applies burn damage' }
+        ]
       },
       {
         name: 'Freezer',
         tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['food', 'freeze', 'control'],
+        tags: ['appliance', 'freeze', 'core'],
         description: 'Food items apply freeze. Control and damage.',
-        synergies: ['Food items', 'Freeze amplifiers'],
+        synergies: ['Food items', 'Ice Cubes', 'Dishwasher'],
         combos: [
           { items: ['Freezer', 'Food Board', 'Grill'], effect: 'Apply burn and freeze simultaneously' }
         ]
       },
       {
-        name: 'Food Items',
-        tier: { early: 'S', mid: 'A', late: 'A' },
-        tags: ['food', 'sustain'],
-        description: 'Any food items. Trigger Jules passive and Grill/Freezer.',
-        synergies: ['Grill', 'Freezer', 'Giant Lollipop'],
-        combos: []
-      },
-      {
-        name: 'Sweet Items',
+        name: 'Dishwasher',
         tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['sweet', 'scaling'],
-        description: 'Sweet-tagged items to feed Giant Lollipop.',
-        synergies: ['Giant Lollipop'],
-        combos: []
+        tags: ['appliance', 'freeze', 'haste'],
+        description: 'Applies Freeze via cooking. Haste generation.',
+        synergies: ['Freezer', 'Food items', 'Freeze builds'],
+        combos: [
+          { items: ['Dishwasher', 'Freezer'], effect: 'Freeze lockdown with food synergy' }
+        ]
       },
       {
-        name: 'Spices',
+        name: 'Hot Sauce',
         tier: { early: 'A', mid: 'A', late: 'B' },
-        tags: ['food', 'damage'],
-        description: 'Spices boost food damage. Good early scaling.',
-        synergies: ['Food items', 'Grill'],
+        tags: ['food', 'burn', 'small'],
+        description: 'Burn food. Works with Grill.',
+        synergies: ['Grill', 'Burn builds'],
         combos: []
       },
       {
-        name: 'Oven',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['food', 'size'],
-        description: 'Makes bigger food items with more powerful effects.',
-        synergies: ['Food items', 'Grill', 'Freezer'],
+        name: 'Curry',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['food', 'burn', 'charge'],
+        description: 'Burn food with charge mechanics.',
+        synergies: ['Grill', 'Burn builds'],
+        combos: []
+      },
+      {
+        name: 'Ice Cubes',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['food', 'freeze', 'small'],
+        description: 'Freeze food. Works with Freezer.',
+        synergies: ['Freezer', 'Freeze builds'],
+        combos: []
+      },
+      {
+        name: 'Butter',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['food', 'haste', 'small'],
+        description: 'Haste food.',
+        synergies: ['Food builds', 'Haste'],
+        combos: []
+      },
+      {
+        name: 'Salt',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['food', 'crit', 'small'],
+        description: 'Crit food. Boosts damage.',
+        synergies: ['Food builds', 'Crit'],
+        combos: []
+      },
+      {
+        name: 'Black Pepper',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['food', 'burn', 'charge'],
+        description: 'Burn spice with charge.',
+        synergies: ['Grill', 'Burn builds'],
         combos: []
       },
       {
         name: 'Chocolate Bar',
         tier: { early: 'S', mid: 'A', late: 'B' },
-        tags: ['sweet', 'cheap'],
+        tags: ['sweet', 'cheap', 'food'],
         description: 'Cheap sweet for early scaling. Feeds Giant Lollipop.',
         synergies: ['Giant Lollipop', 'Sweet items'],
         combos: []
@@ -3909,35 +4937,57 @@ const heroItemKnowledge = {
       {
         name: 'Truffles',
         tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['sweet', 'premium'],
+        tags: ['sweet', 'premium', 'food'],
         description: 'Premium sweet item. Good Lollipop scaling.',
         synergies: ['Giant Lollipop', 'Sweet items'],
         combos: []
       },
       {
-        name: 'Dishwasher',
-        tier: { early: 'B', mid: 'A', late: 'S' },
-        tags: ['food', 'freeze', 'control'],
-        description: 'Applies Freeze via cooking. Control build enabler.',
-        synergies: ['Freezer', 'Food items', 'Control'],
-        combos: [
-          { items: ['Dishwasher', 'Freezer', 'Food Board'], effect: 'Freeze lockdown with food synergy' }
-        ]
-      },
-      {
-        name: 'Wok',
-        tier: { early: 'B', mid: 'A', late: 'A' },
-        tags: ['food', 'fast'],
-        description: 'Fast cooking with good damage output.',
-        synergies: ['Food items', 'CDR'],
+        name: 'Skillet',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['tool', 'burn'],
+        description: 'Cooking tool with burn.',
+        synergies: ['Grill', 'Food builds'],
         combos: []
       },
       {
-        name: 'Curry',
+        name: 'Knife Set',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['weapon', 'tool', 'food'],
+        description: 'Weapon tool for food builds.',
+        synergies: ['Food builds', 'Damage'],
+        combos: []
+      },
+      {
+        name: 'Cleaver',
+        tier: { early: 'A', mid: 'B', late: 'B' },
+        tags: ['weapon', 'tool', 'small'],
+        description: 'Small weapon tool.',
+        synergies: ['Food builds'],
+        combos: []
+      },
+      {
+        name: 'Rolling Pin',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['weapon', 'tool', 'haste'],
+        description: 'Tool weapon with haste reference.',
+        synergies: ['Food builds', 'Haste'],
+        combos: []
+      },
+      {
+        name: 'Pickled Peppers',
         tier: { early: 'A', mid: 'A', late: 'A' },
         tags: ['food', 'burn'],
-        description: 'Food with burn synergy. Works with Grill.',
+        description: 'Burn food item.',
         synergies: ['Grill', 'Burn builds'],
+        combos: []
+      },
+      {
+        name: 'Oven Mitts',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['apparel', 'burn', 'haste', 'shield'],
+        description: 'Protective apparel with multiple effects.',
+        synergies: ['Burn builds', 'Defense'],
         combos: []
       }
     ]

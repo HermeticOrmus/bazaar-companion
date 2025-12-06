@@ -43,6 +43,13 @@
         <span class="icon-sun">☀</span>
         <span class="icon-moon">☾</span>
       </button>
+
+      <!-- Auth Button / User Profile -->
+      <button class="btn-auth" id="authButton">Login</button>
+      <div class="user-profile" id="userProfile" style="display: none;">
+        <span class="user-email" id="userEmail"></span>
+        <button class="btn-logout" id="logoutBtn">Logout</button>
+      </div>
     </div>
     <nav class="nav-tabs">
       <button class="tab active" data-tab="meta">Meta</button>
@@ -1760,6 +1767,61 @@
     </div>
   </div>
 
+  <!-- Auth Modal -->
+  <div class="auth-modal" id="authModal">
+    <div class="auth-modal-backdrop"></div>
+    <div class="auth-modal-content">
+      <button class="auth-modal-close" id="closeAuthModal">×</button>
+
+      <!-- Login Tab -->
+      <div class="auth-tab active" id="loginTab">
+        <h2>Login to Bazaar Companion</h2>
+        <p class="auth-subtitle">Sync your runs, builds, and progress across devices</p>
+
+        <form id="loginForm">
+          <label>
+            Email
+            <input type="email" id="loginEmail" required placeholder="your@email.com" autocomplete="email">
+          </label>
+          <label>
+            Password
+            <input type="password" id="loginPassword" required placeholder="••••••••" autocomplete="current-password">
+          </label>
+          <button type="submit" class="btn-primary full-width">Login</button>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account? <a href="#" id="showSignup">Sign up</a>
+        </p>
+      </div>
+
+      <!-- Signup Tab -->
+      <div class="auth-tab" id="signupTab">
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Start tracking your Bazaar mastery</p>
+
+        <form id="signupForm">
+          <label>
+            Email
+            <input type="email" id="signupEmail" required placeholder="your@email.com" autocomplete="email">
+          </label>
+          <label>
+            Password
+            <input type="password" id="signupPassword" required placeholder="••••••••" autocomplete="new-password" minlength="6">
+          </label>
+          <button type="submit" class="btn-primary full-width">Create Account</button>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account? <a href="#" id="showLogin">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
   <script src="app.js?v=2.5"></script>
 
   <!-- PWA Service Worker Registration -->

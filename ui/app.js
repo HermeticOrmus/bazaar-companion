@@ -3211,12 +3211,12 @@ function saveMastery() {
 }
 
 function getMasteryBadge(level) {
-  if (level >= 20) return { name: 'Master', color: '#FFD700', icon: '👑' };
-  if (level >= 15) return { name: 'Expert', color: '#E5E4E2', icon: '💎' };
+  if (level >= 20) return { name: 'Master', color: '#FFD700', icon: '◆' };
+  if (level >= 15) return { name: 'Expert', color: '#E5E4E2', icon: '◇' };
   if (level >= 10) return { name: 'Veteran', color: '#CD7F32', icon: '⭐' };
-  if (level >= 5) return { name: 'Skilled', color: '#16C79A', icon: '✨' };
+  if (level >= 5) return { name: 'Skilled', color: '#16C79A', icon: '✦' };
   if (level >= 2) return { name: 'Apprentice', color: '#6C63FF', icon: '⚐' };
-  return { name: 'Novice', color: '#888', icon: '🌱' };
+  return { name: 'Novice', color: '#888', icon: '○' };
 }
 
 // Build progression timeline data for each hero
@@ -3548,7 +3548,7 @@ function showHeroDetail(heroId) {
 
         ${pn.newItems && pn.newItems.length > 0 ? `
           <div class="patch-section">
-            <h4>✨ New Items</h4>
+            <h4>◈ New Items</h4>
             <ul class="patch-list new-items">
               ${pn.newItems.map(i => `<li>${i}</li>`).join('')}
             </ul>

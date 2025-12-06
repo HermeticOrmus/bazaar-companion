@@ -3403,6 +3403,40 @@ const heroItemKnowledge = {
         description: 'Cooldown reduction for more weapon activations.',
         synergies: ['Multiple weapons', 'Active items'],
         combos: []
+      },
+      {
+        name: 'Cannon',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['weapon', 'reliable'],
+        description: 'Reliable damage weapon with good CDR. Solid choice for weapon builds.',
+        synergies: ['Aquarium', 'CDR', 'Multiweapon builds'],
+        combos: []
+      },
+      {
+        name: 'Oni Mask',
+        tier: { early: 'C', mid: 'S', late: 'S' },
+        tags: ['burn', 'crit', 'core'],
+        description: 'Burn scaling with Crit. S-tier for burn+crit hybrid builds.',
+        synergies: ['Incendiary Rounds', 'Crit items', 'Burn sources'],
+        combos: [
+          { items: ['Oni Mask', 'Crit', 'Burn'], effect: 'Critical burn damage scales massively' }
+        ]
+      },
+      {
+        name: 'Lighthouse',
+        tier: { early: 'D', mid: 'B', late: 'S' },
+        tags: ['burn', 'scaling', 'ultimate'],
+        description: 'Ultimate burn scaling item. Rare but game-winning.',
+        synergies: ['Powder Keg', 'Oni Mask', 'All burn sources'],
+        combos: []
+      },
+      {
+        name: 'Sniper Rifle',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['weapon', 'damage'],
+        description: 'High damage weapon. Good with crit builds.',
+        synergies: ['Crit items', 'Burn builds'],
+        combos: []
       }
     ]
   },
@@ -3458,6 +3492,22 @@ const heroItemKnowledge = {
         tags: ['luxury', 'expensive'],
         description: 'High-cost luxury items. Scale with wealth.',
         synergies: ['Showcase', 'Economy items'],
+        combos: []
+      },
+      {
+        name: 'ATM',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['economy', 'gold'],
+        description: 'Generates gold from shields. Shield build economy engine.',
+        synergies: ['Shield items', 'Jabalian Drum'],
+        combos: []
+      },
+      {
+        name: 'Landscraper',
+        tier: { early: 'D', mid: 'B', late: 'S' },
+        tags: ['economy', 'burst'],
+        description: 'Late game economy burst. Massive gold generation.',
+        synergies: ['Business Card', 'Showcase', 'Gold builds'],
         combos: []
       }
     ]
@@ -3585,6 +3635,116 @@ const heroItemKnowledge = {
         description: 'Crit scaling for massive damage spikes.',
         synergies: ['Peacewrought', 'Haste'],
         combos: []
+      },
+      {
+        name: 'Staff of the Moose',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['regen', 'scaling', 'core'],
+        description: 'Doubles Regen. Build-defining with Peacewrought.',
+        synergies: ['Peacewrought', 'Barbed Claws', 'Healing items'],
+        combos: [
+          { items: ['Staff of the Moose', 'Peacewrought'], effect: '2x Regen = 2x healing = unkillable sustain' },
+          { items: ['Staff of the Moose', 'Barbed Claws'], effect: 'Doubled Regen means doubled damage from Claws' }
+        ]
+      },
+      {
+        name: 'Barbed Claws',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['damage', 'regen', 'scaling'],
+        description: 'Adds damage per Regen. Scales infinitely with Regen stacking.',
+        synergies: ['Peacewrought', 'Staff of the Moose', 'Regen sources'],
+        combos: [
+          { items: ['Barbed Claws', 'Peacewrought', 'Staff of the Moose'], effect: 'Massive damage scaling from Regen doubling' }
+        ]
+      },
+      {
+        name: 'Aludel',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['catalyst', 'generation', 'economy'],
+        description: 'Generates catalysts. Feed to Peacewrought for passive gold.',
+        synergies: ['Peacewrought', 'Mortar & Pestle'],
+        combos: [
+          { items: ['Aludel', 'Peacewrought'], effect: 'Infinite catalyst feeding for gold generation' }
+        ]
+      },
+      {
+        name: 'Poppy Field',
+        tier: { early: 'C', mid: 'S', late: 'S' },
+        tags: ['poison', 'weapon', 'core'],
+        description: 'Poisons when weapons hit. Charges weapons. S-tier poison build.',
+        synergies: ['Spider Mace', 'Floor Spike', 'Poison weapons'],
+        combos: [
+          { items: ['Poppy Field', 'Spider Mace'], effect: 'Spider Mace poison charges from Poppy Field triggers = infinite loop' },
+          { items: ['Poppy Field', 'Heavy enchantment'], effect: 'Heavy Poppy Field with 2 Spider Maces = true infinite damage' }
+        ]
+      },
+      {
+        name: 'Spider Mace',
+        tier: { early: 'B', mid: 'S', late: 'S' },
+        tags: ['poison', 'weapon', 'slow'],
+        description: 'Charges via Slow/Poison. Small slot with huge value in poison builds.',
+        synergies: ['Poppy Field', 'Floor Spike', 'Slow items'],
+        combos: []
+      },
+      {
+        name: 'Floor Spike',
+        tier: { early: 'A', mid: 'A', late: 'B' },
+        tags: ['poison', 'weapon'],
+        description: 'Poison weapon. Works well in multiples for poison stacking.',
+        synergies: ['Poppy Field', 'Spider Mace', 'Poison builds'],
+        combos: []
+      },
+      {
+        name: 'Runic Potion',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['potion', 'lifesteal'],
+        description: 'Guarantees Lifesteal on any weapon. Essential for weapon sustain.',
+        synergies: ['Peacewrought', 'Spider Mace', 'Any weapon'],
+        combos: []
+      },
+      {
+        name: 'Foul Mushroom',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['poison', 'self-poison'],
+        description: 'Self-poison enabler. Triggers damage scaling from poison stacks.',
+        synergies: ['Rainbow Staff', 'Lifesteal', 'Poison scaling'],
+        combos: [
+          { items: ['Foul Mushroom', 'Lifesteal'], effect: 'Self-poison damage + lifesteal = net healing + damage scaling' }
+        ]
+      },
+      {
+        name: 'Energy Potion',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['potion', 'haste', 'cheap'],
+        description: 'Haste + cheap sacrifice fodder for Peacewrought.',
+        synergies: ['Peacewrought', 'Haste builds'],
+        combos: []
+      },
+      {
+        name: 'Magnus Femur',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['weapon', 'slow', 'core'],
+        description: 'Gains +25 damage per tier each Slow. Self-charges. Slow-based S-tier build.',
+        synergies: ['Incense', 'Amber', 'Slow sources'],
+        combos: [
+          { items: ['Magnus Femur', 'Incense'], effect: 'Each Incense tick charges Magnus Femur for massive damage' }
+        ]
+      },
+      {
+        name: 'Incense',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['slow', 'trigger'],
+        description: '4 Slow triggers at Diamond. Small slot, huge value for Slow builds.',
+        synergies: ['Magnus Femur', 'Amber', 'Slow builds'],
+        combos: []
+      },
+      {
+        name: 'Amber',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['slow', 'duration'],
+        description: 'Extends Slow duration. Decent Slow itself.',
+        synergies: ['Magnus Femur', 'Incense', 'Slow builds'],
+        combos: []
       }
     ]
   },
@@ -3647,6 +3807,32 @@ const heroItemKnowledge = {
         description: 'Crit for chain damage spikes.',
         synergies: ['Lightning Rod', 'Vehicles'],
         combos: []
+      },
+      {
+        name: 'Helicopter',
+        tier: { early: 'C', mid: 'A', late: 'S' },
+        tags: ['vehicle', 'strong'],
+        description: 'Strong late game vehicle with good stats.',
+        synergies: ['Lightning Rod', 'Other vehicles'],
+        combos: []
+      },
+      {
+        name: 'Space Laser',
+        tier: { early: 'D', mid: 'B', late: 'S' },
+        tags: ['weapon', 'burst', 'charge'],
+        description: 'Build-defining burst weapon. Charges from items.',
+        synergies: ['Drone Workshop', 'Charge sources', 'Shields'],
+        combos: [
+          { items: ['Space Laser', 'Drone Workshop'], effect: 'Drones charge laser faster for burst damage' }
+        ]
+      },
+      {
+        name: 'Drone Workshop',
+        tier: { early: 'C', mid: 'A', late: 'A' },
+        tags: ['generation', 'charge'],
+        description: 'Generates drones. Charges Space Laser and other items.',
+        synergies: ['Space Laser', 'Charge items'],
+        combos: []
       }
     ]
   },
@@ -3702,6 +3888,56 @@ const heroItemKnowledge = {
         tags: ['food', 'damage'],
         description: 'Spices boost food damage. Good early scaling.',
         synergies: ['Food items', 'Grill'],
+        combos: []
+      },
+      {
+        name: 'Oven',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['food', 'size'],
+        description: 'Makes bigger food items with more powerful effects.',
+        synergies: ['Food items', 'Grill', 'Freezer'],
+        combos: []
+      },
+      {
+        name: 'Chocolate Bar',
+        tier: { early: 'S', mid: 'A', late: 'B' },
+        tags: ['sweet', 'cheap'],
+        description: 'Cheap sweet for early scaling. Feeds Giant Lollipop.',
+        synergies: ['Giant Lollipop', 'Sweet items'],
+        combos: []
+      },
+      {
+        name: 'Truffles',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['sweet', 'premium'],
+        description: 'Premium sweet item. Good Lollipop scaling.',
+        synergies: ['Giant Lollipop', 'Sweet items'],
+        combos: []
+      },
+      {
+        name: 'Dishwasher',
+        tier: { early: 'B', mid: 'A', late: 'S' },
+        tags: ['food', 'freeze', 'control'],
+        description: 'Applies Freeze via cooking. Control build enabler.',
+        synergies: ['Freezer', 'Food items', 'Control'],
+        combos: [
+          { items: ['Dishwasher', 'Freezer', 'Food Board'], effect: 'Freeze lockdown with food synergy' }
+        ]
+      },
+      {
+        name: 'Wok',
+        tier: { early: 'B', mid: 'A', late: 'A' },
+        tags: ['food', 'fast'],
+        description: 'Fast cooking with good damage output.',
+        synergies: ['Food items', 'CDR'],
+        combos: []
+      },
+      {
+        name: 'Curry',
+        tier: { early: 'A', mid: 'A', late: 'A' },
+        tags: ['food', 'burn'],
+        description: 'Food with burn synergy. Works with Grill.',
+        synergies: ['Grill', 'Burn builds'],
         combos: []
       }
     ]

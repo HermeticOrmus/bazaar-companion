@@ -1100,6 +1100,17 @@ function switchTab(target) {
   tabContents.forEach(content => {
     content.classList.toggle('active', content.id === target);
   });
+
+  // When switching to heroes tab, return to hero grid
+  if (target === 'heroes') {
+    const detail = document.getElementById('heroDetail');
+    const grid = document.getElementById('heroGrid');
+    if (detail && detail.classList.contains('active')) {
+      if (grid) grid.style.display = '';
+      detail.classList.remove('active');
+      currentHero = null;
+    }
+  }
 }
 
 tabs.forEach(tab => {

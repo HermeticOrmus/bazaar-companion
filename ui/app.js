@@ -1342,8 +1342,9 @@ function getItemPlaceholder(itemName, tier) {
 // Comprehensive items database with full tooltip data
 const sampleItems = [
   // ========== VANESSA ITEMS ==========
+  // VERIFIED 2024-12-06 from BazaarDB
   { name: 'Powder Keg', hero: 'vanessa', tier: 'gold', size: 'medium', tags: ['weapon', 'burn'],
-    cooldown: 6, damage: 45, effect: 'Deal damage and apply 3 Burn to enemy. When destroyed, explodes for 60 damage to all enemies.' },
+    cooldown: 24, effect: 'Deal Damage equal to 30%/40% of enemy Max Health and Destroy this. Passive: When you Burn, Charge this 2 second(s).' },
   { name: 'Cannon', hero: 'vanessa', tier: 'silver', size: 'medium', tags: ['weapon'],
     cooldown: 5, damage: 35, effect: 'Deal damage. Gains +10 damage for each Ammo item you own.' },
   { name: 'Sniper Rifle', hero: 'vanessa', tier: 'gold', size: 'large', tags: ['weapon'],
@@ -1374,6 +1375,11 @@ const sampleItems = [
     cooldown: 12, damage: 150, effect: 'Deal massive damage. Ignores Shield. 100% Crit Chance.' },
   { name: 'Flamethrower', hero: 'vanessa', tier: 'silver', size: 'medium', tags: ['weapon', 'burn'],
     cooldown: 3, damage: 15, effect: 'Deal damage and apply 2 Burn. Triggers 3 times.' },
+  // VERIFIED 2024-12-06 from BazaarDB - Core Vanessa items
+  { name: 'Orange Julian', hero: 'vanessa', tier: 'silver', size: 'medium', tags: ['friend'],
+    cooldown: 10, effect: 'Your Weapons gain +10 Damage for the fight. Passive: When you gain Gold, permanently increase the Damage bonus by the amount.' },
+  { name: 'Oni Mask', hero: 'vanessa', tier: 'silver', size: 'medium', tags: ['apparel', 'tech', 'burn'],
+    cooldown: 10, effect: 'Burn 6/9/12. Passive: When you Crit, your Burn items gain +4/+6/+8 Burn for the fight. When you Slow, Charge 2s.' },
 
   // ========== PYGMALIEN ITEMS ==========
   { name: 'Business Card', hero: 'pygmalien', tier: 'bronze', size: 'small', tags: ['gold'],
@@ -1404,6 +1410,13 @@ const sampleItems = [
     cooldown: 4, shield: 15, damage: 10, effect: 'Gain Shield. Deal damage to attacker when hit.' },
   { name: 'Force Field', hero: 'pygmalien', tier: 'diamond', size: 'large', tags: ['shield'],
     cooldown: 10, shield: 100, effect: 'Gain massive Shield. Shield does not decay this fight.' },
+  // VERIFIED 2024-12-06 from BazaarDB - Core Jabalian Drum build items
+  { name: 'Yo-Yo', hero: 'pygmalien', tier: 'gold', size: 'small', tags: ['weapon', 'toy'],
+    cooldown: 4, damage: 1, effect: 'Deal 1 Damage. When you use an adjacent item, Charge this 3/4 second(s).' },
+  { name: 'Model Ship', hero: 'pygmalien', tier: 'silver', size: 'medium', tags: ['aquatic', 'vehicle', 'toy', 'shield'],
+    cooldown: 5, shield: 10, effect: 'Shield 10. Passive: Adjacent Toys have +1 Multicast.' },
+  { name: 'Slingshot', hero: 'pygmalien', tier: 'bronze', size: 'small', tags: ['weapon', 'toy', 'ammo'],
+    cooldown: 4, damage: 30, effect: 'Deal 30/45/60/75 damage. This has +1/2/3/4 Max Ammo for each Toy you have.' },
 
   // ========== DOOLEY ITEMS ==========
   { name: 'Combat Core', hero: 'dooley', tier: 'silver', size: 'medium', tags: ['core', 'weapon'],
@@ -1478,6 +1491,9 @@ const sampleItems = [
     cooldown: 4, effect: 'Create a Catalyst. Catalysts can be destroyed by Peacewrought for Regen.' },
   { name: 'Library', hero: 'mak', tier: 'gold', size: 'large', tags: ['potion'],
     effect: 'Passive: At start of fight, create a random Potion. Your Potions cost 0.' },
+  // VERIFIED 2024-12-06 from BazaarDB - Core Mak item
+  { name: 'Rainbow Staff', hero: 'mak', tier: 'silver', size: 'medium', tags: ['relic', 'burn', 'poison', 'freeze', 'slow'],
+    cooldown: 6, effect: 'Burn 6/9/12, Poison 6/9/12, Freeze 1 item for 1s, Slow 1 item for 2s. Passive: Auto-enchants on purchase and each day.' },
 
   // ========== STELLE ITEMS ==========
   { name: 'Lightning Rod', hero: 'stelle', tier: 'gold', size: 'medium', tags: ['weapon', 'electric'],

@@ -209,60 +209,60 @@ const metaGuides = [
     name: 'Jabalian Drum',
     hero: 'pygmalien',
     tier: 's',
-    overview: 'Shield-stacking powerhouse. Jabalian Drum converts your shields into damage, turning defense into offense. One of the most consistent builds in the game.',
-    winCondition: 'Stack massive shields, let Jabalian Drum convert them to damage. Out-value opponents with economy.',
+    overview: 'Weapon-scaling powerhouse. Jabalian Drum buffs ALL your weapons with +damage and Haste every time you use a weapon. Stack fast weapons like Yo-Yo to ramp damage exponentially.',
+    winCondition: 'Fill board with fast weapons. Each weapon use buffs all weapons. Yo-Yo triggers constantly, ramping your entire board.',
     early: [
-      'Any shield items are good - start stacking early',
-      'Business Card for gold generation',
-      'Dont worry about damage yet',
-      'Focus on surviving PvP with shields'
+      'Look for fast small weapons (Fang, Slingshot)',
+      'Yo-Yo is the #1 priority if you find it',
+      'Check The Curio for Fang',
+      'Any fast-cooldown weapon works early'
     ],
     mid: [
-      'Jabalian Drum is your core piece',
-      'Add more shield generators',
-      'Showcase for economy scaling',
-      'Start thinking about shield-to-damage conversion'
+      'Find Jabalian Drum before Day 7 - must upgrade it',
+      'Model Ship + Yo-Yo combo is insane (Multicast)',
+      'Stack multiple fast weapons',
+      'Shiny enchantment doubles Drum effects'
     ],
     late: [
-      'Massive shield stacks = massive Drum damage',
-      'Add CDR to cycle shields faster',
-      'Consider crit for Drum damage multiplication',
-      'Position shields to apply before Drum activates'
+      'Your weapons should be hitting hard from stacked buffs',
+      'Turbo or Shiny enchantments on Drum',
+      'SMG, Marbles add more weapon triggers',
+      'Damage ramps every fight - longer fights favor you'
     ],
     coreItems: [
-      { name: 'Jabalian Drum', tier: 'gold', priority: 'must', desc: 'Converts shields to damage' },
-      { name: 'Business Card', tier: 'bronze', priority: 'core', desc: 'Economy engine' },
-      { name: 'Showcase', tier: 'silver', priority: 'core', desc: 'Gold and shield synergy' },
-      { name: 'Landscraper', tier: 'gold', priority: 'good', desc: 'Late game economy burst' }
+      { name: 'Jabalian Drum', tier: 'gold', priority: 'must', desc: 'When you use a Weapon, all Weapons gain +5/+10 damage and Haste 2s' },
+      { name: 'Yo-Yo', tier: 'bronze', priority: 'must', desc: 'Fast weapon, triggers constantly, great enchant host' },
+      { name: 'Model Ship', tier: 'silver', priority: 'core', desc: 'Gives Yo-Yo Multicast - doubles triggers' },
+      { name: 'Slingshot', tier: 'bronze', priority: 'core', desc: 'Fast weapon, Toy synergy' },
+      { name: 'Fang', tier: 'bronze', priority: 'good', desc: 'Fast neutral weapon, check The Curio' }
     ],
     synergies: [
-      { items: ['Jabalian Drum', 'Shield items'], desc: 'More shields = more damage from Drum' },
-      { items: ['Business Card', 'Showcase'], desc: 'Gold generation engine for shop power' },
-      { items: ['CDR', 'Shield generators'], desc: 'Faster shield cycling for more Drum procs' }
+      { items: ['Jabalian Drum', 'Yo-Yo'], desc: 'Yo-Yo triggers fast, stacking Drum buffs on all weapons' },
+      { items: ['Model Ship', 'Yo-Yo'], desc: 'Multicast doubles Yo-Yo triggers = double Drum stacks' },
+      { items: ['Fast weapons', 'Haste items'], desc: 'More weapon uses = more damage stacking' }
     ],
     boardLayout: [
-      { name: 'Shield', size: 'small', filled: true },
-      { name: 'Shield', size: 'small', filled: true },
-      { name: 'Jabalian Drum', size: 'medium', filled: true },
-      { name: 'Economy', size: 'medium', filled: true },
-      { name: 'Showcase', size: 'medium', filled: true },
-      { name: 'Flex', size: 'small' }
+      { name: 'Yo-Yo', size: 'small', filled: true },
+      { name: 'Slingshot', size: 'small', filled: true },
+      { name: 'Jabalian Drum', size: 'large', filled: true },
+      { name: 'Model Ship', size: 'medium', filled: true },
+      { name: 'Fang/Weapon', size: 'small', filled: true }
     ],
     tips: [
-      'Shields apply before combat damage - position accordingly',
-      'Business Card pays for itself quickly - get it early',
-      'Jabalian Drum damage scales with total shield, not just new shields',
-      'This build is very consistent - great for climbing',
-      'Economy items let you see more shops = find pieces faster'
+      'Drum is LARGE size - plan your board accordingly',
+      'Find Drum before Day 7 or its too late to scale',
+      'Shiny enchant doubles both damage AND haste duration',
+      'Yo-Yo is best weapon host for enchantments',
+      'Longer fights = more weapon triggers = more damage stacking'
     ],
     counters: {
-      bad: ['Shield-piercing effects', 'Burn damage (bypasses shields partially)'],
-      weak: ['Very fast aggro before shields stack', 'Anti-shield tech']
+      bad: ['Freeze effects (stops weapon triggers)', 'Silence/disable effects'],
+      weak: ['Fast aggro before you ramp', 'Burn that ignores your damage scaling']
     },
     externalLinks: [
-      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/', icon: '⚒' },
-      { name: 'BazaarDB Items', url: 'https://bazaardb.gg/?hero=pygmalien', icon: '▤' },
-      { name: 'Mobalytics Guide', url: 'https://mobalytics.gg/the-bazaar/guides', icon: '⚐' }
+      { name: 'Bazaar Builds', url: 'https://bazaar-builds.net/category/builds/pygmalien-builds/jabalian-drum-build/', icon: '>' },
+      { name: 'BazaarDB Item', url: 'https://bazaardb.gg/card/95q0sa46396uvpyse76trb67o/Jabalian-Drum', icon: '|' },
+      { name: 'Mobalytics Build', url: 'https://mobalytics.gg/the-bazaar/builds/jabalian-drum-pygmalien-kripp', icon: '+' }
     ]
   },
   {
@@ -1378,8 +1378,8 @@ const sampleItems = [
   // ========== PYGMALIEN ITEMS ==========
   { name: 'Business Card', hero: 'pygmalien', tier: 'bronze', size: 'small', tags: ['gold'],
     cooldown: 3, effect: 'Gain 5 Gold. When sold, gain 15 Gold.' },
-  { name: 'Jabalian Drum', hero: 'pygmalien', tier: 'gold', size: 'medium', tags: ['shield', 'weapon'],
-    cooldown: 6, shield: 30, effect: 'Gain Shield. Deal damage equal to your current Shield.' },
+  { name: 'Jabalian Drum', hero: 'pygmalien', tier: 'gold', size: 'large', tags: ['weapon', 'haste'],
+    cooldown: null, effect: 'When you use a Weapon, your Weapons gain +5/+10 Damage for the fight. When you use a Weapon, Haste it 2s.' },
   { name: 'Showcase', hero: 'pygmalien', tier: 'silver', size: 'medium', tags: ['gold'],
     effect: 'Passive: At the start of each fight, gain 2 Gold for each item you own.' },
   { name: 'Landscraper', hero: 'pygmalien', tier: 'gold', size: 'large', tags: ['gold', 'weapon'],
@@ -2910,7 +2910,7 @@ const heroData = {
     difficulty: 'Intermediate',
     portrait: 'assets/heroes/pygmalien.jpg',
     description: 'A wealthy merchant who converts gold and shields into power. Excels at economy generation and outlasting opponents through massive shield stacking.',
-    playstyle: 'Pygmalien plays the value game. Generate gold, build shields, and convert your economic advantage into combat power. Jabalian Drum turns shields into damage, while items like Safe and Business Card build your wealth. Pygmalien is patient - you dont need to win fights early, just survive and scale.',
+    playstyle: 'Pygmalien has multiple build paths. Economy builds use Business Card and Safe for gold generation. Jabalian Drum is a weapon-scaling build - stack fast weapons like Yo-Yo and let Drum buff them all. Shield builds focus on defensive stacking. Pygmalien is patient - you dont need to win fights early, just survive and scale.',
     strengths: [
       'Excellent economy generation',
       'Strong shield stacking',
@@ -2932,7 +2932,7 @@ const heroData = {
     tips: [
       'Business Card pays for itself quickly - get it early',
       'Shields apply before combat damage',
-      'Jabalian Drum converts shields to damage',
+      'Jabalian Drum buffs weapons - use fast weapons like Yo-Yo',
       'Economy items let you see more shops',
       'You can afford to lose early fights - play for value'
     ],
@@ -3252,18 +3252,18 @@ const heroProgression = {
   pygmalien: {
     early: [
       { name: 'Business Card', priority: 'must', reason: 'Economy engine' },
-      { name: 'Shield items', priority: 'core', reason: 'Early defense' },
+      { name: 'Fast weapons (Yo-Yo)', priority: 'core', reason: 'For Drum builds' },
       { name: 'Safe', priority: 'good', reason: 'Gold scaling' }
     ],
     mid: [
-      { name: 'Jabalian Drum', priority: 'must', reason: 'Shield → Damage' },
+      { name: 'Jabalian Drum', priority: 'must', reason: 'Weapon damage scaling' },
       { name: 'Showcase', priority: 'core', reason: 'Economy scaling' },
-      { name: 'More shields', priority: 'good', reason: 'Feed the drum' }
+      { name: 'Model Ship', priority: 'good', reason: 'Multicast for Yo-Yo' }
     ],
     late: [
-      { name: 'Massive shields', priority: 'must', reason: 'Max drum damage' },
+      { name: 'More fast weapons', priority: 'must', reason: 'Stack Drum triggers' },
       { name: 'Diamond items', priority: 'core', reason: 'Luxury scaling' },
-      { name: 'CDR', priority: 'good', reason: 'Shield cycling' }
+      { name: 'Shiny enchants', priority: 'good', reason: 'Double Drum effects' }
     ]
   },
   dooley: {
@@ -3622,11 +3622,12 @@ const heroItemKnowledge = {
       {
         name: 'Jabalian Drum',
         tier: { early: 'B', mid: 'S', late: 'S' },
-        tags: ['shield', 'damage', 'core'],
-        description: 'Converts shield into damage. Build-defining item.',
-        synergies: ['Shield items', 'ATM', 'Spiky Shield'],
+        tags: ['weapon', 'haste', 'core'],
+        description: 'When you use a Weapon, all Weapons gain +damage and Haste. Build-defining item for weapon builds.',
+        synergies: ['Yo-Yo', 'Model Ship', 'Fast weapons', 'Slingshot'],
         combos: [
-          { items: ['Jabalian Drum', 'Massive Shield Stack'], effect: 'Deal damage equal to total shield' }
+          { items: ['Jabalian Drum', 'Yo-Yo'], effect: 'Fast triggers stack Drum buffs on all weapons' },
+          { items: ['Model Ship', 'Yo-Yo'], effect: 'Multicast doubles weapon trigger rate' }
         ]
       },
       {
@@ -3644,7 +3645,7 @@ const heroItemKnowledge = {
         tier: { early: 'C', mid: 'A', late: 'A' },
         tags: ['property', 'shield', 'economy'],
         description: 'Converts shield into gold and provides shield.',
-        synergies: ['Shield items', 'Jabalian Drum'],
+        synergies: ['Shield items', 'Spiky Shield', 'Safe'],
         combos: []
       },
       {
@@ -3667,10 +3668,10 @@ const heroItemKnowledge = {
         name: 'Spiky Shield',
         tier: { early: 'A', mid: 'S', late: 'S' },
         tags: ['shield', 'weapon', 'core'],
-        description: 'Shield that deals damage. Perfect for Drum builds.',
-        synergies: ['Jabalian Drum', 'Shield stacking'],
+        description: 'Shield that deals damage. Great for shield-focused builds.',
+        synergies: ['Shield stacking', 'ATM'],
         combos: [
-          { items: ['Spiky Shield', 'Jabalian Drum'], effect: 'Shield AND damage combo' }
+          { items: ['Spiky Shield', 'Shield items'], effect: 'Shield AND damage combo' }
         ]
       },
       {
@@ -3814,7 +3815,7 @@ const heroItemKnowledge = {
         tier: { early: 'A', mid: 'A', late: 'B' },
         tags: ['shield', 'defense'],
         description: 'Shield generation item.',
-        synergies: ['Jabalian Drum', 'Shield builds'],
+        synergies: ['ATM', 'Shield builds', 'Spiky Shield'],
         combos: []
       },
       {
@@ -6732,11 +6733,11 @@ const heroLearningChecklists = {
         icon: '🎯',
         items: [
           'Spot Business Card instantly (economy)',
-          'Know Jabalian Drum (shield → damage)',
+          'Know Jabalian Drum (weapon scaling + haste)',
           'Recognize Showcase (economy scaling)',
           'Prioritize Safe (gold accumulation)',
           'Understand ATM buffed (shield x2)',
-          'Know shield items by tier',
+          'Know Yo-Yo (fast trigger for Drum)',
           'Identify Lemonade Stand build',
           'Recognize Cash Cannon scaling'
         ]
@@ -6745,11 +6746,11 @@ const heroLearningChecklists = {
         name: 'Synergy Patterns',
         icon: '⚯',
         items: [
-          'Shield Stack: Business Card → Shields → Drum → ATM',
+          'Drum Build: Yo-Yo + Model Ship + Drum',
           'Economy = more shop options',
-          'Shield cycling with CDR',
+          'Fast weapons stack Drum buffs',
           'Shields apply before damage',
-          'Damage conversion timing (Drum)',
+          'Drum buffs ALL weapons each trigger',
           'Luxury items scale with gold'
         ]
       },
@@ -6759,8 +6760,8 @@ const heroLearningChecklists = {
         items: [
           'Accept slow early (economy build)',
           'Can afford early losses (building value)',
-          'Avoid fighting without shield cycles',
-          'Know when Drum online (shield stacks)',
+          'Find Drum before Day 7',
+          'Know when Drum online (have fast weapons)',
           'Trade Prestige early for gold'
         ]
       },
@@ -6768,11 +6769,11 @@ const heroLearningChecklists = {
         name: 'Win Condition Setup',
         icon: '🏆',
         items: [
-          'Late: Massive shields + Drum + ATM',
+          'Drum Build: Fast weapons ramp damage',
           'Economy affords Diamond items',
-          'CDR stacking for shield cycles',
+          'Shiny enchant doubles Drum effects',
           'Out-value with economy advantage',
-          'Scaled past enemy damage'
+          'Longer fights = more weapon triggers'
         ]
       },
       {
@@ -6780,10 +6781,10 @@ const heroLearningChecklists = {
         icon: '⚠️',
         items: [
           'NEVER skip Business Card early',
-          'AVOID: Drum without shields',
+          'AVOID: Drum without fast weapons',
           'AVOID: Fighting early (build economy)',
-          'REMEMBER: Burn bypasses shields',
-          'AVOID: No CDR (shields need cycling)'
+          'REMEMBER: Drum is LARGE size',
+          'AVOID: Missing Drum before Day 7'
         ]
       }
     ]
@@ -7007,11 +7008,542 @@ function saveLearningProgress() {
 function calculateLearningPercentage(heroId) {
   const checklist = heroLearningChecklists[heroId];
   if (!checklist) return 0;
-  
+
   const totalItems = checklist.categories.reduce((sum, cat) => sum + cat.items.length, 0);
   const progress = getLearningProgress(heroId);
   const checkedItems = Object.values(progress).filter(v => v === true).length;
-  
+
   return totalItems > 0 ? Math.round((checkedItems / totalItems) * 100) : 0;
 }
+
+// ========================================
+// THEORYCRAFT TAB
+// ========================================
+
+// Enchantment database
+const enchantments = [
+  { name: 'Shiny', effect: 'Doubles the item effect', goodFor: ['weapon', 'haste', 'shield', 'damage'] },
+  { name: 'Turbo', effect: 'Reduces cooldown significantly', goodFor: ['weapon', 'cooldown'] },
+  { name: 'Heavy', effect: 'Increases damage but slows cooldown', goodFor: ['weapon', 'damage'] },
+  { name: 'Deadly', effect: '+50% Crit Chance', goodFor: ['weapon', 'crit'] },
+  { name: 'Vampiric', effect: 'Lifesteal on damage', goodFor: ['weapon', 'damage'] },
+  { name: 'Fiery', effect: 'Applies Burn on hit', goodFor: ['weapon', 'burn'] },
+  { name: 'Icy', effect: 'Applies Slow on hit', goodFor: ['weapon'] },
+  { name: 'Golden', effect: 'Generates gold on trigger', goodFor: ['gold', 'economy'] },
+  { name: 'Obsidian', effect: 'Ignores Shield', goodFor: ['weapon', 'damage'] },
+  { name: 'Restorative', effect: 'Heals on trigger', goodFor: ['heal', 'shield'] }
+];
+
+// Counter matchups based on tags
+const counterMatchups = {
+  weapon: { weakTo: ['Freeze', 'Silence', 'Slow'], strongVs: ['Slow builds', 'Economy-only builds'] },
+  shield: { weakTo: ['Shield-piercing', 'Burn', 'Obsidian enchant'], strongVs: ['Burst damage', 'Low DPS'] },
+  burn: { weakTo: ['High Heal', 'Cleanse'], strongVs: ['Shield builds', 'Low HP'] },
+  heal: { weakTo: ['Burn', 'Anti-heal'], strongVs: ['Burn builds', 'DoT'] },
+  haste: { weakTo: ['Slow', 'Freeze'], strongVs: ['Slow weapons'] },
+  crit: { weakTo: ['High HP tanks'], strongVs: ['Low HP builds'] },
+  poison: { weakTo: ['Cleanse', 'High Heal'], strongVs: ['Low healing builds'] },
+  gold: { weakTo: ['Aggro early', 'Fast kills'], strongVs: ['Slow games', 'Long fights'] },
+  tech: { weakTo: ['Tech disruption'], strongVs: ['Non-tech builds'] },
+  aquatic: { weakTo: ['Non-aquatic removal'], strongVs: ['Aquatic synergies'] },
+  core: { weakTo: ['Core disruption'], strongVs: ['Core synergies'] }
+};
+
+// Initialize theorycraft functionality
+function initTheorycraft() {
+  const searchInput = document.getElementById('theorycraftSearch');
+  const suggestionsBox = document.getElementById('theorycraftSuggestions');
+  const heroFilter = document.getElementById('theorycraftHeroFilter');
+  const refreshBtn = document.getElementById('refreshBazaarDB');
+
+  if (!searchInput) return;
+
+  // Search input handler
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const heroFilterValue = heroFilter.value;
+
+    if (query.length < 2) {
+      suggestionsBox.classList.remove('active');
+      return;
+    }
+
+    const matches = state.items.filter(item => {
+      const nameMatch = item.name.toLowerCase().includes(query);
+      const tagMatch = item.tags && item.tags.some(t => t.toLowerCase().includes(query));
+      const heroMatch = !heroFilterValue || item.hero === heroFilterValue;
+      return (nameMatch || tagMatch) && heroMatch;
+    }).slice(0, 10);
+
+    if (matches.length > 0) {
+      renderTheorycraftSuggestions(matches);
+      suggestionsBox.classList.add('active');
+    } else {
+      suggestionsBox.classList.remove('active');
+    }
+  });
+
+  // Close suggestions on click outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.theorycraft-search')) {
+      suggestionsBox.classList.remove('active');
+    }
+  });
+
+  // Hero filter change
+  heroFilter.addEventListener('change', () => {
+    searchInput.dispatchEvent(new Event('input'));
+  });
+
+  // Refresh button
+  refreshBtn.addEventListener('click', handleBazaarDBRefresh);
+
+  // Popular chips
+  document.querySelectorAll('.popular-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const itemName = chip.dataset.item;
+      const item = state.items.find(i => i.name === itemName);
+      if (item) {
+        analyzeItem(item);
+      }
+    });
+  });
+}
+
+function renderTheorycraftSuggestions(items) {
+  const container = document.getElementById('theorycraftSuggestions');
+  container.innerHTML = items.map(item => `
+    <div class="tc-suggestion" data-item-name="${item.name}">
+      <span class="tc-suggestion-tier ${item.tier}">${item.tier}</span>
+      <span class="tc-suggestion-name">${item.name}</span>
+      <span class="tc-suggestion-meta">${capitalize(item.hero)} | ${item.size}</span>
+    </div>
+  `).join('');
+
+  // Add click handlers
+  container.querySelectorAll('.tc-suggestion').forEach(el => {
+    el.addEventListener('click', () => {
+      const itemName = el.dataset.itemName;
+      const item = state.items.find(i => i.name === itemName);
+      if (item) {
+        document.getElementById('theorycraftSearch').value = itemName;
+        container.classList.remove('active');
+        analyzeItem(item);
+      }
+    });
+  });
+}
+
+function analyzeItem(item) {
+  // Hide empty state, show results
+  document.getElementById('theorycraftEmpty').style.display = 'none';
+  document.getElementById('theorycraftResults').style.display = 'block';
+
+  // Populate item card
+  renderItemCard(item);
+
+  // Compute and render all analysis sections
+  renderSynergies(item);
+  renderBuildsUsing(item);
+  renderBoardLayout(item);
+  renderCounters(item);
+  renderEnchantments(item);
+  renderCombos(item);
+  renderExternalLinks(item);
+}
+
+function renderItemCard(item) {
+  document.getElementById('tcItemName').textContent = item.name;
+
+  const tierBadge = document.getElementById('tcItemTier');
+  tierBadge.textContent = item.tier;
+  tierBadge.className = `item-tier-badge ${item.tier}`;
+
+  document.getElementById('tcItemSize').textContent = item.size;
+  document.getElementById('tcItemHero').textContent = capitalize(item.hero);
+
+  // Tags
+  const tagsContainer = document.getElementById('tcItemTags');
+  tagsContainer.innerHTML = (item.tags || []).map(tag =>
+    `<span class="item-tag">${tag}</span>`
+  ).join('');
+
+  // Effect
+  document.getElementById('tcItemEffect').textContent = item.effect || 'No effect description available';
+
+  // Stats
+  const statsContainer = document.getElementById('tcItemStats');
+  const stats = [];
+  if (item.cooldown) stats.push({ label: 'Cooldown', value: `${item.cooldown}s` });
+  if (item.damage) stats.push({ label: 'Damage', value: item.damage });
+  if (item.shield) stats.push({ label: 'Shield', value: item.shield });
+  if (item.heal) stats.push({ label: 'Heal', value: item.heal });
+
+  statsContainer.innerHTML = stats.map(s => `
+    <div class="item-stat">
+      <span class="stat-label">${s.label}:</span>
+      <span class="stat-value">${s.value}</span>
+    </div>
+  `).join('');
+}
+
+function renderSynergies(item) {
+  // Get direct synergies from item knowledge
+  const directSynergies = getDirectSynergies(item);
+  const tagSynergies = getTagSynergies(item);
+  const triggerSynergies = getTriggerSynergies(item);
+
+  // Direct synergies
+  const directContainer = document.getElementById('tcDirectSynergies');
+  if (directSynergies.length > 0) {
+    directContainer.innerHTML = directSynergies.map(s =>
+      `<span class="synergy-item" data-item="${s}">${s}</span>`
+    ).join('');
+  } else {
+    directContainer.innerHTML = '<span class="tc-empty-state">No direct synergies found</span>';
+  }
+
+  // Tag synergies
+  const tagContainer = document.getElementById('tcTagSynergies');
+  if (tagSynergies.length > 0) {
+    tagContainer.innerHTML = tagSynergies.slice(0, 8).map(s =>
+      `<span class="synergy-item" data-item="${s.name}">${s.name}</span>`
+    ).join('');
+  } else {
+    tagContainer.innerHTML = '<span class="tc-empty-state">No tag matches found</span>';
+  }
+
+  // Trigger synergies
+  const triggerContainer = document.getElementById('tcTriggerSynergies');
+  if (triggerSynergies.length > 0) {
+    triggerContainer.innerHTML = triggerSynergies.slice(0, 6).map(s =>
+      `<span class="synergy-item" data-item="${s.name}">${s.name}</span>`
+    ).join('');
+  } else {
+    triggerContainer.innerHTML = '<span class="tc-empty-state">No trigger synergies found</span>';
+  }
+
+  // Make synergy items clickable
+  document.querySelectorAll('#tcSynergies .synergy-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const targetItem = state.items.find(i => i.name === el.dataset.item);
+      if (targetItem) {
+        document.getElementById('theorycraftSearch').value = targetItem.name;
+        analyzeItem(targetItem);
+      }
+    });
+  });
+}
+
+function getDirectSynergies(item) {
+  const synergies = new Set();
+
+  // Check item knowledge base
+  const heroKnowledge = itemKnowledge[item.hero];
+  if (heroKnowledge && heroKnowledge.items) {
+    const knowledgeEntry = heroKnowledge.items.find(k => k.name === item.name);
+    if (knowledgeEntry && knowledgeEntry.synergies) {
+      knowledgeEntry.synergies.forEach(s => synergies.add(s));
+    }
+  }
+
+  // Check builds for items commonly paired with this one
+  metaGuides.forEach(build => {
+    if (build.coreItems) {
+      const hasItem = build.coreItems.some(ci => ci.name === item.name);
+      if (hasItem) {
+        build.coreItems.forEach(ci => {
+          if (ci.name !== item.name) {
+            synergies.add(ci.name);
+          }
+        });
+      }
+    }
+  });
+
+  return Array.from(synergies);
+}
+
+function getTagSynergies(item) {
+  if (!item.tags || item.tags.length === 0) return [];
+
+  // Find items with matching tags (same hero or neutral)
+  return state.items.filter(other => {
+    if (other.name === item.name) return false;
+    if (other.hero !== item.hero && other.hero !== 'neutral' && item.hero !== 'neutral') return false;
+    if (!other.tags) return false;
+
+    // Check for tag overlap
+    const overlap = other.tags.filter(t => item.tags.includes(t));
+    return overlap.length > 0;
+  }).slice(0, 10);
+}
+
+function getTriggerSynergies(item) {
+  if (!item.effect) return [];
+
+  const effectLower = item.effect.toLowerCase();
+  const synergies = [];
+
+  // Items that trigger on same conditions
+  const triggers = ['when you use', 'when you gain', 'when you deal', 'when you take', 'when you heal'];
+
+  triggers.forEach(trigger => {
+    if (effectLower.includes(trigger)) {
+      state.items.forEach(other => {
+        if (other.name === item.name) return;
+        if (other.hero !== item.hero && other.hero !== 'neutral' && item.hero !== 'neutral') return;
+        if (other.effect && other.effect.toLowerCase().includes(trigger)) {
+          synergies.push(other);
+        }
+      });
+    }
+  });
+
+  // Unique by name
+  const seen = new Set();
+  return synergies.filter(s => {
+    if (seen.has(s.name)) return false;
+    seen.add(s.name);
+    return true;
+  });
+}
+
+function renderBuildsUsing(item) {
+  const container = document.getElementById('tcBuilds');
+
+  const builds = metaGuides.filter(build => {
+    // Check core items
+    if (build.coreItems && build.coreItems.some(ci => ci.name === item.name)) return true;
+    // Check build name
+    if (build.name.toLowerCase().includes(item.name.toLowerCase())) return true;
+    // Check synergies
+    if (build.synergies && build.synergies.some(syn =>
+      syn.items && syn.items.includes(item.name)
+    )) return true;
+    return false;
+  });
+
+  if (builds.length > 0) {
+    container.innerHTML = builds.map(build => `
+      <div class="tc-build-item" data-build-id="${build.id}">
+        <span class="tc-build-name">${build.name}</span>
+        <span class="tc-build-tier ${build.tier}">${build.tier.toUpperCase()}-Tier</span>
+      </div>
+    `).join('');
+
+    // Click to view build
+    container.querySelectorAll('.tc-build-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const buildId = el.dataset.buildId;
+        // Switch to guides tab and show build
+        document.querySelector('[data-tab="guides"]').click();
+        setTimeout(() => {
+          const build = metaGuides.find(b => b.id === buildId);
+          if (build && typeof showGuide === 'function') {
+            showGuide(build);
+          }
+        }, 100);
+      });
+    });
+  } else {
+    container.innerHTML = '<div class="tc-empty-state">No builds use this item as core</div>';
+  }
+}
+
+function renderBoardLayout(item) {
+  const container = document.getElementById('tcBoardLayout');
+  const explanation = document.getElementById('tcBoardExplanation');
+
+  // Get synergies to suggest board
+  const synergies = getDirectSynergies(item);
+  const synergyItems = synergies.slice(0, 4).map(name => {
+    const found = state.items.find(i => i.name === name);
+    return found || { name, size: 'medium' };
+  });
+
+  // Build board layout
+  const boardSlots = [
+    { ...item, isCurrent: true }
+  ];
+
+  synergyItems.forEach(si => {
+    boardSlots.push(si);
+  });
+
+  // Fill remaining with suggestions based on size
+  const remainingSpace = 5 - boardSlots.length;
+  if (remainingSpace > 0) {
+    const fillers = item.tags ? state.items.filter(i =>
+      i.hero === item.hero &&
+      i.name !== item.name &&
+      !synergyItems.some(s => s.name === i.name) &&
+      i.tags && i.tags.some(t => item.tags.includes(t))
+    ).slice(0, remainingSpace) : [];
+
+    fillers.forEach(f => boardSlots.push(f));
+  }
+
+  container.innerHTML = boardSlots.map(slot => `
+    <div class="tc-board-slot ${slot.size} ${slot.isCurrent ? 'current' : ''}">
+      ${slot.name}
+    </div>
+  `).join('');
+
+  // Explanation
+  const sizeText = item.size === 'large' ? 'takes significant board space' :
+                   item.size === 'medium' ? 'moderate size allows flexibility' :
+                   'small size enables multiple synergies';
+  explanation.textContent = `${item.name} ${sizeText}. Pair with synergy items that complement its ${(item.tags || []).join('/')} tags.`;
+}
+
+function renderCounters(item) {
+  const weakToContainer = document.getElementById('tcWeakTo');
+  const strongVsContainer = document.getElementById('tcStrongVs');
+
+  const weakTo = new Set();
+  const strongVs = new Set();
+
+  // Analyze based on tags
+  (item.tags || []).forEach(tag => {
+    const matchup = counterMatchups[tag];
+    if (matchup) {
+      matchup.weakTo.forEach(w => weakTo.add(w));
+      matchup.strongVs.forEach(s => strongVs.add(s));
+    }
+  });
+
+  // Add item-specific counters from builds
+  metaGuides.forEach(build => {
+    if (build.coreItems && build.coreItems.some(ci => ci.name === item.name)) {
+      if (build.counters) {
+        (build.counters.bad || []).forEach(c => weakTo.add(c));
+      }
+    }
+  });
+
+  weakToContainer.innerHTML = weakTo.size > 0
+    ? Array.from(weakTo).map(w => `<span class="counter-item bad">${w}</span>`).join('')
+    : '<span class="tc-empty-state">No known counters</span>';
+
+  strongVsContainer.innerHTML = strongVs.size > 0
+    ? Array.from(strongVs).map(s => `<span class="counter-item good">${s}</span>`).join('')
+    : '<span class="tc-empty-state">No known advantages</span>';
+}
+
+function renderEnchantments(item) {
+  const container = document.getElementById('tcEnchantments');
+
+  // Find matching enchantments based on tags
+  const recommended = enchantments.filter(ench => {
+    if (!item.tags) return false;
+    return ench.goodFor.some(g => item.tags.includes(g));
+  });
+
+  // Sort by priority (more tag matches = better)
+  recommended.sort((a, b) => {
+    const aMatches = a.goodFor.filter(g => item.tags.includes(g)).length;
+    const bMatches = b.goodFor.filter(g => item.tags.includes(g)).length;
+    return bMatches - aMatches;
+  });
+
+  if (recommended.length > 0) {
+    container.innerHTML = recommended.slice(0, 4).map((ench, i) => `
+      <div class="tc-enchant">
+        <div>
+          <div class="tc-enchant-name">${ench.name}</div>
+          <div class="tc-enchant-desc">${ench.effect}</div>
+        </div>
+        <span class="tc-enchant-priority ${i === 0 ? 'best' : 'good'}">${i === 0 ? 'Best' : 'Good'}</span>
+      </div>
+    `).join('');
+  } else {
+    container.innerHTML = '<div class="tc-empty-state">No specific enchantments recommended</div>';
+  }
+}
+
+function renderCombos(item) {
+  const container = document.getElementById('tcCombos');
+  const combos = [];
+
+  // Get combos from item knowledge
+  const heroKnowledge = itemKnowledge[item.hero];
+  if (heroKnowledge && heroKnowledge.items) {
+    const knowledgeEntry = heroKnowledge.items.find(k => k.name === item.name);
+    if (knowledgeEntry && knowledgeEntry.combos) {
+      combos.push(...knowledgeEntry.combos);
+    }
+  }
+
+  // Get combos from builds
+  metaGuides.forEach(build => {
+    if (build.synergies) {
+      build.synergies.forEach(syn => {
+        if (syn.items && syn.items.includes(item.name)) {
+          combos.push({
+            items: syn.items,
+            effect: syn.desc
+          });
+        }
+      });
+    }
+  });
+
+  // Unique combos
+  const seen = new Set();
+  const uniqueCombos = combos.filter(c => {
+    const key = c.items.sort().join('|');
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  if (uniqueCombos.length > 0) {
+    container.innerHTML = uniqueCombos.slice(0, 5).map(combo => `
+      <div class="tc-combo">
+        <div class="tc-combo-items">
+          ${combo.items.map((itm, i) => `
+            <span class="tc-combo-item">${itm}</span>
+            ${i < combo.items.length - 1 ? '<span class="tc-combo-arrow">+</span>' : ''}
+          `).join('')}
+        </div>
+        <div class="tc-combo-effect">${combo.effect}</div>
+      </div>
+    `).join('');
+  } else {
+    container.innerHTML = '<div class="tc-empty-state">No known combos</div>';
+  }
+}
+
+function renderExternalLinks(item) {
+  const itemSlug = item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const wikiSlug = item.name.replace(/\s+/g, '_');
+
+  document.getElementById('tcLinkBazaarDB').href = `https://bazaardb.gg/?search=${encodeURIComponent(item.name)}`;
+  document.getElementById('tcLinkWiki').href = `https://thebazaar.wiki.gg/wiki/${wikiSlug}`;
+}
+
+async function handleBazaarDBRefresh() {
+  const btn = document.getElementById('refreshBazaarDB');
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  try {
+    // Note: This would need CORS proxy or backend to actually fetch
+    // For now, show a message about manual refresh
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    alert('BazaarDB refresh: For the latest data, visit bazaardb.gg directly.\n\nAutomatic sync requires a backend proxy due to browser security restrictions.');
+  } catch (error) {
+    console.error('Refresh failed:', error);
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  initTheorycraft();
+});
 

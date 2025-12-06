@@ -36,3 +36,5 @@ npm-debug.log*
 # Whisper models (large files)
 whisper.cpp/models/*
 !whisper.cpp/models/.gitkeep
+.vercel
+.env*.local

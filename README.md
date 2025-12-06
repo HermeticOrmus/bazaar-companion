@@ -76,32 +76,6 @@ cd ui && python3 -m http.server 8080
 | **Notes** | Voice recording, transcription | Record, tag, search |
 | **Progress** | Charts, stats, milestones | Track trends, achievements |
 
-### Voice Notes (In-Browser Recording)
-
-Record voice notes directly in the browser:
-1. Go to **Notes** tab
-2. Click the microphone button
-3. Speak your insight
-4. Click again to stop
-5. Note is auto-transcribed and tagged
-
-**For auto-transcription**, run the Whisper server:
-```bash
-# Terminal 1: UI Server
-cd ui && python3 -m http.server 8080
-
-# Terminal 2: Whisper Transcription Server
-python3 scripts/whisper-server.py
-```
-
-Requires: `~/whisper.cpp` with built binaries and models, plus `pip install flask flask-cors`.
-
-**Alternative (CLI recording)**:
-```bash
-./scripts/record-note.sh      # Record until Ctrl+C
-./scripts/record-note.sh 30   # Record 30 seconds
-```
-
 ## Quick Reference
 
 ### Day Structure
@@ -123,13 +97,10 @@ Requires: `~/whisper.cpp` with built binaries and models, plus `pip install flas
 ## Project Structure
 ```
 /ui              - Web interface (BazaarDB-style dark theme)
-/scripts         - Automation (voice notes)
-/voice-notes     - Audio recordings & transcriptions
-/heroes          - Hero guides & personal notes
-/runs            - Run logs & analysis
-/builds          - Successful build templates
-/mechanics       - Deep dives on systems
-/progress        - Personal stats & goals
+/mechanics       - Meta reference & game systems
+/runs            - Run log templates
+/progress        - Personal goals & tracking
+/scripts         - Utility scripts (image download, whisper)
 ```
 
 ## Resources
@@ -157,7 +128,7 @@ Check these regularly for current meta:
 4. Mobalytics for Kripp's latest builds
 
 ### Patch Notes Sources
-- [BazaarDB Patch Notes](https://bazaardb.gg/patchnotes/8.0) - Auto-generated diffs
+- [BazaarDB Patch Notes](https://bazaardb.gg/patchnotes/9.0) - Auto-generated diffs
 - [How Bazaar Patch Notes](https://www.howbazaar.gg/patchnotes)
 - [Mobalytics Patch Tracker](https://mobalytics.gg/the-bazaar/guides/patch-notes)
 - [The Bazaar Zone](https://thebazaarzone.com/news/patch-notes/)

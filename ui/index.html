@@ -54,6 +54,7 @@
       <button class="tab" data-tab="runs">Runs</button>
       <button class="tab" data-tab="notes">Notes</button>
       <button class="tab" data-tab="progress">Progress</button>
+      <button class="tab" data-tab="theorycraft">Theorycraft</button>
       <button class="tab" data-tab="trainer">Trainer</button>
     </nav>
   </header>
@@ -1294,6 +1295,166 @@
       </div>
     </section>
 
+    <!-- Theorycraft Tab -->
+    <section class="tab-content" id="theorycraft">
+      <div class="section-header">
+        <h2>Theorycrafting Lab</h2>
+        <p class="section-subtitle">Deep-dive item analysis: synergies, counters, builds, and board layouts</p>
+      </div>
+
+      <!-- Search and Controls -->
+      <div class="theorycraft-controls">
+        <div class="theorycraft-search-row">
+          <div class="search-wrapper theorycraft-search">
+            <span class="search-icon">?</span>
+            <input type="text" id="theorycraftSearch" placeholder="Search for an item..." autocomplete="off">
+            <div class="theorycraft-suggestions" id="theorycraftSuggestions"></div>
+          </div>
+          <select id="theorycraftHeroFilter" class="hero-filter">
+            <option value="">All Heroes</option>
+            <option value="vanessa">Vanessa</option>
+            <option value="pygmalien">Pygmalien</option>
+            <option value="dooley">Dooley</option>
+            <option value="mak">Mak</option>
+            <option value="stelle">Stelle</option>
+            <option value="jules">Jules</option>
+            <option value="neutral">Neutral</option>
+          </select>
+          <button class="btn-refresh-bazaardb" id="refreshBazaarDB" title="Fetch latest data from BazaarDB">
+            <span class="refresh-icon">↻</span>
+            <span class="refresh-text">Refresh</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="theorycraft-container">
+        <!-- Empty State -->
+        <div class="theorycraft-empty" id="theorycraftEmpty">
+          <div class="empty-icon">◈</div>
+          <h3>Select an Item to Analyze</h3>
+          <p>Search for any item above to see detailed synergies, counters, builds, and optimal board layouts.</p>
+          <div class="popular-items">
+            <p class="popular-label">Popular items:</p>
+            <div class="popular-chips">
+              <button class="popular-chip" data-item="Yo-Yo">Yo-Yo</button>
+              <button class="popular-chip" data-item="Powder Keg">Powder Keg</button>
+              <button class="popular-chip" data-item="Jabalian Drum">Jabalian Drum</button>
+              <button class="popular-chip" data-item="Core">Core</button>
+              <button class="popular-chip" data-item="Peacewrought">Peacewrought</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis Results (hidden until item selected) -->
+        <div class="theorycraft-results" id="theorycraftResults" style="display: none;">
+          <!-- Item Card -->
+          <div class="theorycraft-item-card" id="theorycraftItemCard">
+            <div class="item-card-header">
+              <h3 class="item-card-name" id="tcItemName">Item Name</h3>
+              <div class="item-card-badges">
+                <span class="item-tier-badge" id="tcItemTier">Gold</span>
+                <span class="item-size-badge" id="tcItemSize">Medium</span>
+                <span class="item-hero-badge" id="tcItemHero">Vanessa</span>
+              </div>
+            </div>
+            <div class="item-card-tags" id="tcItemTags"></div>
+            <div class="item-card-effect">
+              <div class="effect-label">Effect</div>
+              <div class="effect-text" id="tcItemEffect">Item effect description...</div>
+            </div>
+            <div class="item-card-stats" id="tcItemStats"></div>
+          </div>
+
+          <!-- Analysis Sections Grid -->
+          <div class="theorycraft-grid">
+            <!-- Synergies Section -->
+            <div class="tc-section synergies-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">⚯</span> Synergies</h4>
+              </div>
+              <div class="tc-section-content" id="tcSynergies">
+                <div class="synergy-group">
+                  <div class="synergy-label">Direct Synergies</div>
+                  <div class="synergy-items" id="tcDirectSynergies"></div>
+                </div>
+                <div class="synergy-group">
+                  <div class="synergy-label">Tag Matches</div>
+                  <div class="synergy-items" id="tcTagSynergies"></div>
+                </div>
+                <div class="synergy-group">
+                  <div class="synergy-label">Trigger Synergies</div>
+                  <div class="synergy-items" id="tcTriggerSynergies"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Builds Section -->
+            <div class="tc-section builds-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">≡</span> Builds Using This</h4>
+              </div>
+              <div class="tc-section-content" id="tcBuilds"></div>
+            </div>
+
+            <!-- Board Layout Section -->
+            <div class="tc-section board-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">▦</span> Suggested Board Layout</h4>
+              </div>
+              <div class="tc-section-content">
+                <div class="tc-board-layout" id="tcBoardLayout"></div>
+                <div class="tc-board-explanation" id="tcBoardExplanation"></div>
+              </div>
+            </div>
+
+            <!-- Counters Section -->
+            <div class="tc-section counters-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">⚔</span> Counter Analysis</h4>
+              </div>
+              <div class="tc-section-content">
+                <div class="counter-group weak-to">
+                  <div class="counter-label">Weak To</div>
+                  <div class="counter-items" id="tcWeakTo"></div>
+                </div>
+                <div class="counter-group strong-vs">
+                  <div class="counter-label">Strong Against</div>
+                  <div class="counter-items" id="tcStrongVs"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enchantments Section -->
+            <div class="tc-section enchants-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">★</span> Recommended Enchantments</h4>
+              </div>
+              <div class="tc-section-content" id="tcEnchantments"></div>
+            </div>
+
+            <!-- Combos Section -->
+            <div class="tc-section combos-section">
+              <div class="tc-section-header">
+                <h4><span class="tc-icon">→</span> Key Combos</h4>
+              </div>
+              <div class="tc-section-content" id="tcCombos"></div>
+            </div>
+          </div>
+
+          <!-- External Links -->
+          <div class="tc-external-links" id="tcExternalLinks">
+            <a href="#" class="tc-ext-link" id="tcLinkBazaarDB" target="_blank">
+              <span class="ext-icon">|</span> View on BazaarDB
+            </a>
+            <a href="#" class="tc-ext-link" id="tcLinkWiki" target="_blank">
+              <span class="ext-icon">W</span> View on Wiki
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Trainer Tab -->
     <section class="tab-content" id="trainer">
       <div class="section-header">
@@ -1439,7 +1600,7 @@
                   </div>
                   <div class="item-ref">
                     <span class="item-ref-name">Jabalian Drum</span>
-                    <span class="item-ref-desc">Shield → Damage</span>
+                    <span class="item-ref-desc">Weapon Buff + Haste</span>
                   </div>
                 </div>
               </div>
@@ -1512,9 +1673,9 @@
                 </div>
               </div>
               <div class="synergy-chain">
-                <h4>Shield Stack (Pygmalien)</h4>
+                <h4>Weapon Ramp (Pygmalien)</h4>
                 <div class="chain-flow">
-                  Business Card → Shields → Jabalian Drum → ATM
+                  Yo-Yo → Model Ship → Jabalian Drum → Fast Weapons
                 </div>
               </div>
               <div class="synergy-chain">

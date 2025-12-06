@@ -1,5 +1,5 @@
 // Service Worker for Bazaar Companion PWA
-const CACHE_NAME = 'bazaar-companion-v19';
+const CACHE_NAME = 'bazaar-companion-v21';
 const urlsToCache = [
   '/',
   '/index.html',

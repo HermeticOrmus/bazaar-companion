@@ -28,30 +28,46 @@ ITEMS = [
     "Oni Mask", "Lighthouse", "Flamethrower", "Bayonet", "Blunderbuss",
     "Cutlass", "Pistol", "Musket", "Fuse", "Gunpowder", "Cannonball",
     "Double Barrel", "Rocket Launcher", "Thermal Lance", "Railgun",
+    "Ramrod", "Chum", "Honing Steel", "Shot Glasses", "Switchblade",
+    "Flame Signal", "Hate Leech", "Scimitar of the Deep", "Vampire Squid",
+    "Orange Julian", "Sharkclaws", "Port", "Slumbering Primordial",
 
     # Pygmalien Items
     "Business Card", "Jabalian Drum", "Showcase", "Landscraper", "Safe",
     "Cash Cannon", "ATM", "Bar of Gold", "Chunk of Gold", "Bag of Jewels",
     "Cash Register", "Briefcase", "Spiky Shield", "Force Field",
+    "Gavel", "Hatchet", "Streaming Setup", "Lemonade Stand",
 
     # Dooley Items
     "Core", "Combat Core", "Critical Core", "Companion Core", "Armored Core",
     "Fiber Optics", "Ray Gun", "Dooltron", "Dooltron Mainframe",
     "GPU", "Memory Card", "Battery", "Capacitor", "Motherboard",
     "Monitor Lizard", "Cool LEDs", "Charging Station", "3D Printer",
+    "Launcher Core", "Ice 9000", "Weakpoint Detector", "Temporal Navigator",
+    "Micro Mach", "Defense Matrix", "DJ Circuit Breaker", "Cooling Fan",
 
     # Mak Items
     "Peacewrought", "Foul Mushroom", "Rainbow Staff", "Vial Launcher",
     "Potion", "Health Potion", "Regeneration Potion", "Energy Potion",
     "Alembic", "Cauldron", "Apothecary", "Laboratory",
+    "Poppy Field", "Spider Mace", "Magnus Femur", "Staff of the Moose",
+    "Runic Potion", "Floor Spike", "Barbed Claws", "Incense",
+    "Aludel", "Mortar and Pestle", "Library", "Book of Secrets", "Spider Fern",
+    "Athanor", "Ice Claw", "Runic Great Axe", "Tome of Yyahan",
 
     # Stelle Items
     "Flycycle", "Ornithopter", "Boom Boom Bot", "Balloon Bot",
     "Angry Balloon Bot", "Battle Balloon", "Helicopter", "Jetpack",
+    "Lightning Rod", "Space Laser", "Stellar Swallowtail", "Skyliner",
+    "Caracara", "Aerial Turret", "Gyro Gunsight", "Headset",
+    "Clockwork Disc", "Drone Workshop",
 
     # Jules Items
     "Pizza", "Rice Cooker", "Grill", "Wok", "Oven", "Dishwasher",
     "Spices", "Curry", "Chocolate Bar", "Truffles", "Butter",
+    "Hot Box", "Imu", "Giant Lollipop", "Freezer", "Stove", "Cooler",
+    "Gingerbread House", "Cutting Board", "Bubblegum Floor", "Excellent Vintage",
+    "Feast",
 
     # Common/Neutral Items
     "Bandages", "Brick Buddy", "Duct Tape", "Bootstraps", "Belt",

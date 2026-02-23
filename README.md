@@ -1,4 +1,22 @@
-# Bazaar Companion
+<p align="center">
+  <img src="https://ormus.solutions/mascot/pixellab_liquid_to_crown.gif" alt="Bazaar Companion" width="128" style="image-rendering: pixelated;" />
+</p>
+
+<h1 align="center">Bazaar Companion</h1>
+
+<p align="center">
+  <em>Community tracker for The Bazaar card game</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/HermeticOrmus/bazaar-companion/stargazers"><img src="https://img.shields.io/github/stars/HermeticOrmus/bazaar-companion?style=flat-square&color=aa8142" alt="Stars" /></a>
+  <a href="https://github.com/HermeticOrmus/bazaar-companion/blob/main/LICENSE"><img src="https://img.shields.io/github/license/HermeticOrmus/bazaar-companion?style=flat-square&color=aa8142" alt="License" /></a>
+  <a href="https://github.com/HermeticOrmus/bazaar-companion/commits"><img src="https://img.shields.io/github/last-commit/HermeticOrmus/bazaar-companion?style=flat-square&color=aa8142" alt="Last Commit" /></a>
+  <img src="https://img.shields.io/badge/React-aa8142?style=flat-square&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Vercel-aa8142?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
+
+---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/HermeticOrmus/bazaar-companion)
